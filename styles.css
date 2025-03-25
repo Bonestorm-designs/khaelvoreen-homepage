@@ -81,14 +81,18 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     transform: translate(-50%, -50%);
     z-index: -1;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,140,0,0.6) 0%, rgba(255,80,0,0.2) 60%, transparent 100%);
-    filter: blur(25px);
-    animation: pulse-glow 2s infinite ease-in-out;
+    background: radial-gradient(circle, 
+        rgba(255, 180, 0, 0.8) 0%, 
+        rgba(255, 90, 0, 0.5) 30%, 
+        rgba(255, 30, 0, 0.2) 60%, 
+        transparent 100%);
+    filter: blur(40px);
+    animation: solar-burst 2.8s infinite ease-in-out;
     pointer-events: none;
 
 
@@ -136,18 +140,21 @@ body {
     padding: 20px;
 }
 
-@keyframes pulse-glow {
+@keyframes solar-burst {
     0% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 0.9;
+        opacity: 1;
+        filter: blur(35px);
     }
     50% {
         transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0.5;
+        opacity: 0.7;
+        filter: blur(50px);
     }
     100% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 0.9;
+        opacity: 1;
+        filter: blur(35px);
     }
 }
 
