@@ -71,6 +71,9 @@ body {
         7% 50%,     /* notch center */
         0% 25%      /* notch top */
     );
+    box-shadow: 0 0 12px rgba(255, 100, 0, 0.8),
+            0 0 24px rgba(255, 80, 0, 0.5),
+            0 0 36px rgba(255, 60, 0, 0.3);
 }
 
 
@@ -78,7 +81,7 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -78%; /* Hidden initially */
+    left: -65%; /* Hidden initially */
     height: 100%;
     width: 78%;
     background-color: rgba(0, 0, 0, 0.7); /* Dark glass effect */
