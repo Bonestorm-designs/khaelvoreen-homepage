@@ -1,12 +1,14 @@
-document.getElementById('sidebar-toggle').addEventListener('click', function(){
-    const sidebar = document.getElementById('sidebar');
-    const toggleArrow = document.getElementById('sidebar-toggle');
+const sidebar = document.getElementById('sidebar');
+const toggleArrow = document.getElementById('sidebar-toggle');
 
-    if(sidebar.style.left === "0%"){
-        sidebar.style.left = "-78%";
-        toggleArrow.innerHTML = "➤";
+// Match this to the peeking position in your CSS (e.g. -70%)
+const closedPosition = "-77%";
+const openPosition = "0%";
+
+toggleArrow.addEventListener('click', function () {
+    if (sidebar.style.left === openPosition) {
+        sidebar.style.left = closedPosition;
     } else {
-        sidebar.style.left = "0%";
-        toggleArrow.innerHTML = "⬅";
+        sidebar.style.left = openPosition;
     }
 });
