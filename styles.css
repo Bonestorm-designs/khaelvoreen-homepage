@@ -49,12 +49,12 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 30%;
+    left: 4%;
     transform: translateY(-50%);
     width: 80px;
     height: 60px;
     background-image: url(ROCk.jpg);
-    background-color: #d2691e; /* dark orange fallback */
+
     background-size: cover;
     background-position: center;
     cursor: pointer;
