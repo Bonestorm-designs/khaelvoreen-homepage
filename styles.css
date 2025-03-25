@@ -81,7 +81,7 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -70%; /* Hidden initially */
+    left: -73%; /* Hidden initially */
     height: 100%;
     width: 78%;
     background-color: rgba(0, 0, 0, 0.7); /* Dark glass effect */
