@@ -1,5 +1,5 @@
 body {
-    background: url(Khaelbackg.PNG) no-repeat center center fixed;
+    background: url(Khaelbackg.png) no-repeat center center fixed;
     background-size: cover;
     color: #f2f2f2;
     font-family: 'Georgia', serif;
@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding-top: 50px;
 }
+
 
 /* Sidebar Styling */
 #sidebar {
