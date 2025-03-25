@@ -73,11 +73,12 @@ body {
     left: -78%; /* Hidden initially */
     height: 100%;
     width: 78%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark glass effect clearly visible */
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.7); /* Dark glass effect */
+    backdrop-filter: blur(10px); /* Glass blur */
     transition: all 0.5s ease;
     z-index: 998;
 }
+
 
 #sidebar nav {
     margin-top: 60px;
