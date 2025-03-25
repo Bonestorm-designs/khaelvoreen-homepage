@@ -158,3 +158,22 @@ body {
     }
 }
 
+#glow-behind-arrow {
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    z-index: 998;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        rgba(255,180,0,0.8) 0%, 
+        rgba(255,90,0,0.4) 40%, 
+        rgba(255,30,0,0.15) 70%, 
+        transparent 100%);
+    filter: blur(35px);
+    animation: solar-burst 2.8s infinite ease-in-out;
+    pointer-events: none;
+}
+
