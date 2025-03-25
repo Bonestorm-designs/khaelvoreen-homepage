@@ -55,30 +55,22 @@ body {
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
-    background-image: url(ROCK.jpg); /* <-- Replace with your actual file name */
+    background-image: url(ROCK.jpg); /* Replace if needed */
     background-size: cover;
     background-position: center;
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s ease;
 
-    /* Fantasy arrow shape: pointed front, inverted notch back */
+    /* Clean right-pointing arrowhead with inward V notch on the left */
     clip-path: polygon(
-        20% 0%,   /* Top left inward cut */
-        100% 0%,  /* Top right */
-        100% 50%, /* Arrow tip */
-        100% 100%,/* Bottom right */
-        20% 100%, /* Bottom left inward cut */
-        0% 50%    /* Deep V notch */
+        25% 0%,    /* top inward angle */
+        100% 0%,   /* top right */
+        100% 50%,  /* point */
+        100% 100%, /* bottom right */
+        25% 100%,  /* bottom inward angle */
+        0% 50%     /* deep inward notch */
     );
-}
-
-
-
-}
-
-#sidebar-toggle:hover {
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
 
