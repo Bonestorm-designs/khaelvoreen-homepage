@@ -53,19 +53,26 @@ body {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-color: rgba(255, 215, 0, 0.1); /* fallback gold tint */
-    background-image: url(ROCK.jpg); /* optional stone texture */
+    width: 60px;
+    height: 60px;
+    background-image: url(ROCKjpg); /* Replace with your exact filename */
     background-size: cover;
-    color: #d4af37; /* faded gold */
-    border: 2px solid #d4af37; /* same faded gold */
-    font-size: 36px;
-    padding: 15px;
+    background-position: center;
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s ease;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+
+    /* Fantasy arrow shape: pointed front, notched back */
+    clip-path: polygon(
+        25% 0%,   /* top inward V */
+        60% 0%,   /* upper edge to tip */
+        100% 50%, /* arrow point */
+        60% 100%, /* lower edge from tip */
+        25% 100%, /* bottom inward V */
+        0% 50%    /* deep inward notch */
+    );
 }
+
 
 }
 
