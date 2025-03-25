@@ -151,7 +151,7 @@ body {
         rgba(255,40,0,0.2) 65%, 
         transparent 100%);
         
-    filter: blur(20px) brightness(1.65);
+    filter: blur(20px) brightness(1.99);
     border-radius: 50%;
     animation: solar-burst 2.8s ease-in-out infinite;
 }
