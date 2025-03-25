@@ -60,16 +60,16 @@ body {
     z-index: 999;
     transition: all 0.3s ease;
 
-    clip-path: polygon(
-        25% 10%,     /* Top front */
-        100% 50%,    /* Tip */
-        25% 90%,     /* Bottom front */
-        0% 70%,      /* Bottom of V notch */
-        15% 50%,     /* Deepest part of notch */
-        0% 30%       /* Top of V notch */
+clip-path: polygon(
+    25% 15%,     /* Top front edge */
+    100% 50%,    /* Tip of the arrow */
+    25% 85%,     /* Bottom front edge */
+    10% 70%,     /* Bottom edge of notch */
+    28% 50%,     /* Deepest part of notch */
+    10% 30%      /* Top edge of notch */
+);
 
 
-    );
     box-shadow: 0 0 12px rgba(255, 100, 0, 0.8),
             0 0 24px rgba(255, 80, 0, 0.5),
             0 0 36px rgba(255, 60, 0, 0.3);
