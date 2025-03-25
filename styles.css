@@ -51,7 +51,7 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 24%;
+    left: 25%;
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
@@ -94,9 +94,9 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -76%; /* Hidden initially */
+    left: -75%; /* Hidden initially */
     height: 100%;
-    width: 78%;
+    width: 80%;
     background-color: rgba(0, 0, 0, 0.7); /* Dark glass effect */
     backdrop-filter: blur(10px); /* Glass blur */
     transition: all 0.5s ease;
