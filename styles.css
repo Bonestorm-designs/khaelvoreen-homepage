@@ -64,12 +64,12 @@ body {
 
     /* Clean right-pointing arrowhead with inward V notch on the left */
     clip-path: polygon(
-        25% 0%,    /* top inward angle */
+        25% 30%,    /* top inward angle */
         100% 0%,   /* top right */
-        100% 50%,  /* point */
+        50% 100%,  /* point */
         100% 100%, /* bottom right */
         25% 100%,  /* bottom inward angle */
-        0% 50%     /* deep inward notch */
+        60% 0%     /* deep inward notch */
     );
 }
 
