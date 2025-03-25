@@ -62,15 +62,14 @@ body {
     z-index: 999;
     transition: all 0.3s ease;
 
-     /* Fantasy arrow shape with center V-notch carved into back */
+    /* Arrowhead shape with pointy tip and V-notched back */
     clip-path: polygon(
-        20% 0%,    /* top notch start */
-        100% 0%,   /* top right */
-        100% 50%,  /* point */
-        100% 100%, /* bottom right */
-        20% 100%,  /* bottom notch start */
-        5% 75%,    /* lower V-cut */
-        5% 25%     /* upper V-cut */
+        15% 0%,     /* top inward V start */
+        100% 50%,   /* arrow tip */
+        15% 100%,   /* bottom inward V start */
+        0% 75%,     /* notch bottom */
+        7% 50%,     /* notch center */
+        0% 25%      /* notch top */
     );
 }
 
