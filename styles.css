@@ -60,14 +60,13 @@ body {
     z-index: 999;
     transition: all 0.3s ease;
 
-    /* Arrowhead shape with pointy tip and V-notched back */
-    clip-path: polygon(
-    15% 0%,     
-    100% 50%,   
-    15% 100%,   
-    0% 75%,     
-    19% 50%,     /* ← this goes deeper into the arrow */
-    0% 25%      
+   clip-path: polygon(
+    20% 10%,     /* Top front edge */
+    100% 50%,    /* Tip */
+    20% 90%,     /* Bottom front edge */
+    0% 70%,      /* Bottom of notch */
+    15% 50%,     /* Notch depth */
+    0% 30%       /* Top of notch */
 );
 
     );
