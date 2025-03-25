@@ -46,3 +46,63 @@ body {
     margin-left: 200px;
     padding: 20px;
 }
+
+/* Sidebar Toggle Arrow Styling */
+#sidebar-toggle {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+#sidebar-toggle:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Sidebar Styling */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -78%; /* Hidden initially */
+    height: 100%;
+    width: 78%;
+    background-image: url(Khaelmenu.png); /* Clearly replace with your sidebar image */
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(8px);
+    opacity: 0.95; /* Glass effect */
+    transition: all 0.5s ease;
+    z-index: 998;
+}
+
+#sidebar nav {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebar nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 15px;
+    transition: color 0.3s ease;
+}
+
+#sidebar nav a:hover {
+    color: #cfcfcf;
+}
+
+/* Main Content Adjustments */
+#main-content {
+    transition: margin-left 0.5s ease;
+    padding: 20px;
+}
