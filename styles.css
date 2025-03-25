@@ -62,12 +62,14 @@ body {
 
     /* Arrowhead shape with pointy tip and V-notched back */
     clip-path: polygon(
-        15% 0%,     /* top inward V start */
-        100% 50%,   /* arrow tip */
-        15% 100%,   /* bottom inward V start */
-        0% 75%,     /* notch bottom */
-        7% 50%,     /* notch center */
-        0% 25%      /* notch top */
+    15% 0%,     
+    100% 50%,   
+    15% 100%,   
+    0% 75%,     
+    19% 50%,     /* ← this goes deeper into the arrow */
+    0% 25%      
+);
+
     );
     box-shadow: 0 0 12px rgba(255, 100, 0, 0.8),
             0 0 24px rgba(255, 80, 0, 0.5),
