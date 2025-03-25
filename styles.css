@@ -49,25 +49,25 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 3%;
+    left: 30%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background-image: url(ROCK.jpg); /* Replace if needed */
+    width: 80px;    /* wider arrow */
+    height: 40px;   /* shorter height */
+    background-image: url('realistic_molten_stone.jpg');
     background-size: cover;
     background-position: center;
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s ease;
 
-   clip-path: polygon(
-    20% 10%,     /* Top front edge */
-    100% 50%,    /* Tip */
-    20% 90%,     /* Bottom front edge */
-    0% 70%,      /* Bottom of notch */
-    15% 50%,     /* Notch depth */
-    0% 30%       /* Top of notch */
-);
+    clip-path: polygon(
+        25% 10%,     /* Top front */
+        100% 50%,    /* Tip */
+        25% 90%,     /* Bottom front */
+        0% 70%,      /* Bottom of V notch */
+        15% 50%,     /* Deepest part of notch */
+        0% 30%       /* Top of V notch */
+
 
     );
     box-shadow: 0 0 12px rgba(255, 100, 0, 0.8),
