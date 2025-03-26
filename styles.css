@@ -20,14 +20,15 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -77%;               /* Starts mostly off-screen, just peeking */
-    width: 25%;               /* Takes up 25% of the screen when fully visible */
+    left: -20%;         /* Only 5% of it peeks out (width - abs(left)) */
+    width: 25%;
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(8px);
     transition: left 0.4s ease;
     z-index: 998;
 }
+
 
 
 
@@ -53,7 +54,7 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 4%; /* This will update via JavaScript */
+    left: 5%; /* aligns with visible 5% of sidebar when closed */
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
@@ -74,7 +75,9 @@ body {
 
     cursor: pointer;
     z-index: 999;
-    transition: left 0.3s ease;
+    transition: left 0.4s ease;
+}
+
 }
 
 
