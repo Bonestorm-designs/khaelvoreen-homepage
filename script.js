@@ -6,10 +6,10 @@ let isOpen = false;
 function updatePositions() {
     if (isOpen) {
         sidebar.style.left = "0%";
-        toggleArrow.style.left = "25%"; // Moves arrow with the sidebar
+        toggleArrow.style.left = "25%";
     } else {
-        sidebar.style.left = "-75%";
-        toggleArrow.style.left = "0"; // Resets arrow to edge
+        sidebar.style.left = "-20%";
+        toggleArrow.style.left = "5%";
     }
 }
 
