@@ -58,35 +58,31 @@ body {
     background-color: rgba(255,255,255,0.2);
 }
 
-/* Sidebar Toggle Arrow */
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 3%;
+    left: -20%;
     transform: translateY(-50%);
-    width: 100px;
+    width: 25%;
     height: 40px;
 
-    background-image: url(Purplestone.png);
-    background-size: 100% 100%;
+    background-image: url(purplestone.png);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
     clip-path: polygon(
-        0% 50%,     /* Left tip */
-        15% 0%,     /* Top left */
-        50% 40%,    /* Top center */
-        85% 0%,     /* Top right */
-        100% 50%,   /* Right tip */
-        85% 100%,   /* Bottom right */
-        50% 60%,    /* Bottom center */
-        15% 100%    /* Bottom left */
+        0% 50%,     /* Left middle */
+        50% 0%,     /* Top point */
+        100% 50%,   /* Right middle */
+        50% 100%    /* Bottom point */
     );
 
-    cursor: pointer;
     z-index: 999;
+    cursor: pointer;
     transition: left 0.4s ease;
 }
+
 
 /* Gold Divider */
 #arrow-divider {
