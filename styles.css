@@ -20,14 +20,15 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: 77%;             /* STARTS at 77% from the left */
-    width: 78%;            /* Overlaps most of the screen when opened */
+    left: -75%; /* Mostly hidden, peeking a bit */
+    width: 25%;
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    transition: left 0.4s ease;
     z-index: 998;
-    transition: all 0.4s ease;
 }
+
 
 
 
@@ -49,20 +50,18 @@ body {
     padding: 20px;
 }
 
-/* Sidebar Toggle Arrow Styling */
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 76%;                 /* Arrow sits just next to the visible edge */
+    left: 0; /* This will update via JavaScript */
     transform: translateY(-50%);
-    width: 80px;
+    width: 60px;
     height: 60px;
+
     background-image: url('purple_molten_stone.jpg');
     background-size: cover;
     background-position: center;
     background-color: transparent;
-    border-radius: 0;
-    overflow: hidden;
 
     clip-path: polygon(
         25% 15%,
@@ -75,8 +74,9 @@ body {
 
     cursor: pointer;
     z-index: 999;
-    transition: all 0.3s ease;
+    transition: left 0.3s ease;
 }
+
 
     /* 📦 Optional: Add a glowing effect visually behind it */
     /* box-shadow: 0 0 12px rgba(255, 100, 0, 0.7); */
