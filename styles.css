@@ -120,9 +120,13 @@ box-shadow:
 }
 
 #join-banner-sidebar img {
-    width: 100%;           /* Stretch to container */
-    max-width: 300px;      /* Increase max size */
-    transition: filter 0.3s ease, transform 0.3s ease;
+    width: 300px; /* or whatever size you want */
+    border-radius: 50%;                /* 👈 This makes it perfectly round */
+    overflow: hidden;                  /* Hides any corners sticking out */
+    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7); /* Optional glow */
+    transition: filter 0.4s ease, transform 0.4s ease;
+    animation: shinePulse 3s ease-in-out infinite;
+    border: 3px solid gold;
 }
 
 #join-banner-sidebar img:hover {
@@ -139,9 +143,13 @@ box-shadow:
 }
 
 #join-banner-home img {
-    width: 400px;
+      width: 400px; /* or whatever size you want */
+    border-radius: 50%;                /* 👈 This makes it perfectly round */
+    overflow: hidden;                  /* Hides any corners sticking out */
+    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7); /* Optional glow */
     transition: filter 0.4s ease, transform 0.4s ease;
     animation: shinePulse 3s ease-in-out infinite;
+    border: 4px solid gold;
 }
 
 #join-banner-home img:hover {
