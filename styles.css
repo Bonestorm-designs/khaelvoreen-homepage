@@ -18,7 +18,7 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -20%; /* Only 5% of it peeks out */
+    left: -20%;
     width: 25%;
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
@@ -46,36 +46,32 @@ body {
     color: #cfcfcf;
 }
 
-#sidebar a {
-    padding: 12px;
-    text-decoration: none;
-    color: #f2f2f2;
-    display: block;
-    font-size: 18px;
+/* Main Content */
+#main-content {
+    transition: margin-left 0.5s ease;
+    padding: 20px;
 }
 
-#sidebar a:hover {
-    background-color: rgba(255,255,255,0.2);
-}
-
+/* Sidebar Toggle - Elongated Diamond */
 #sidebar-toggle {
     position: fixed;
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
-    width: 25%;
-    height: 40px;
+    width: 100px;
+    height: 60px;
 
     background-image: url(purplestone.png);
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
+    background-color: #5a3e91; /* fallback color */
 
     clip-path: polygon(
-        0% 50%,     /* Left middle */
-        50% 0%,     /* Top point */
-        100% 50%,   /* Right middle */
-        50% 100%    /* Bottom point */
+        0% 50%,    /* Left */
+        50% 0%,    /* Top */
+        100% 50%,  /* Right */
+        50% 100%   /* Bottom */
     );
 
     z-index: 999;
@@ -83,47 +79,7 @@ body {
     transition: left 0.4s ease;
 }
 
-
-/* Gold Divider */
-#arrow-divider {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background-color: gold;
-    opacity: 0.8;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Main Content */
-#main-content {
-    transition: margin-left 0.5s ease;
-    padding: 20px;
-}
-
-/* Solar Burst Animation */
-@keyframes solar-burst {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        filter: blur(25px);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.15);
-        opacity: 0.6;
-        filter: blur(35px);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        filter: blur(25px);
-    }
-}
-
-/* Glowing Solar Burst Behind Arrow */
+/* Glowing Solar Burst */
 #glow-behind-arrow {
     position: fixed;
     top: 50%;
@@ -146,7 +102,7 @@ body {
     animation: solar-burst 2.8s ease-in-out infinite;
 }
 
-/* Orange Static Glow Behind Arrow */
+/* Static Orange Glow */
 #glow-outline {
     position: fixed;
     top: 50%;
@@ -158,8 +114,8 @@ body {
     pointer-events: none;
 
     background: radial-gradient(circle at center,
-        rgba(255, 140, 0, 0.95) 0%,
-        rgba(255, 100, 0, 0.5) 45%,
+        rgba(255, 140, 0, 0.9) 0%,
+        rgba(255, 100, 0, 0.4) 40%,
         transparent 100%
     );
 
@@ -167,5 +123,24 @@ body {
     border-radius: 50%;
 }
 
+/* Solar Burst Animation */
+@keyframes solar-burst {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        filter: blur(25px);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 0.6;
+        filter: blur(35px);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        filter: blur(25px);
+    }
+}
+-
 
 
