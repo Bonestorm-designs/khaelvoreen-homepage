@@ -43,33 +43,26 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 5%; /* aligns with visible 5% of sidebar when closed */
+    left: 5%;
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
 
-    background-image: url(Purplestone.png);
+    background-image: url(purplestone.png);
     background-size: cover;
     background-position: center;
     background-color: transparent;
 
     clip-path: path('M20,10 Q0,50 20,90 L100,50 Z');
 
-    clip-path: polygon(
-        25% 15%,
-        100% 50%,
-        25% 85%,
-        10% 70%,
-        28% 50%,
-        10% 30%
-    );
+    box-shadow: 0 0 15px 6px rgba(255, 140, 0, 0.9);
+    outline: 2px solid rgba(255, 140, 0, 0.8);
 
     cursor: pointer;
     z-index: 999;
     transition: left 0.4s ease;
-box-shadow: 0 0 20px 6px rgba(255, 140, 0, 0.9);
-  
 }
+
 
 /* Sidebar Nav Links */
 #sidebar nav {
@@ -119,24 +112,23 @@ box-shadow: 0 0 20px 6px rgba(255, 140, 0, 0.9);
 #glow-behind-arrow {
     position: fixed;
     top: 50%;
-    left: 4.5%;
-    width: 160px;
-    height: 160px;
+    left: 5.5%; /* nudged slightly right to center it under the arrow */
+    width: 220px;
+    height: 220px;
     transform: translate(-50%, -50%);
     z-index: 998;
     pointer-events: none;
 
     background: radial-gradient(circle at center,
-        rgba(255, 255, 150, 0.8) 0%,
-        rgba(255, 220, 100, 0.4) 35%,
-        rgba(255, 200, 50, 0.15) 65%,
+        rgba(255, 255, 180, 1) 0%,
+        rgba(255, 220, 80, 0.5) 35%,
+        rgba(255, 200, 50, 0.2) 65%,
         transparent 100%
     );
 
-    filter: blur(25px) brightness(1.8);
-    border-radius: 750%;
+    filter: blur(35px) brightness(2.2);
+    border-radius: 50%;
     animation: solar-burst 2.8s ease-in-out infinite;
 }
 
-}
 
