@@ -20,14 +20,15 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: 77%;              /* Starts mostly off-screen to the right */
+    left: 77%;             /* STARTS at 77% from the left */
+    width: 78%;            /* Overlaps most of the screen when opened */
     height: 100%;
-    width: 23%;             /* Only takes up the rest of the screen */
-    background-color: rgba(0, 0, 0, 0.7);  /* Glassy look */
+    background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(10px);
-    transition: all 0.5s ease;
     z-index: 998;
+    transition: all 0.4s ease;
 }
+
 
 
 #sidebar a {
@@ -52,42 +53,33 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 4%;
+    left: 76%;                 /* Arrow sits just next to the visible edge */
     transform: translateY(-50%);
     width: 80px;
     height: 60px;
-
-    /* 🔥 Texture background */
-    background-image: url(Purplestone.png);
+    background-image: url('purple_molten_stone.jpg');
     background-size: cover;
     background-position: center;
+    background-color: transparent;
+    border-radius: 0;
+    overflow: hidden;
 
-    /* 🔸 Fallback color if image fails */
-    background-color: #d2691e;
-
-    /* 🧩 Clip-path to shape the arrow */
     clip-path: polygon(
-        25% 15%,     /* Top front edge */
-        100% 50%,    /* Tip */
-        25% 85%,     /* Bottom front edge */
-        10% 70%,     /* Bottom of back notch */
-        28% 50%,     /* Deepest part of back notch */
-        10% 30%      /* Top of back notch */
+        25% 15%,
+        100% 50%,
+        25% 85%,
+        10% 70%,
+        28% 50%,
+        10% 30%
     );
 
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s ease;
+}
 
     /* 📦 Optional: Add a glowing effect visually behind it */
     /* box-shadow: 0 0 12px rgba(255, 100, 0, 0.7); */
-}
-
-
-
-    box-shadow: 0 0 12px rgba(255, 100, 0, 0.8),
-            0 0 24px rgba(255, 80, 0, 0.5),
-            0 0 36px rgba(255, 60, 0, 0.3);
 }
 
 
