@@ -50,7 +50,7 @@ body {
     width: 100px;
     height: 60px;
     background-image: url(Purplestone.png);
-    background-size: 240% 240%;
+    background-size: 250% 250%;
 background-position: center center;
 background-repeat: no-repeat;
     background-color: #5a3e91;
@@ -58,9 +58,8 @@ background-repeat: no-repeat;
     z-index: 999;
     cursor: pointer;
     transition: left 0.4s ease;
-    outline: 4px solid orange;
-    outline-offset: -4px;
-    box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+    outline: 3px solid #BF00FF; /* bold & glowing */
+box-shadow: 0 0 14px 6px rgba(191, 0, 255, 0.8);
 }
 
 
