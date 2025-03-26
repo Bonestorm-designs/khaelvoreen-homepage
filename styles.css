@@ -119,14 +119,14 @@ box-shadow:
     text-align: center;
 }
 
-#join-banner-sidebar img {
-    width: 300px; /* or whatever size you want */
-    border-radius: 50%;                /* 👈 This makes it perfectly round */
-    overflow: hidden;                  /* Hides any corners sticking out */
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7); /* Optional glow */
-    transition: filter 0.4s ease, transform 0.4s ease;
-    animation: shinePulse 3s ease-in-out infinite;
-    border: 3px solid gold;
+#join-banner-sidebar img, {
+    width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7);
+    animation: magicHum 3s ease-in-out infinite;
+    transition: transform 0.3s ease; 
+    border: 3px solid #BF00FF;
 }
 
 #join-banner-sidebar img:hover {
@@ -142,14 +142,17 @@ box-shadow:
     z-index: 1000;
 }
 
-#join-banner-home img {
-      width: 400px; /* or whatever size you want */
-    border-radius: 50%;                /* 👈 This makes it perfectly round */
-    overflow: hidden;                  /* Hides any corners sticking out */
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7); /* Optional glow */
-    transition: filter 0.4s ease, transform 0.4s ease;
-    animation: shinePulse 3s ease-in-out infinite;
-    border: 4px solid gold;
+#join-banner-home img, {
+    width: 400px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7);
+    animation: magicHum 3s ease-in-out infinite;
+    transition: transform 0.3s ease; 
+    border: 4px solid #BF00FF;
+}
+
+   
 }
 
 #join-banner-home img:hover {
@@ -157,14 +160,17 @@ box-shadow:
     transform: scale(1.08);
 }
 
-/* Flicker Animation */
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    45% { opacity: 0.85; }
-    50% { opacity: 0.95; }
-    55% { opacity: 0.75; }
-    60% { opacity: 0.95; }
+@keyframes magicHum {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px #BF00FF) brightness(1);
+  }
+  50% {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 20px #BF00FF) brightness(1.2);
+  }
 }
+
 
 @keyframes shinePulse {
     0%, 100% {
