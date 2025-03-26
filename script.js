@@ -1,12 +1,13 @@
 const sidebar = document.getElementById('sidebar');
 const toggleArrow = document.getElementById('sidebar-toggle');
 
-// Match this to the peeking position in your CSS (e.g. -70%)
-const closedPosition = "-77%";
-const openPosition = "0%";
+const openPosition = "0%";      // Fully slid in
+const closedPosition = "77%";   // Docked on the right
 
 toggleArrow.addEventListener('click', function () {
-    if (sidebar.style.left === openPosition) {
+    const currentLeft = getComputedStyle(sidebar).left;
+
+    if (currentLeft === openPosition) {
         sidebar.style.left = closedPosition;
     } else {
         sidebar.style.left = openPosition;
