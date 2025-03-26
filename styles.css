@@ -49,26 +49,35 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 4%;
+    left: 30%;
     transform: translateY(-50%);
     width: 80px;
     height: 60px;
-    background-image: url(ROCk.jpg);
 
+    /* 🔥 Texture background */
+    background-image: url('realistic_molten_stone.jpg');
     background-size: cover;
     background-position: center;
+
+    /* 🔸 Fallback color if image fails */
+    background-color: #d2691e;
+
+    /* 🧩 Clip-path to shape the arrow */
+    clip-path: polygon(
+        25% 15%,     /* Top front edge */
+        100% 50%,    /* Tip */
+        25% 85%,     /* Bottom front edge */
+        10% 70%,     /* Bottom of back notch */
+        28% 50%,     /* Deepest part of back notch */
+        10% 30%      /* Top of back notch */
+    );
+
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s ease;
 
-    clip-path: polygon(
-        25% 15%,
-        100% 50%,
-        25% 85%,
-        10% 70%,
-        28% 50%,
-        10% 30%
-    );
+    /* 📦 Optional: Add a glowing effect visually behind it */
+    /* box-shadow: 0 0 12px rgba(255, 100, 0, 0.7); */
 }
 
 
