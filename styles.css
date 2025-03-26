@@ -46,12 +46,12 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: calc(50% - 30px); /* Perfectly centers a 60px tall arrow */
-    left: 2%;
+    left: 3.5%;
     width: 100px;
     height: 60px;
     background-image: url(Purplestone.png);
-    background-size: cover;
-background-position: center;
+    background-size: 150% 150%;
+background-position: center center;
 background-repeat: no-repeat;
     background-color: #5a3e91;
     clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
