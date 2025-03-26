@@ -24,4 +24,5 @@ toggleArrow.addEventListener("click", () => {
     updatePositions();
 });
 
+// Initialize position
 updatePositions();
