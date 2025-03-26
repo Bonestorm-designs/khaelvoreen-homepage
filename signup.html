@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Join the Vanguard</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: url(Khaelbackground.png) no-repeat center center fixed;
+      background-size: cover;
+      color: #f2f2f2;
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 60px 20px;
+    }
+
+    .signup-container {
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+    }
+
+    .signup-container h1 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #bf00ff;
+    }
+
+    .signup-container label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .signup-container input,
+    .signup-container textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #333;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .signup-container button {
+      margin-top: 15px;
+      background-color: #bf00ff;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .signup-container button:hover {
+      background-color: #a000d4;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h1>Join the Vanguard</h1>
+    <form action="https://your-wordpress-form-endpoint" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="q1">Why do you want to join the Vanguard?</label>
+      <textarea id="q1" name="q1" rows="3" required></textarea>
+
+      <label for="q2">What role would you play in a fantasy world?</label>
+      <textarea id="q2" name="q2" rows="3" required></textarea>
+
+      <label for="q3">What’s your character’s greatest strength or flaw?</label>
+      <textarea id="q3" name="q3" rows="3" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
