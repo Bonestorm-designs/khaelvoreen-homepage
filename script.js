@@ -1,10 +1,10 @@
 const sidebar = document.getElementById('sidebar');
 const toggleArrow = document.getElementById('sidebar-toggle');
 
-const openPosition = "0%";      // Fully slid in
-const closedPosition = "77%";   // Docked on the right
+const closedPosition = "77%";
+const openPosition = "0%";
 
-toggleArrow.addEventListener('click', function () {
+toggleArrow.addEventListener("click", function () {
     const currentLeft = getComputedStyle(sidebar).left;
 
     if (currentLeft === openPosition) {
