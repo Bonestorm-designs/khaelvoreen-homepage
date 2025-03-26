@@ -45,8 +45,8 @@ body {
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 5px;
+    height: 45px;
 
     background-image: url(Purplestone.png);
     background-size: cover;
@@ -54,17 +54,18 @@ body {
     background-color: transparent;
 
  clip-path: polygon(
-    25% 10%,
-    100% 50%,
-    25% 90%,
-    20% 85%,
-    15% 75%,
-    12% 65%,
-    10% 50%,
-    12% 35%,
-    15% 25%,
-    20% 15%
+    25% 10%,     /* Top point */
+    100% 50%,    /* Tip of arrow */
+    25% 90%,     /* Bottom point */
+    22% 85%,     /* Bottom curve in */
+    18% 75%,
+    15% 60%,
+    13% 50%,     /* Deepest inward indent */
+    15% 40%,
+    18% 25%,
+    22% 15%      /* Top curve in */
 );
+
 
     box-shadow: 0 0 15px 6px rgba(255, 140, 0, 0.9);
     outline: 2px solid rgba(255, 140, 0, 0.8);
