@@ -56,13 +56,13 @@ body {
 #sidebar-toggle {
     position: fixed;
     top: 50%;
-    left: 5%;
+    left: 2%;
     transform: translateY(-50%);
     width: 100px;
     height: 60px;
 
     background-image: url(Purplestone.png);
-    background-size: cover;
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #5a3e91; /* fallback color */
