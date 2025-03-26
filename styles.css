@@ -20,8 +20,8 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -75%; /* Mostly hidden, peeking a bit */
-    width: 25%;
+    left: -75%;               /* Starts mostly off-screen, just peeking */
+    width: 25%;               /* Takes up 25% of the screen when fully visible */
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(8px);
