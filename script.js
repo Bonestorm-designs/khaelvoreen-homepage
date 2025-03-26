@@ -6,11 +6,10 @@ let isOpen = false;
 function updatePositions() {
     if (isOpen) {
         sidebar.style.left = "0%";
-        toggleArrow.style.left = "25%";
-    } else {
-        sidebar.style.left = "-20%";
-        toggleArrow.style.left = "5%";
-    }
+   toggleArrow.style.left = isOpen ? "25%" : "5%";
+document.getElementById('glow-behind-arrow').style.left = isOpen ? "25%" : "5%";
+document.getElementById('glow-outline').style.left = isOpen ? "25%" : "5%";
+
 }
 
 toggleArrow.addEventListener("click", () => {
