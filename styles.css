@@ -55,16 +55,16 @@ body {
 /* Sidebar Toggle - Elongated Diamond */
 #sidebar-toggle {
     position: fixed;
-    top: 50%;
-    left: 2%;
-    transform: translateY(-50%);
+    top: calc(50% - 30px); /* Aligns vertically at sidebar center */
+    left: 3%;               /* Sidebar edge alignment */
     width: 100px;
     height: 60px;
+    transform: none;
 
-    background-image: url(Purplestone.png);
+    background-image: url(purplestone.png);
     background-size: 100% 100%;
+    background-repeat: no-repeat;
     background-position: center;
-    background-repeat: repeat;
     background-color: #5a3e91; /* fallback color */
 
     clip-path: polygon(
@@ -78,6 +78,7 @@ body {
     cursor: pointer;
     transition: left 0.4s ease;
 }
+
 
 /* Glowing Solar Burst */
 #glow-behind-arrow {
