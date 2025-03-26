@@ -58,8 +58,8 @@ background-repeat: no-repeat;
     z-index: 999;
     cursor: pointer;
     transition: left 0.4s ease;
-    outline: 2px solid orange;
-    outline-offset: -2px;
+    outline: 4px solid orange;
+    outline-offset: -4px;
     box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
 }
 
