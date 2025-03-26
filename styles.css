@@ -18,7 +18,7 @@ body {
 #sidebar {
     position: fixed;
     top: 0;
-    left: -20%;         /* Only 5% of it peeks out (width - abs(left)) */
+    left: -20%; /* Only 5% of it peeks out */
     width: 25%;
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
@@ -27,54 +27,6 @@ body {
     z-index: 998;
 }
 
-#sidebar a {
-    padding: 12px;
-    text-decoration: none;
-    color: #f2f2f2;
-    display: block;
-    font-size: 18px;
-}
-
-#sidebar a:hover {
-    background-color: rgba(255,255,255,0.2);
-}
-
-#sidebar-toggle {
-    position: fixed;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    width: 120px;
-    height: 40px;
-
-    background-image: url(Purplestone.png);
-    background-size: 100% 100%; /* Ensures full coverage */
-    background-repeat: no-repeat;
-    background-position: center;
-
-
-    /* Double-pointed arrow shape with central dip */
-    clip-path: polygon(
-        0% 50%,     /* Left tip */
-        15% 0%,     /* Top left angle */
-        50% 40%,    /* Top center before divider */
-        85% 0%,     /* Top right angle */
-        100% 50%,   /* Right tip */
-        85% 100%,   /* Bottom right angle */
-        50% 60%,    /* Bottom center after divider */
-        15% 100%    /* Bottom left angle */
-    );
-
-    box-shadow: 0 0 15px 6px rgba(255, 140, 0, 0.9);
-    outline: 2px solid rgba(255, 140, 0, 0.8);
-    cursor: pointer;
-    z-index: 999;
-    transition: left 0.4s ease;
-}
-
-
-
-/* Sidebar Nav Links */
 #sidebar nav {
     margin-top: 60px;
     display: flex;
@@ -94,13 +46,69 @@ body {
     color: #cfcfcf;
 }
 
-/* Main Content Adjustments */
+#sidebar a {
+    padding: 12px;
+    text-decoration: none;
+    color: #f2f2f2;
+    display: block;
+    font-size: 18px;
+}
+
+#sidebar a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Sidebar Toggle Arrow */
+#sidebar-toggle {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 40px;
+
+    background-image: url(Purplestone.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    clip-path: polygon(
+        0% 50%,     /* Left tip */
+        15% 0%,     /* Top left */
+        50% 40%,    /* Top center */
+        85% 0%,     /* Top right */
+        100% 50%,   /* Right tip */
+        85% 100%,   /* Bottom right */
+        50% 60%,    /* Bottom center */
+        15% 100%    /* Bottom left */
+    );
+
+    cursor: pointer;
+    z-index: 999;
+    transition: left 0.4s ease;
+}
+
+/* Gold Divider */
+#arrow-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: gold;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Main Content */
 #main-content {
     transition: margin-left 0.5s ease;
     padding: 20px;
 }
 
-/* Glowing Animation Behind Arrow */
+/* Solar Burst Animation */
 @keyframes solar-burst {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -119,37 +127,48 @@ body {
     }
 }
 
+/* Glowing Solar Burst Behind Arrow */
+#glow-behind-arrow {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    z-index: 996;
+    pointer-events: none;
+
+    background: radial-gradient(circle at center,
+        rgba(255, 255, 180, 1) 0%,
+        rgba(255, 220, 80, 0.5) 35%,
+        rgba(255, 200, 50, 0.2) 65%,
+        transparent 100%
+    );
+
+    filter: blur(35px) brightness(2.2);
+    border-radius: 50%;
+    animation: solar-burst 2.8s ease-in-out infinite;
+}
+
+/* Orange Static Glow Behind Arrow */
 #glow-outline {
     position: fixed;
     top: 50%;
     left: 5%;
-    width: 130px;
-    height: 130px;
+    width: 160px;
+    height: 160px;
     transform: translate(-50%, -50%);
     z-index: 997;
     pointer-events: none;
 
     background: radial-gradient(circle at center,
-        rgba(255, 140, 0, 0.9) 0%,
-        rgba(255, 100, 0, 0.4) 40%,
+        rgba(255, 140, 0, 0.95) 0%,
+        rgba(255, 100, 0, 0.5) 45%,
         transparent 100%
     );
 
-    filter: blur(35px);
+    filter: blur(30px);
     border-radius: 50%;
-}
-
-#arrow-divider {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background-color: gold;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.8;
 }
 
 
