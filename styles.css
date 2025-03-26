@@ -53,7 +53,18 @@ body {
     background-position: center;
     background-color: transparent;
 
-    clip-path: path('M20,10 Q0,50 20,90 L100,50 Z');
+ clip-path: polygon(
+    25% 10%,
+    100% 50%,
+    25% 90%,
+    20% 85%,
+    15% 75%,
+    12% 65%,
+    10% 50%,
+    12% 35%,
+    15% 25%,
+    20% 15%
+);
 
     box-shadow: 0 0 15px 6px rgba(255, 140, 0, 0.9);
     outline: 2px solid rgba(255, 140, 0, 0.8);
