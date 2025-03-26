@@ -6,15 +6,13 @@ html, body {
 
 body {
     background: url(Khaelbackground.png) no-repeat center center fixed;
-    background-size: cover; /* The best solution */
+    background-size: cover;
     background-position: center;
     color: #f2f2f2;
     font-family: 'Georgia', serif;
     text-align: center;
     overflow-x: hidden;
 }
-
-
 
 /* Sidebar Styling */
 #sidebar {
@@ -29,10 +27,6 @@ body {
     z-index: 998;
 }
 
-
-
-
-
 #sidebar a {
     padding: 12px;
     text-decoration: none;
@@ -45,12 +39,7 @@ body {
     background-color: rgba(255,255,255,0.2);
 }
 
-/* Adjust main content to move right of sidebar */
-#main-content {
-    margin-left: 200px;
-    padding: 20px;
-}
-
+/* Sidebar Toggle Arrow Styling */
 #sidebar-toggle {
     position: fixed;
     top: 50%;
@@ -76,16 +65,12 @@ body {
     cursor: pointer;
     z-index: 999;
     transition: left 0.4s ease;
-}
 
-}
-
-
-    /* 📦 Optional: Add a glowing effect visually behind it */
+    /* Optional: glowing effect */
     /* box-shadow: 0 0 12px rgba(255, 100, 0, 0.7); */
 }
 
-
+/* Sidebar Nav Links */
 #sidebar nav {
     margin-top: 60px;
     display: flex;
@@ -105,14 +90,13 @@ body {
     color: #cfcfcf;
 }
 
-}
-
 /* Main Content Adjustments */
 #main-content {
     transition: margin-left 0.5s ease;
     padding: 20px;
 }
 
+/* Glowing Animation Behind Arrow */
 @keyframes solar-burst {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -130,7 +114,6 @@ body {
         filter: blur(20px);
     }
 }
-
 
 #glow-behind-arrow {
     position: fixed;
@@ -152,5 +135,4 @@ body {
     border-radius: 60%;
     animation: solar-burst 2.8s ease-in-out infinite;
 }
-
 
