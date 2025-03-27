@@ -45,26 +45,25 @@ body {
 
 #sidebar-toggle {
     position: fixed;
-    top: calc(50% - 30px); /* Perfectly centers a 60px tall arrow */
+    top: calc(50% - 30px);
     left: 3.5%;
     width: 100px;
     height: 60px;
     background-image: url(Purplestone.png);
     background-size: 250% 250%;
-background-position: center center;
-background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-color: #5a3e91;
     clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
     z-index: 999;
     cursor: pointer;
     transition: left 0.4s ease;
     outline: 2px solid #BF00FF;
-outline-offset: -2px;
-box-shadow: 
-    0 0 10px rgba(191, 0, 255, 0.6), 
-    inset 0 0 5px rgba(191, 0, 255, 0.3);
+    outline-offset: -2px;
+    box-shadow: 
+        0 0 10px rgba(191, 0, 255, 0.6), 
+        inset 0 0 5px rgba(191, 0, 255, 0.3);
 }
-
 
 #glow-outline {
     position: fixed;
@@ -111,30 +110,36 @@ box-shadow:
         opacity: 1;
     }
 }
-/* Sidebar Join Button */
-#join-banner-sidebar {
-    display: block;
-    margin-top: auto;
-    margin-bottom: 20px;
-    text-align: center;
-}
 
-#join-banner-sidebar img, {
-    width: 300px;
+/* Join Buttons - Shared Container */
+.join-container {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7);
-    animation: magicHum 3s ease-in-out infinite;
-    transition: transform 0.3s ease; 
-    border: 3px solid #BF00FF;
+    box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
+    animation: magicPulse 3s ease-in-out infinite;
 }
 
-#join-banner-sidebar img:hover {
-    filter: drop-shadow(0 0 15px #bf00ff) brightness(1.2);
+/* Join Images - Sidebar & Homepage */
+.join-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 10px #bf00ff);
+    border: 4px solid #BF00FF;
+}
+
+.join-container:hover img {
     transform: scale(1.05);
+    filter: drop-shadow(0 0 18px #bf00ff);
 }
 
-/* Home Page Join Button */
+/* Homepage Positioning */
 #join-banner-home {
     position: fixed;
     bottom: 8%;
@@ -142,20 +147,12 @@ box-shadow:
     z-index: 1000;
 }
 
-#join-banner-home img, {
-    width: 400px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.7);
-    animation: magicHum 3s ease-in-out infinite;
-    transition: transform 0.3s ease; 
-    border: 4px solid #BF00FF;
-}
-
-
-#join-banner-home img:hover {
-    filter: drop-shadow(0 0 15px #bf00ff) brightness(1.3);
-    transform: scale(1.08);
+/* Sidebar Positioning */
+#join-banner-sidebar {
+    display: block;
+    margin-top: auto;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 @keyframes magicHum {
@@ -167,41 +164,6 @@ box-shadow:
     transform: scale(1.03);
     filter: drop-shadow(0 0 20px #BF00FF) brightness(1.2);
   }
-}
-
-
-@keyframes shinePulse {
-    0%, 100% {
-        filter: drop-shadow(0 0 6px #bf00ff) brightness(1);
-    }
-    50% {
-        filter: drop-shadow(0 0 20px #bf00ff) brightness(1.3);
-    }
-}
-
-.join-container {
-    position: relative;
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.6); /* purple glow */
-    animation: magicPulse 3s ease-in-out infinite;
-}
-
-.join-container img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    filter: drop-shadow(0 0 10px #bf00ff);
-}
-
-.join-container:hover img {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 18px #bf00ff);
 }
 
 @keyframes magicPulse {
