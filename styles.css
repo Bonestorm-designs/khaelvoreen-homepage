@@ -134,7 +134,7 @@ body {
 
 .join-container:hover img {
     transform: translateY(10%) scale(1.05);
-    filter: drop-shadow(0 0 22px #bf00ff) brightness(1.2);
+    filter: drop-shadow(0 0 22px #bf00ff) brightness(1.9);
 }
 
 /* Homepage Positioning */
