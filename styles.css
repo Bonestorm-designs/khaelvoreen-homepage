@@ -172,3 +172,15 @@ body {
         box-shadow: 0 0 40px rgba(191, 0, 255, 0.8);
     }
 }
+#join-banner-home {
+    position: fixed;
+    bottom: 8%;
+    right: 8%;
+    z-index: 1000;
+}
+#join-banner-sidebar {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
