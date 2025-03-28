@@ -148,11 +148,12 @@ body {
 }
 
 #join-banner-home {
-    position: fixed;
-    bottom: 8%;
-    right: 8%;
-    z-index: 1000;
+  position: fixed !important;
+  bottom: 8% !important;
+  right: 8% !important;
+  z-index: 1000 !important;
 }
+
 
 #join-banner-sidebar {
     display: flex;
