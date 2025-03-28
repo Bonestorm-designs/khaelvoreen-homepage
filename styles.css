@@ -148,10 +148,13 @@ body {
 }
 
 #join-banner-home {
-  position: fixed !important;
-  bottom: 8% !important;
-  right: 8% !important;
-  z-index: 1000 !important;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1100;
+  width: 200px;
+  height: auto;
+  pointer-events: auto;
 }
 
 
