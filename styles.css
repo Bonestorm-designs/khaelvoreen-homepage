@@ -111,28 +111,26 @@ body {
     }
 }
 
-/* === JOIN BUTTON SHARED STYLE === */
+/* === JOIN BUTTON CONTAINER (with oval shield shape + glow) === */
 .join-container {
     position: relative;
     display: inline-block;
     width: 400px;
     height: auto;
-    padding-bottom: 40px; /* creates space for the V */
-    border-radius: 50%;   /* smooth top and sides */
+    padding-bottom: 40px;
+    border-radius: 45% / 50%;
     overflow: visible;
     animation: magicPulse 3s ease-in-out infinite;
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
+    box-shadow: 0 0 30px rgba(191, 0, 255, 0.5);
 }
 
-/* Image inside the container */
 .join-container img {
     width: 100%;
     height: auto;
     object-fit: contain;
+    display: block;
     filter: drop-shadow(0 0 12px #bf00ff);
     transition: transform 0.3s ease, filter 0.3s ease;
-    display: block;
-    margin-top: -10px; /* optional tweak to center better */
 }
 
 .join-container:hover img {
@@ -140,17 +138,15 @@ body {
     filter: drop-shadow(0 0 22px #bf00ff) brightness(1.2);
 }
 
-/* Glowing animation behind Join */
 @keyframes magicPulse {
     0%, 100% {
         box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
     }
     50% {
-        box-shadow: 0 0 40px rgba(191, 0, 255, 0.8);
+        box-shadow: 0 0 40px rgba(191, 0, 255, 0.85);
     }
 }
 
-/* === HOMEPAGE JOIN BUTTON POSITION === */
 #join-banner-home {
     position: fixed;
     bottom: 8%;
@@ -158,7 +154,6 @@ body {
     z-index: 1000;
 }
 
-/* === SIDEBAR JOIN BUTTON POSITION === */
 #join-banner-sidebar {
     display: flex;
     justify-content: center;
