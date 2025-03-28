@@ -22,6 +22,9 @@ body {
     backdrop-filter: blur(8px);
     transition: left 0.4s ease;
     z-index: 998;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #sidebar nav {
@@ -124,14 +127,15 @@ body {
 }
 
 .badge-image {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    display: block;
     width: 100%;
+    height: auto;
     transform: translateY(12%);
     filter: drop-shadow(0 0 12px #bf00ff);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 
 .glow-circle:hover .badge-image {
     transform: translateY(12%) scale(1.05);
@@ -152,10 +156,11 @@ body {
   bottom: 8%;
   right: 6%;
   z-index: 1100;
-  width: 400px;
+  width: 200px;
   height: auto;
   pointer-events: auto;
 }
+
 
 
 #join-banner-sidebar {
