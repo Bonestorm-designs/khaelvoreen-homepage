@@ -111,42 +111,52 @@ body {
     }
 }
 
-/* === JOIN BUTTON CONTAINER (with oval shield shape + glow) === */
+/* === JOIN BUTTON SHARED STYLE === */
 .join-container {
     position: relative;
     display: inline-block;
     width: 400px;
     height: auto;
-    padding-bottom: 40px;
-    border-radius: 45% / 50%;
-    overflow: visible;
     animation: magicPulse 3s ease-in-out infinite;
-    box-shadow: 0 0 30px rgba(191, 0, 255, 0.5);
+
+    /* Clip to match emblem shape with the V */
+    clip-path: polygon(
+        10% 0%, 90% 0%, 100% 15%, 100% 85%,
+        67% 88%, 50% 100%, 33% 88%, 0% 85%, 0% 15%
+    );
+    -webkit-clip-path: polygon(
+        10% 0%, 90% 0%, 100% 15%, 100% 85%,
+        67% 88%, 50% 100%, 33% 88%, 0% 85%, 0% 15%
+    );
 }
 
+/* Image inside the container */
 .join-container img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    display: block;
     filter: drop-shadow(0 0 12px #bf00ff);
     transition: transform 0.3s ease, filter 0.3s ease;
+    border: none;
 }
 
+/* Hover effect for Join image */
 .join-container:hover img {
     transform: scale(1.05);
     filter: drop-shadow(0 0 22px #bf00ff) brightness(1.2);
 }
 
+/* Glowing animation behind Join */
 @keyframes magicPulse {
     0%, 100% {
         box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
     }
     50% {
-        box-shadow: 0 0 40px rgba(191, 0, 255, 0.85);
+        box-shadow: 0 0 40px rgba(191, 0, 255, 0.8);
     }
 }
 
+/* === HOMEPAGE JOIN BUTTON POSITION === */
 #join-banner-home {
     position: fixed;
     bottom: 8%;
@@ -154,10 +164,10 @@ body {
     z-index: 1000;
 }
 
+/* === SIDEBAR JOIN BUTTON POSITION === */
 #join-banner-sidebar {
     display: flex;
     justify-content: center;
     margin-top: auto;
     margin-bottom: 20px;
 }
-
