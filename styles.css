@@ -111,39 +111,34 @@ body {
     }
 }
 
-/* === GLOWING BADGE WRAPPER === */
-.glow-wrapper {
+/* === GLOWING BADGE CONTAINER (with overhanging emblem) === */
+.glow-circle {
     position: relative;
-    display: inline-block;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: visible;
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
-    animation: magicPulse 3s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(191, 0, 255, 0.6);
+    animation: pulseGlow 3s ease-in-out infinite;
     z-index: 1000;
 }
 
-/* === EMBLEM IMAGE (V hangs below) === */
-.glow-emblem {
+.badge-image {
     position: absolute;
-    top: -10%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    transform: translateY(10%);
+    transform: translateY(12%);
     filter: drop-shadow(0 0 12px #bf00ff);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* === Hover Effect === */
-.glow-wrapper:hover .glow-emblem {
-    transform: translateY(10%) scale(1.05);
+.glow-circle:hover .badge-image {
+    transform: translateY(12%) scale(1.05);
     filter: drop-shadow(0 0 22px #bf00ff) brightness(1.2);
 }
 
-/* === Pulse Glow Animation === */
-@keyframes magicPulse {
+@keyframes pulseGlow {
     0%, 100% {
         box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
     }
@@ -152,32 +147,13 @@ body {
     }
 }
 
-
-@keyframes magicHum {
-  0%, 100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 12px #BF00FF) brightness(1);
-  }
-  50% {
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 20px #BF00FF) brightness(1.2);
-  }
-}
-
-@keyframes magicPulse {
-    0%, 100% {
-        box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(191, 0, 255, 0.8);
-    }
-}
 #join-banner-home {
     position: fixed;
     bottom: 8%;
     right: 8%;
     z-index: 1000;
 }
+
 #join-banner-sidebar {
     display: flex;
     justify-content: center;
