@@ -67,6 +67,12 @@ body {
         0 0 10px rgba(191, 0, 255, 0.6), 
         inset 0 0 5px rgba(191, 0, 255, 0.3);
 }
+#sidebar-toggle:hover {
+    filter: brightness(1.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.9), inset 0 0 8px rgba(191, 0, 255, 0.5);
+    transition: all 0.3s ease;
+}
 
 #glow-outline {
     position: fixed;
@@ -114,33 +120,33 @@ body {
     }
 }
 
-/* === GLOWING BADGE CONTAINER (with overhanging emblem) === */
 .glow-circle {
     position: relative;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    overflow: visible;
+    overflow: hidden; /* contains only the coin area */
     box-shadow: 0 0 30px rgba(191, 0, 255, 0.6);
     animation: pulseGlow 3s ease-in-out infinite;
     z-index: 1000;
 }
 
 .badge-image {
-    position: relative;
-    display: block;
+    position: absolute;
+    top: -12%;
+    left: 0;
     width: 100%;
     height: auto;
-    transform: translateY(12%);
+    transform: none;
     filter: drop-shadow(0 0 12px #bf00ff);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-
 .glow-circle:hover .badge-image {
-    transform: translateY(12%) scale(1.05);
+    transform: scale(1.05);
     filter: drop-shadow(0 0 22px #bf00ff) brightness(1.2);
 }
+
 
 @keyframes pulseGlow {
     0%, 100% {
