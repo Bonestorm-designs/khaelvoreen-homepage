@@ -147,15 +147,23 @@ body {
     filter: drop-shadow(0 0 22px #bf00ff) brightness(1.2);
 }
 
-
-@keyframes pulseGlow {
-    0%, 100% {
-        box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(191, 0, 255, 0.85);
-    }
+@keyframes magicPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(191, 0, 255, 0.9);
+  }
 }
+
+.glow-container {
+  position: relative;
+  width: 220px;
+  height: auto;
+  animation: magicPulse 3s ease-in-out infinite;
+  border-radius: 50%;
+
+
 
 #join-banner-home {
   position: fixed;
