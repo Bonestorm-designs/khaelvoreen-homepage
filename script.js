@@ -8,7 +8,7 @@ let isOpen = false;
 function updatePositions() {
     if (isOpen) {
         sidebar.style.left = "0%";
-        toggleArrow.style.left = "24%";
+        toggleArrow.style.left = "23%";
         glow.style.left = "26.5%";
         burst.style.left = "26.5%";
     } else {
