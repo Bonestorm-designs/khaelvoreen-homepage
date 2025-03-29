@@ -123,29 +123,29 @@ body {
 
 .glow-container {
     position: relative;
-    width: 400px;
-    height: auto;
     border-radius: 50%;
     animation: magicPulse 3s ease-in-out infinite;
-    overflow: visible;
+    overflow: hidden;
     background: transparent;
     z-index: 1000;
 }
 
 .glow-container img {
-    display: block;
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    background: transparent;
+    height: 100%;
+    object-fit: cover; /* Makes it fill the container */
+    border-radius: 50%;
+    display: block;
     filter: drop-shadow(0 0 12px #bf00ff);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+
 .glow-container:hover img {
     transform: scale(1.05);
-    filter: drop-shadow(0 0 22px #bf00ff) brightness(1.2);
+    filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
 }
+
 
 @keyframes magicPulse {
     0%, 100% {
@@ -161,9 +161,14 @@ body {
     bottom: 8%;
     right: 6%;
     z-index: 1100;
-    width: 220px;
-    height: auto;
+    width: 440px;   /* Double the original 220px */
+    height: 440px;
     pointer-events: auto;
+}
+
+#join-banner-home .glow-container {
+    width: 100%;
+    height: 100%;
 }
 
 #join-banner-sidebar {
@@ -172,3 +177,9 @@ body {
     margin-top: auto;
     margin-bottom: 20px;
 }
+
+#join-banner-sidebar .glow-container {
+    width: 240px;
+    height: 240px;
+}
+
