@@ -121,87 +121,87 @@ body {
     }
 }
 
+/* === GLOWING CONTAINER WITH CENTERED PULSE === */
 .glow-container {
-    position: relative;
-    border-radius: 50%;
-    overflow: hidden;
-    background: transparent;
-    z-index: 1000;
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Pulsing center glow */
-.glow-container::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(191, 0, 255, 0.8) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: centerPulse 3s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-}
-
-@keyframes centerPulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        filter: blur(8px);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.8);
-        opacity: 0.4;
-        filter: blur(12px);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        filter: blur(8px);
-    }
-}
-
+/* The JOIN IMAGE */
 .glow-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Makes it fill the container */
-    border-radius: 50%;
-    display: block;
-    filter: drop-shadow(0 0 12px #bf00ff);
-    transition: transform 0.3s ease, filter 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  filter: drop-shadow(0 0 12px #bf00ff);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Hover Glow Effect */
 .glow-container:hover img {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
 }
 
+/* Center Pulse Glow from Behind */
+.glow-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -50%) scale(1);
+  background: radial-gradient(circle, rgba(191, 0, 255, 0.8) 0%, rgba(191, 0, 255, 0.3) 40%, transparent 70%);
+  border-radius: 50%;
+  animation: centerPulse 2.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(12px);
+}
+
+/* Pulse Animation */
+@keyframes centerPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* === HOMEPAGE JOIN BUTTON === */
 #join-banner-home {
-    position: fixed;
-    bottom: 8%;
-    right: 6%;
-    z-index: 1100;
-    width: 440px;   /* Double the original 220px */
-    height: 440px;
-    pointer-events: auto;
+  position: fixed;
+  bottom: 8%;
+  right: 6%;
+  z-index: 1100;
+  width: 440px;
+  height: 440px;
+  pointer-events: auto;
 }
 
-#join-banner-home .glow-container {
-    width: 100%;
-    height: 100%;
-}
-
+/* === SIDEBAR JOIN BUTTON FIXED + CENTERED === */
 #join-banner-sidebar {
-    display: flex;
-   justify-content: flex-start;
-    margin-top: 60px;
-    margin-bottom: 20px;
-}
-
-#join-banner-sidebar .glow-container {
-    width: 240px;
-    height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 40px 0;
+  width: 100%;
 }
 
