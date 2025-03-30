@@ -152,29 +152,26 @@ body {
   filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
 }
 
-/* Center Pulse Glow from Behind */
 .glow-container::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 240px;
-  height: 240px;
+  width: 320px;
+  height: 320px;
   transform: translate(-50%, -50%) scale(1);
   background: radial-gradient(circle,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(191, 0, 255, 0.5) 20%,
-    rgba(191, 0, 255, 0.3) 40%,
-    rgba(191, 0, 255, 0.15) 60%,
-    rgba(191, 0, 255, 0.05) 80%,
-    transparent 100%);
+    rgba(90, 0, 150, 0.9) 0%,
+    rgba(110, 0, 200, 0.5) 30%,
+    rgba(90, 0, 180, 0.25) 55%,
+    rgba(80, 0, 140, 0.1) 70%,
+    transparent 90%);
   border-radius: 50%;
-  animation: centerStarburst 2.8s ease-in-out infinite;
+  filter: blur(50px) brightness(2.8);
+  animation: centerStarburst 3.5s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
-  filter: blur(20px) brightness(2.4);
 }
-
 
 /* Pulse Animation */
 @keyframes centerPulse {
@@ -211,13 +208,14 @@ body {
   margin: 40px 0 40px 0;
   width: 100%;
 }
+
 @keyframes centerStarburst {
   0% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
   50% {
-    transform: translate(-50%, -50%) scale(2.4);
+    transform: translate(-50%, -50%) scale(2.8);
     opacity: 0.5;
   }
   100% {
