@@ -152,25 +152,21 @@ body {
   filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
 }
 
+/* Center Pulse Glow from Behind */
 .glow-container::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 320px;
-  height: 320px;
+  width: 240px;
+  height: 240px;
   transform: translate(-50%, -50%) scale(1);
-  background: radial-gradient(circle,
-    rgba(90, 0, 150, 0.9) 0%,
-    rgba(110, 0, 200, 0.5) 30%,
-    rgba(90, 0, 180, 0.25) 55%,
-    rgba(80, 0, 140, 0.1) 70%,
-    transparent 90%);
+  background: radial-gradient(circle, rgba(191, 0, 255, 0.8) 0%, rgba(191, 0, 255, 0.3) 40%, transparent 70%);
   border-radius: 50%;
-  filter: blur(50px) brightness(2.8);
-  animation: centerStarburst 3.5s ease-in-out infinite;
+  animation: centerPulse 2.8s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
+  filter: blur(12px);
 }
 
 /* Pulse Animation */
@@ -207,19 +203,4 @@ body {
   align-items: center;
   margin: 40px 0 40px 0;
   width: 100%;
-}
-
-@keyframes centerStarburst {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(2.8);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
 }
