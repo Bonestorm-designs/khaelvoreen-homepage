@@ -141,7 +141,7 @@ body {
   width: 700px;
   height: 700px;
   transform: translate(-50%, -50%);
-  background: url('starburst-glow.png') center center no-repeat;
+  background: url(starburst-glow.png) center center no-repeat;
   background-size: contain;
   background-color: transparent; /* Ensures no black bg */
   pointer-events: none;
