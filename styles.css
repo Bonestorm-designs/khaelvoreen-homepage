@@ -1,69 +1,206 @@
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background: url(Khaelbackground.png) no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Georgia', serif;
-  overflow-x: hidden;
-  color: #f2f2f2;
+    background: url(Khaelbackground.png) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    color: #f2f2f2;
 }
 
-/* === SIDEBAR === */
+/* SIDEBAR MENU */
 #sidebar {
-  position: fixed;
-  top: 0;
-  left: -20%;
-  width: 25%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  transition: left 0.4s ease;
-  z-index: 998;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: -20%;
+    width: 25%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    transition: left 0.4s ease;
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #sidebar nav {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #sidebar nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 15px;
-  transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 15px;
+    transition: color 0.3s ease;
 }
 
 #sidebar nav a:hover {
-  color: #cfcfcf;
+    color: #cfcfcf;
 }
 
-/* === SIDEBAR TOGGLE === */
+/* TOGGLE ARROW */
 #sidebar-toggle {
-  position: fixed;
-  top: calc(50% - 30px);
-  left: 3.5%;
-  width: 100px;
-  height: 60px;
-  background-image: url(Purplestone.png);
-  background-size: 250% 250%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: #5a3e91;
-  clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
-  z-index: 999;
-  cursor: pointer;
-  transition: left 0.4s ease;
-  outline: 2px solid #BF00FF;
-  outline-offset: -2px;
-  box-shadow: 
-      0 0 10px rgba(191, 0, 255,
+    position: fixed;
+    top: calc(50% - 30px);
+    left: 3.5%;
+    width: 100px;
+    height: 60px;
+    background-image: url(Purplestone.png);
+    background-size: 250% 250%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #5a3e91;
+    clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+    z-index: 999;
+    cursor: pointer;
+    transition: left 0.4s ease;
+    outline: 2px solid #BF00FF;
+    outline-offset: -2px;
+    box-shadow:
+        0 0 10px rgba(191, 0, 255, 0.6),
+        inset 0 0 5px rgba(191, 0, 255, 0.3);
+}
+
+#sidebar-toggle:hover {
+    filter: brightness(1.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.9), inset 0 0 8px rgba(191, 0, 255, 0.5);
+}
+
+/* GLOW ELEMENTS */
+#glow-outline,
+#glow-behind-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: left 0.4s ease;
+    border-radius: 50%;
+    z-index: 996;
+}
+
+#glow-outline {
+    left: 5%;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at center,
+        rgba(255, 140, 0, 0.9) 0%,
+        rgba(255, 100, 0, 0.4) 40%,
+        transparent 100%);
+    filter: blur(30px);
+    z-index: 997;
+}
+
+#glow-behind-arrow {
+    left: 5%;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle at center,
+        rgba(255, 255, 180, 1) 0%,
+        rgba(255, 220, 80, 0.5) 35%,
+        rgba(255, 200, 50, 0.2) 65%,
+        transparent 100%);
+    filter: blur(35px) brightness(2.2);
+    animation: solar-burst 3.2s ease-in-out infinite;
+}
+
+@keyframes solar-burst {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* UNIVERSAL JOIN BUTTON CONTAINER */
+.glow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: visible;
+    background: transparent;
+    animation: magicPulse 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 320px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle,
+        rgba(90, 0, 150, 0.9) 0%,
+        rgba(110, 0, 200, 0.5) 30%,
+        rgba(90, 0, 180, 0.25) 55%,
+        rgba(80, 0, 140, 0.1) 70%,
+        transparent 90%);
+    border-radius: 50%;
+    filter: blur(50px) brightness(2.8);
+    animation: centerStarburst 3.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 12px #bf00ff);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    background-color: transparent;
+}
+
+.glow-container:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
+}
+
+/* HOMEPAGE JOIN BUTTON */
+#join-banner-home {
+    position: fixed;
+    bottom: 8%;
+    right: 6%;
+    z-index: 1100;
+    width: 440px;
+    height: 440px;
+}
+
+/* SIDEBAR JOIN BUTTON */
+#join-banner-sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+#join-banner-sidebar .glow-container {
+    width: 200px;
+    height: 200px;
+}
+
+/* GLOW PULSE EFFECT */
+@keyframes centerStarburst {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(2.4); opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes magicPulse {
+    0%, 100% { box-shadow: 0 0 25px rgba(191, 0, 255, 0.6); }
+    50% { box-shadow: 0 0 60px rgba(191, 0, 255, 0.9); }
+}
