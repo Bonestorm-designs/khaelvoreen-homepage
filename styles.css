@@ -141,16 +141,14 @@ body {
   width: 700px;
   height: 700px;
   transform: translate(-50%, -50%);
-  background: url(starburst-glow.png) center center no-repeat;
+  background: url(starburst-glow.png) no-repeat center center;
   background-size: contain;
-  background-color: transparent; /* Ensures no black bg */
   pointer-events: none;
   z-index: 0;
-  opacity: 1;
-  filter: drop-shadow(0 0 70px #bf00ff) brightness(2.5) blur(8px);
-  animation: slowPulse 4.5s ease-in-out infinite;
+  opacity: 0.9;
+  filter: brightness(2) drop-shadow(0 0 60px #BF00FF);
+  animation: slowPulse 5s ease-in-out infinite;
 }
-
 
 .glow-container img {
     width: 100%;
