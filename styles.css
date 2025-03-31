@@ -134,25 +134,21 @@ body {
 }
 
 .glow-container::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 320px;
-    height: 320px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle,
-        rgba(90, 0, 150, 0.9) 0%,
-        rgba(110, 0, 200, 0.5) 30%,
-        rgba(90, 0, 180, 0.25) 55%,
-        rgba(80, 0, 140, 0.1) 70%,
-        transparent 90%);
-    border-radius: 50%;
-    filter: blur(50px) brightness(2.8);
-    animation: centerStarburst 3.5s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translate(-50%, -50%);
+  background: url(starburst-glow.png) no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+  animation: slowPulse 4s ease-in-out infinite;
+  opacity: 0.9;
 }
+
 
 .glow-container img {
     width: 100%;
@@ -173,7 +169,7 @@ body {
 #join-banner-home {
     position: fixed;
     bottom: 8%;
-    right: 8%;
+    right: 10%;
     z-index: 1100;
     width: 440px;
     height: 440px;
