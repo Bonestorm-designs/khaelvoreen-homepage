@@ -180,20 +180,29 @@ body {
 }
 
 /* SIDEBAR JOIN BUTTON */
-#join-banner-sidebar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15%;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-
 #join-banner-sidebar .glow-container {
     width: 200px;
     height: 200px;
+    position: relative;
+    border-radius: 50%;
+    overflow: visible;
+    background: transparent;
+    animation: none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+#join-banner-sidebar .glow-container::before {
+    content: none;
+}
+
+#join-banner-sidebar .glow-container img {
+    filter: none;
+    transition: none;
+}
+
+
 
 /* GLOW PULSE EFFECT */
 @keyframes centerStarburst {
