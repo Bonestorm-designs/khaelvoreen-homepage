@@ -1,171 +1,12 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: url(Khaelbackground.png) no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Georgia', serif;
-  overflow-x: hidden;
-  color: #f2f2f2;
-}
-
-/* SIDEBAR MENU */
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: -20%;
-  width: 25%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  transition: left 0.4s ease;
-  z-index: 998;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#sidebar nav {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#sidebar nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 15px;
-  transition: color 0.3s ease;
-}
-
-#sidebar nav a:hover {
-  color: #cfcfcf;
-}
-
-/* SIDEBAR TOGGLE ARROW */
-#sidebar-toggle {
-  position: fixed;
-  top: calc(50% - 30px);
-  left: 3.5%;
-  width: 100px;
-  height: 60px;
-  background-image: url(Purplestone.png);
-  background-size: 250% 250%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: #5a3e91;
-  clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
-  z-index: 999;
-  cursor: pointer;
-  transition: left 0.4s ease;
-  outline: 2px solid #BF00FF;
-  outline-offset: -2px;
-  box-shadow:
-    0 0 10px rgba(191, 0, 255, 0.6),
-    inset 0 0 5px rgba(191, 0, 255, 0.3);
-}
-
-#sidebar-toggle:hover {
-  filter: brightness(1.3);
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(191, 0, 255, 0.9), inset 0 0 8px rgba(191, 0, 255, 0.5);
-}
-
-/* ARROW GLOW ELEMENTS */
-#glow-outline,
-#glow-behind-arrow {
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-radius: 50%;
-  transition: left 0.4s ease;
-}
-
-#glow-outline {
-  left: 5%;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle at center, rgba(255, 140, 0, 0.9) 0%, rgba(255, 100, 0, 0.4) 40%, transparent 100%);
-  filter: blur(30px);
-  z-index: 997;
-}
-
-#glow-behind-arrow {
-  left: 5%;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle at center, rgba(255, 255, 180, 1) 0%, rgba(255, 220, 80, 0.5) 35%, rgba(255, 200, 50, 0.2) 65%, transparent 100%);
-  filter: blur(35px) brightness(2.2);
-  animation: solar-burst 3.2s ease-in-out infinite;
-  z-index: 996;
-}
-
-@keyframes solar-burst {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-}
-
-/* === GLOW CONTAINER === */
-.glow-container {
-  position: relative;
-  border-radius: 50%;
-  overflow: hidden;
-  animation: magicPulse 3s ease-in-out infinite;
-  background: transparent;
-  z-index: 1000;
-}
-
-.glow-container::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle,
-    rgba(90, 0, 150, 0.9) 0%,
-    rgba(110, 0, 200, 0.5) 30%,
-    rgba(90, 0, 180, 0.25) 55%,
-    rgba(80, 0, 140, 0.1) 70%,
-    transparent 90%);
-  border-radius: 50%;
-  filter: blur(60px) brightness(2.8);
-  animation: centerStarburst 3.5s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.glow-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 12px #bf00ff);
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.glow-container:hover img {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
-}
-
-/* Homepage Join Button */
+/* === HOMEPAGE JOIN BUTTON === */
 #join-banner-home {
   position: fixed;
   bottom: 8%;
   right: 6%;
-  width: 440px;
-  height: 440px;
   z-index: 1100;
+  width: 500px;           /* Increase size */
+  height: 500px;
+  pointer-events: auto;
 }
 
 #join-banner-home .glow-container {
@@ -173,7 +14,7 @@ body {
   height: 100%;
 }
 
-/* Sidebar Join Button */
+/* === SIDEBAR JOIN BUTTON === */
 #join-banner-sidebar {
   display: flex;
   justify-content: center;
@@ -183,31 +24,57 @@ body {
 }
 
 #join-banner-sidebar .glow-container {
-  width: 180px;
-  height: 180px;
+  width: 260px;
+  height: 260px;
 }
 
-/* Animation for Pulse */
-@keyframes magicPulse {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(191, 0, 255, 0.9);
-  }
+/* === GLOW CONTAINER === */
+.glow-container {
+  position: relative;
+  border-radius: 50%;
+  overflow: visible;
+  z-index: 1000;
+  animation: magicPulse 3s ease-in-out infinite;
 }
 
-@keyframes centerStarburst {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(2.4);
-    opacity: 0.4;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
+.glow-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%) scale(1);
+  background: radial-gradient(circle,
+    rgba(120, 0, 180, 0.8) 0%,
+    rgba(140, 0, 220, 0.5) 30%,
+    rgba(100, 0, 160, 0.25) 60%,
+    transparent 100%);
+  border-radius: 50%;
+  filter: blur(50px) brightness(2.5);
+  animation: starburstGlow 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
+
+/* === JOIN IMAGE === */
+.glow-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+  background: transparent;
+  filter: drop-shadow(0 0 12px #bf00ff);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.glow-container:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 24px #bf00ff) brightness(1.7);
+}
+
+/* === GLOW ANIM*
+
