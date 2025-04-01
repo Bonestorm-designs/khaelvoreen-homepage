@@ -60,7 +60,16 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
-  clip-path: polygon(0% 0%, 80% 50%, 0% 100%); /* triangle, right-pointing */
+  clip-path: polygon(
+    50% 0%, 60% 15%, 75% 35%, 60% 40%, 
+    85% 75%, 50% 100%, 15% 75%, 40% 40%, 
+    25% 35%, 40% 15%
+  );
+  background-image: url('Purplestone.png');
+  background-size: cover;
+  background-position: center;
+}
+
   cursor: pointer;
   z-index: 999;
   outline: 0.2vw solid #BF00FF;
