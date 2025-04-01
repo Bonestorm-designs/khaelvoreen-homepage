@@ -160,6 +160,11 @@ body {
     background-color: transparent;
 }
 
+#join-banner-home .glow-container img {
+    width: 70%; /* Or 60%, adjust as needed */
+    height: 70%;
+}
+
 .glow-container:hover img {
     transform: scale(1.05);
     filter: drop-shadow(0 0 22px #bf00ff) brightness(1.7);
