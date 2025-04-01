@@ -58,6 +58,7 @@ body {
   background-image: url(Purplestone.png);
   background-size: 300% 300%;
   background-position: center;
+  background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-color: transparent;
   clip-path: polygon(
