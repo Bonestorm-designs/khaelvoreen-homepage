@@ -51,44 +51,34 @@ body {
 #sidebar-toggle {
   position: fixed;
   left: 3.5vw;
-  width: 4vw;
-  height: 4vw;
+  width: 3.2vw;
+  height: 3.2vw;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(Purplestone.png);
-  background-size: 300% 300%;
-  background-position: center;
-  background-blend-mode: multiply;
-  background-repeat: no-repeat;
+  background: url(Purplestone.png) center/250% 250% no-repeat;
   background-color: transparent;
+  background-blend-mode: overlay;
   clip-path: polygon(
-    0% 20%,   /* top left inward cut */
-    30% 0%,   /* top sharp edge */
-    100% 50%, /* right tip */
-    30% 100%, /* bottom sharp edge */
-    0% 80%,   /* bottom left inward cut */
-    15% 50%   /* center back notch */
+    0% 25%, 25% 0%, 100% 50%,
+    25% 100%, 0% 75%, 15% 50%
   );
   z-index: 999;
   cursor: pointer;
-  transition:
-    left 0.4s ease,
-    transform 0.4s ease,
-    clip-path 0.4s ease;
-  box-shadow: inset 0 0 0.5vw rgba(191, 0, 255, 0.3);
+  transition: left 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 0 0.6vw rgba(191, 0, 255, 0.4),
+              inset 0 0 0.3vw rgba(191, 0, 255, 0.3);
 }
 
 #sidebar-toggle:hover {
   filter: brightness(1.3);
-  filter: brightness(1.3);
-  box-shadow: 0 0 2vw rgba(191, 0, 255, 0.9), inset 0 0 1vw rgba(191, 0, 255, 0.5);
+  box-shadow: 0 0 1vw rgba(191, 0, 255, 0.9), inset 0 0 1vw rgba(191, 0, 255, 0.5);
 }
 
-/* GLOW ELEMENTS FOR ARROW */
+/* GLOW BEHIND TOGGLE */
 #glow-outline,
 #glow-behind-arrow {
   position: fixed;
-  top: 50vh;
+  top: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: left 0.4s ease;
@@ -114,25 +104,13 @@ body {
   animation: solar-burst 3.2s ease-in-out infinite;
 }
 
-/* GLOW ANIMATION */
 @keyframes solar-burst {
   0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
   50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
   100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 }
 
-/* UNIVERSAL JOIN BUTTON CONTAINER */
-.glow-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-}
-
-/* === HOMEPAGE JOIN BUTTON === */
+/* HOMEPAGE JOIN BUTTON */
 #join-banner-home {
   position: fixed;
   bottom: 8vh;
@@ -144,6 +122,9 @@ body {
 
 #join-banner-home .glow-container {
   animation: smallerPulse 3s ease-in-out infinite;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 #join-banner-home .glow-container::before {
@@ -151,8 +132,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40vw;
-  height: 40vw;
+  width: 36vw;
+  height: 36vw;
   transform: translate(-50%, -50%);
   background: url('starburst-glow.png') no-repeat center center;
   background-size: contain;
@@ -178,48 +159,51 @@ body {
   filter: drop-shadow(0 0 2vw #bf00ff) brightness(1.7);
 }
 
-/* === SIDEBAR JOIN BUTTON === */
-#join-banner-sidebar .glow-container {
-  width: 10vw;
-  height: 10vw;
-  position: relative;
-  border-radius: 50%;
-  background: transparent;
+/* SIDEBAR JOIN BUTTON */
+#join-banner-sidebar {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-#join-banner-sidebar .glow-container::before {
-  content: none;
-}
-#join-banner-sidebar .glow-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
+  margin-bottom: 4vh;
 }
 
-/* === ANIMATIONS === */
+#join-banner-sidebar .glow-container {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  animation: smallerPulse 3s ease-in-out infinite;
+}
+
+#join-banner-sidebar .glow-container img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 1vw #bf00ff);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#join-banner-sidebar .glow-container:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 2vw #bf00ff) brightness(1.6);
+}
+
+/* ANIMATIONS */
 @keyframes smallerPulse {
-  0%, 100% {
-    box-shadow: 0 0 3px rgba(191, 0, 255, 0.15);
-  }
-  50% {
-    box-shadow: 0 0 8px rgba(191, 0, 255, 0.25);
-  }
+  0%, 100% { box-shadow: 0 0 3px rgba(191, 0, 255, 0.15); }
+  50% { box-shadow: 0 0 8px rgba(191, 0, 255, 0.25); }
 }
 
 @keyframes deepPulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.15);
-    opacity: 1;
-  }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+  50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
 }
-/* 🔄 RESPONSIVE LAYOUT FOR SMALL SCREENS */
+
+/* RESPONSIVE LAYOUT */
 @media (max-width: 768px) {
   #sidebar {
     width: 70vw;
@@ -232,14 +216,8 @@ body {
 
   #sidebar-toggle {
     left: 2vw;
-    width: 60px;
-    height: 60px;
-  }
-
-  #glow-outline,
-  #glow-behind-arrow {
-    width: 120px;
-    height: 120px;
+    width: 50px;
+    height: 50px;
   }
 
   #join-banner-home {
@@ -255,8 +233,8 @@ body {
   }
 
   #join-banner-sidebar .glow-container {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
 
   nav a {
@@ -264,4 +242,5 @@ body {
     padding: 12px;
   }
 }
+
 
