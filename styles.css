@@ -127,10 +127,14 @@ body {
     border-radius: 50%;
     overflow: visible;
     background: transparent;
-    animation: magicPulse 3s ease-in-out infinite;
+    animation: none; /* Stop global pulsing */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#join-banner-home .glow-container {
+    animation: smallerPulse 3s ease-in-out infinite;
 }
 
 #join-banner-home .glow-container::before {
@@ -213,8 +217,6 @@ body {
   }
 }
 
-
-
 /* GLOW PULSE EFFECT */
 @keyframes centerStarburst {
     0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
@@ -222,7 +224,8 @@ body {
     100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 }
 
-@keyframes magicPulse {
-    0%, 50% { box-shadow: 0 0 8px rgba(191, 0, 255, 0.4); }
-    25% { box-shadow: 0 0 16px rgba(191, 0, 255, 0.6); }
+@keyframes smallerPulse {
+    0%, 100% { box-shadow: 0 0 6px rgba(191, 0, 255, 0.2); }
+    50% { box-shadow: 0 0 12px rgba(191, 0, 255, 0.4); }
 }
+
