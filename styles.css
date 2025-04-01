@@ -60,7 +60,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
-  clip-path: polygon(10% 50%, 50% 10%, 90% 50%, 50% 90%);
+  clip-path: polygon(0% 0%, 80% 50%, 0% 100%); /* triangle, right-pointing */
   cursor: pointer;
   z-index: 999;
   outline: 0.2vw solid #BF00FF;
@@ -68,7 +68,7 @@ body {
   box-shadow:
     0 0 1vw rgba(191, 0, 255, 0.6),
     inset 0 0 0.5vw rgba(191, 0, 255, 0.3);
-  transition: all 0.3s ease;
+  transition: clip-path 0.3s ease;
 }
 
 #sidebar-toggle:hover {
