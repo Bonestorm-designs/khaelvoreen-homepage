@@ -113,8 +113,8 @@ body {
 /* HOMEPAGE JOIN BUTTON */
 #join-banner-home {
   position: fixed;
-  bottom: 6vh;
-  right: 5vw;
+  bottom: 4vh;
+  right: 3vw;
   width: 23vw;
   height: 23vw;
   z-index: 1100;
