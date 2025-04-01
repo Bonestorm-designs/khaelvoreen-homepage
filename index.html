@@ -9,25 +9,13 @@
 <body>
 
 <body>
-  <!-- Glows + Toggle Arrow -->
+<body>
+  <!-- Glow Effects and Toggle Arrow -->
   <div id="glow-behind-arrow"></div>
   <div id="glow-outline"></div>
   <div id="sidebar-toggle"></div>
 
-  <!-- Sidebar STARTS after toggle -->
-  <div id="sidebar">
-    <!-- nav + join button here -->
-  </div>
-</body>
-
-  <!-- ✅ Homepage Join Button (outside the sidebar) -->
-  <a href="signup.html" id="join-banner-home">
-    <div class="glow-container">
-      <img src="Join.png" alt="Join the Vanguard">
-    </div>
-  </a>
-
-  <!-- Sidebar Menu -->
+  <!-- Sidebar -->
   <div id="sidebar">
     <nav>
       <a href="#">Home</a>
@@ -36,7 +24,7 @@
       <a href="#">Characters</a>
     </nav>
 
-    <!-- ✅ Sidebar Join Button (inside the sidebar) -->
+    <!-- Sidebar Join Button -->
     <a href="signup.html" id="join-banner-sidebar">
       <div class="glow-container">
         <img src="Join.png" alt="Join the Vanguard">
@@ -44,16 +32,17 @@
     </a>
   </div>
 
-  <!-- Optional: JavaScript for sidebar toggle -->
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const toggle = document.getElementById('sidebar-toggle');
+  <!-- Homepage Join Button (Keep it after the sidebar so it's visible on top) -->
+  <a href="signup.html" id="join-banner-home">
+    <div class="glow-container">
+      <img src="Join.png" alt="Join the Vanguard">
+    </div>
+  </a>
 
-    toggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
-  </script>
-<script src="script.js"></script>
+  <!-- Script Link -->
+  <script src="script.js"></script>
+</body>
+
   
 </body>
 </html>
