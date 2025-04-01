@@ -59,9 +59,12 @@ body {
   background-color: transparent;
   background-blend-mode: overlay;
   clip-path: polygon(
-    0% 25%, 25% 0%, 100% 50%,
-    25% 100%, 0% 75%, 15% 50%
-  );
+  5% 20%,
+  30% 5%,
+  100% 50%,
+  30% 95%,
+  5% 80%,
+  15% 50%);
   z-index: 999;
   cursor: pointer;
   transition: left 0.4s ease, transform 0.4s ease, clip-path 0.4s ease;;
