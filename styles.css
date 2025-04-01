@@ -225,7 +225,12 @@ body {
 }
 
 @keyframes smallerPulse {
-    0%, 100% { box-shadow: 0 0 6px rgba(191, 0, 255, 0.2); }
-    50% { box-shadow: 0 0 12px rgba(191, 0, 255, 0.4); }
+  0%, 100% {
+    box-shadow: 0 0 3px rgba(191, 0, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(191, 0, 255, 0.25);
+  }
 }
+
 
