@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khael'Voreen</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Glows + Arrow -->
+  <!-- Glows + Toggle Arrow -->
   <div id="glow-behind-arrow"></div>
   <div id="glow-outline"></div>
   <div id="sidebar-toggle"></div>
 
-  <!-- ✅ Homepage Join Button (OUTSIDE the sidebar) -->
+  <!-- ✅ Homepage Join Button (outside the sidebar) -->
   <a href="signup.html" id="join-banner-home">
     <div class="glow-container">
       <img src="Join.png" alt="Join the Vanguard">
     </div>
   </a>
 
-  <!-- Sidebar -->
+  <!-- Sidebar Menu -->
   <div id="sidebar">
     <nav>
       <a href="#">Home</a>
@@ -28,7 +29,7 @@
       <a href="#">Characters</a>
     </nav>
 
-    <!-- ✅ Sidebar Join Button (INSIDE sidebar) -->
+    <!-- ✅ Sidebar Join Button (inside the sidebar) -->
     <a href="signup.html" id="join-banner-sidebar">
       <div class="glow-container">
         <img src="Join.png" alt="Join the Vanguard">
@@ -36,6 +37,15 @@
     </a>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Optional: JavaScript for sidebar toggle -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.getElementById('sidebar-toggle');
+
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  </script>
+
 </body>
 </html>
