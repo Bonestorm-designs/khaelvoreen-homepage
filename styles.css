@@ -52,31 +52,28 @@ body {
   position: fixed;
   top: 50%;
   left: 3.5vw;
-  transform: translateY(-50%);
-  width: 3vw;
-  height: 3vw;
-  background-image: url('Purplestone.png');
+  width: 6vw;
+  height: 6vw;
+  background-image: url(Purplestone.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
   clip-path: polygon(
-  0% 10%,   /* top left notch */
-  60% 0%,   /* top point */
-  100% 50%, /* center right tip */
-  60% 100%, /* bottom point */
-  0% 90%,   /* bottom left notch */
-  20% 50%   /* center notch back to start */
-);
-  background-image: url('Purplestone.png');
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
+    0% 20%,   /* top left inward cut */
+    30% 0%,   /* top sharp edge */
+    100% 50%, /* right tip */
+    30% 100%, /* bottom sharp edge */
+    0% 80%,   /* bottom left inward cut */
+    15% 50%   /* center back notch */
+  );
   z-index: 999;
-  outline: none;
-  outline-offset: -0.2vw;
+  cursor: pointer;
+  transition:
+    left 0.4s ease,
+    transform 0.4s ease,
+    clip-path 0.4s ease;
   box-shadow: inset 0 0 0.5vw rgba(191, 0, 255, 0.3);
-  transition: clip-path 0.3s ease;
 }
 
 #sidebar-toggle:hover {
