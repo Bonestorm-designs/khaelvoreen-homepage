@@ -56,10 +56,9 @@ body {
   height: 1.75vw;    /* halved from 3.5vw */
   transform: translateY(-50%);
   background-image: url(Purplestone.png);
-  background-size: 250% 250%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #5a3e91;
   clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
   z-index: 999;
   cursor: pointer;
