@@ -113,12 +113,14 @@ body {
 /* HOMEPAGE JOIN BUTTON */
 #join-banner-home {
   position: fixed;
-  bottom: 4vh;
-  right: 3vw;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
   width: 23vw;
   height: 23vw;
   z-index: 1100;
 }
+
 
 #join-banner-home .glow-container {
   animation: smallerPulse 3s ease-in-out infinite;
