@@ -113,8 +113,8 @@ body {
 /* HOMEPAGE JOIN BUTTON */
 #join-banner-home {
   position: fixed;
-  bottom: 5%;
-  left: 88%;
+  bottom: 4%;
+  left: 84%;
   transform: translateX(-50%);
   width: 23vw;
   height: 23vw;
