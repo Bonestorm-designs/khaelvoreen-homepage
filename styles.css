@@ -145,8 +145,8 @@ body {
   pointer-events: none;
   z-index: 0;
   opacity: 1;
-  filter: brightness(1.8) saturate(2) drop-shadow(0 0 2vw #6a00b9) blur(0.3vw);
-  animation: deepPulse 3s ease-in-out infinite;
+  filter: brightness(2.8) saturate(2) drop-shadow(0 0 2vw #6a00b9) blur(0.5vw);
+  animation: deepPulse 2s ease-in-out infinite;
 }
 
 #join-banner-home .glow-container img {
