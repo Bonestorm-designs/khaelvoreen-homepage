@@ -9,26 +9,36 @@ function updatePositions() {
   const isMobile = window.innerWidth <= 768;
 
   if (isOpen) {
-    sidebar.style.left = "0%";
-    toggleArrow.style.left = isMobile ? "75%" : "23.5%";
-    glow.style.left = isMobile ? "78%" : "26.5%";
-    burst.style.left = isMobile ? "78%" : "26.5%";
+    sidebar.style.left = "0";
+
+    // Adjust the arrow + glow for mobile and desktop
+    if (isMobile) {
+      toggleArrow.style.left = "80vw";
+      glow.style.left = "83vw";
+      burst.style.left = "83vw";
+    } else {
+      toggleArrow.style.left = "23.5%";
+      glow.style.left = "26.5%";
+      burst.style.left = "26.5%";
+    }
   } else {
     sidebar.style.left = "-20%";
-    toggleArrow.style.left = isMobile ? "3%" : "3.5%";
-    glow.style.left = isMobile ? "5%" : "5%";
-    burst.style.left = isMobile ? "5%" : "5%";
+
+    // Closed position
+    toggleArrow.style.left = "3.5%";
+    glow.style.left = "5%";
+    burst.style.left = "5%";
   }
 }
 
-// Recalculate on resize
-window.addEventListener("resize", updatePositions);
+// Run on page load
+updatePositions();
 
-// Toggle open/close
+// Toggle arrow click
 toggleArrow.addEventListener("click", () => {
   isOpen = !isOpen;
   updatePositions();
 });
 
-// Initialize on load
-updatePositions();
+// Recalculate on resize
+window.addEventListener("resize", updatePositions);
