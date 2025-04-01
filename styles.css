@@ -60,7 +60,7 @@ body {
   background-repeat: no-repeat;
   background-color: #5a3e91;
   clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
-  z-index: 9999;
+  z-index: 999;
   cursor: pointer;
   transition: left 0.4s ease;
   outline: 0.25vw solid #BF00FF;
