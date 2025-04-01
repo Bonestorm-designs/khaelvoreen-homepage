@@ -56,9 +56,10 @@ body {
   height: 1.75vw;    /* halved from 3.5vw */
   transform: translateY(-50%);
   background-image: url(Purplestone.png);
-  background-size: cover;
-  background-position: center;
+  background-size: 350% 350%; /* 🔥 Fills the arrow more completely */
+  background-position: center center;
   background-repeat: no-repeat;
+  background-color: transparent; /* ensure no fallback color leaks in */
   clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
   z-index: 999;
   cursor: pointer;
