@@ -209,4 +209,49 @@ body {
     opacity: 1;
   }
 }
+/* 🔄 RESPONSIVE LAYOUT FOR SMALL SCREENS */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 70vw;
+    left: -70vw;
+  }
+
+  #sidebar.open {
+    left: 0;
+  }
+
+  #sidebar-toggle {
+    left: 2vw;
+    width: 60px;
+    height: 60px;
+  }
+
+  #glow-outline,
+  #glow-behind-arrow {
+    width: 120px;
+    height: 120px;
+  }
+
+  #join-banner-home {
+    width: 300px;
+    height: 300px;
+    right: 5%;
+    bottom: 5%;
+  }
+
+  #join-banner-home .glow-container::before {
+    width: 480px;
+    height: 480px;
+  }
+
+  #join-banner-sidebar .glow-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  nav a {
+    font-size: 20px;
+    padding: 12px;
+  }
+}
 
