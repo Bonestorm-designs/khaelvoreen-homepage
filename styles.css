@@ -140,7 +140,7 @@ body {
   width: 50vw;
   height: 50vw;
   transform: translate(-50%, -50%);
-  background: url('starburst-glow.png') no-repeat center center;
+  background: url(starburst-glow.png) no-repeat center center;
   background-size: contain;
   pointer-events: none;
   z-index: 0;
