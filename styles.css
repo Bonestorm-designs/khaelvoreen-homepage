@@ -56,7 +56,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   background-image: url(Purplestone.png);
-  background-size: cover;
+  background-size: 300% 300%;
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
