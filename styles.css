@@ -229,6 +229,20 @@ body {
   animation: spinStar 8s linear infinite;
 }
 
+#toggle-glow-star::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%;
+  height: 160%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.4) 0%, rgba(255, 102, 0, 0.1) 70%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(2vw);
+  z-index: -1;
+}
+
 @keyframes spinStar {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
