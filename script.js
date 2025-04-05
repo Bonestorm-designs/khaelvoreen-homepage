@@ -20,8 +20,9 @@ function updatePositions() {
 }
 
 toggleArrow.addEventListener("click", () => {
-  isOpen = !isOpen;
-  updatePositions();
+    isOpen = !isOpen;
+    updatePositions();
+    toggleArrow.classList.toggle("open", isOpen); // 👈 toggle icon class
 });
 
 // Init
