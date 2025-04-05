@@ -8,7 +8,7 @@ function updatePositions() {
   if (isOpen) {
     sidebar.style.left = "0";
     toggleArrow.style.left = "23.5vw";
-    starGlow.style.left = "26.5vw";
+   starGlow.style.left = isOpen ? "26.5vw" : "5vw";
     toggleArrow.style.backgroundImage = "url('openside.png')";
   } else {
     sidebar.style.left = "-20vw";
