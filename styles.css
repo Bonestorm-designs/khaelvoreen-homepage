@@ -215,16 +215,17 @@ body {
   position: fixed;
   top: 50%;
   left: 5vw;
-  width: 8vw;
-  height: 8vw;
+  width: 10vw;
+  height: 10vw;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 996;
 
-  background: url(starburst-glow2.png) no-repeat center center;
+  background: url('starburst-glow2.png') no-repeat center center;
   background-size: contain;
+  border-radius: 50%;
 
-  filter: brightness(1.4) saturate(3) drop-shadow(0 0 2vw #ff5a00);
+  filter: brightness(1.4) saturate(2.2) drop-shadow(0 0 2vw #ff6600);
   animation: spinStar 8s linear infinite;
 }
 
