@@ -38,7 +38,7 @@ body {
 
 #sidebar-menu a {
   display: block;
-  width: 8vw; /* Adjust icon size */
+  width: 2vw; /* Smaller width (about 25% of original 8vw) */
   height: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -52,6 +52,8 @@ body {
   width: 100%;
   height: auto;
   object-fit: contain;
+  display: block;
+  margin: 0 auto; /* Center horizontally */
 }
 
 /* SIDEBAR TOGGLE */
