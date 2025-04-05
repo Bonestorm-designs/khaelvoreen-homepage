@@ -56,6 +56,29 @@ body {
   margin: 0 auto; /* Center horizontally */
 }
 
+/* Glow effects by ID */
+#home-link img {
+  filter: drop-shadow(0 0 1vw #bf8fff); /* Light Purple */
+}
+
+#campaign-link img {
+  filter: drop-shadow(0 0 1vw #66ccff); /* Soft Blue */
+}
+
+#lore-link img {
+  filter: drop-shadow(0 0 1vw #ff4444); /* Red */
+}
+
+#characters-link img {
+  filter: drop-shadow(0 0 1vw #66ff66); /* Green */
+}
+
+/* Optional: glow intensifies on hover */
+#sidebar-menu a:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 2vw #fff);
+}
+
 /* SIDEBAR TOGGLE */
 #sidebar-toggle {
   position: fixed;
