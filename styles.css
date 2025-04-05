@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5vh; /* Space between icons */
+  gap: 1.8vh; /* Space between icons */
 }
 
 #sidebar-menu a {
