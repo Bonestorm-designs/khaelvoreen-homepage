@@ -57,10 +57,11 @@ body {
 }
 
 #sidebar-menu a img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+  width: 9vw;               /* Wider look */
+  height: auto;             /* Prevent vertical squish */
   display: block;
+  margin: 2vh auto;         /* Space between + center */
+  max-width: 100%;
 }
 
 /* Icon-specific glow effects */
