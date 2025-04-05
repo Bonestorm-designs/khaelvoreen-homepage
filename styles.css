@@ -33,13 +33,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.8vh; /* Space between icons */
+  gap: 1.6vh; /* Space between icons */
 }
 
 #sidebar-menu a {
   display: block;
-  width: 15vw; /* Smaller width (about 25% of original 8vw) */
-  height: 6vw;
+  width: 14vw; /* Smaller width (about 25% of original 8vw) */
+  height: 8vw;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
