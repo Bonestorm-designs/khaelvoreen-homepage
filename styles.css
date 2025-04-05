@@ -55,9 +55,10 @@ body {
   height: 4vw;
   top: 50%;
   transform: translateY(-50%);
-  background-size: contain;
+  background-image: url('closedside.png');
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-color: transparent;
   z-index: 999;
   cursor: pointer;
