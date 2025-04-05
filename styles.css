@@ -44,10 +44,11 @@ body {
 }
 
 #sidebar-menu a img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  max-height: 4.5vw; /* tweak this value as needed */
   display: block;
-  margin: 0 auto;
+  margin: 2vh auto;
+  object-fit: contain;
 }
 
 #home-link img {
