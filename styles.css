@@ -72,12 +72,6 @@ body {
   box-shadow: 0 0 1vw rgba(191, 0, 255, 0.9), inset 0 0 1vw rgba(191, 0, 255, 0.5);
 }
 
-@keyframes solar-burst {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-}
-
 /* HOMEPAGE JOIN BUTTON */
 #join-banner-home {
   position: fixed;
@@ -226,38 +220,24 @@ body {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 996;
-
-  background: conic-gradient(
-    from 0deg,
-    #FF6600 0deg,
-    transparent 10deg,
-    #FF6600 30deg,
-    transparent 40deg,
-    #FF6600 60deg,
-    transparent 70deg,
-    #FF6600 90deg,
-    transparent 100deg,
-    #FF6600 120deg,
-    transparent 130deg,
-    #FF6600 150deg,
-    transparent 160deg,
-    #FF6600 180deg,
-    transparent 190deg,
-    #FF6600 210deg,
-    transparent 220deg,
-    #FF6600 240deg,
-    transparent 250deg,
-    #FF6600 270deg,
-    transparent 280deg,
-    #FF6600 300deg,
-    transparent 310deg,
-    #FF6600 330deg,
-    transparent 340deg
-  );
-  border-radius: 50%;
-  filter: blur(0.4vw) brightness(1.4) contrast(1.5);
-  animation: spinStar 10s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#toggle-glow-star::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('starburst-glow.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: brightness(1.7) saturate(2.2) drop-shadow(0 0 2vw #ff7a00) blur(0.3vw);
+  animation: spinStar 12s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
 
 
 @keyframes spinStar {
