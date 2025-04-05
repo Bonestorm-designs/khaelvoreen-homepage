@@ -11,8 +11,6 @@ function updatePositions() {
         glow.style.left = "26.5vw";
         burst.style.left = "26.5vw";
         toggleArrow.style.backgroundImage = "url(openside.png)";
-
-        // ✅ ALIGN ORANGE STAR GLOW WITH TOGGLE
         starGlow.style.left = toggleArrow.style.left;
     } else {
         sidebar.style.left = "-20vw";
