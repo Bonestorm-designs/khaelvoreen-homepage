@@ -215,8 +215,8 @@ body {
   position: fixed;
   top: 50%;
   left: 5vw;
-  width: 8vw; /* slightly smaller */
-  height: 8vw;
+  width: 14vw;
+  height: 14vw;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 996;
@@ -225,7 +225,7 @@ body {
   background-size: contain;
   border-radius: 50%;
 
-  filter: brightness(1.3) saturate(2.2) drop-shadow(0 0 1.5vw #ff6600);
+  filter: brightness(1.3) saturate(2.2) drop-shadow(0 0 2vw #ff6600);
   animation: spinStar 8s linear infinite;
 }
 
