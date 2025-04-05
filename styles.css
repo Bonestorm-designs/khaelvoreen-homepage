@@ -221,7 +221,7 @@ body {
   pointer-events: none;
   z-index: 996;
 
-  background: url('starburst-glow.png') no-repeat center center;
+  background: url(starburst-glow2.png) no-repeat center center;
   background-size: contain;
 
   filter: brightness(1.4) saturate(3) drop-shadow(0 0 2vw #ff5a00);
@@ -236,7 +236,7 @@ body {
   width: 200%;
   height: 200%;
   transform: translate(-50%, -50%);
-  background: url('starburst-glow.png') no-repeat center center;
+  background: url(starburst-glow2.png) no-repeat center center;
   background-size: contain;
   filter: hue-rotate(-40deg) saturate(5) brightness(2) drop-shadow(0 0 2vw #ff8000);
   opacity: 1;
