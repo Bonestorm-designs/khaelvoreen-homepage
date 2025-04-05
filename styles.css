@@ -57,7 +57,7 @@ body {
 }
 
 #sidebar-menu a img {
-  width: 12vw;               /* Wider look */
+  width: 18vw;               /* Wider look */
   height: 8vw;             /* Prevent vertical squish */
   display: block;
   margin: 2vh auto;         /* Space between + center */
