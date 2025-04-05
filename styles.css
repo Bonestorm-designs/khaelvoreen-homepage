@@ -38,8 +38,8 @@ body {
 
 #sidebar-menu a {
   display: block;
-  width: 14vw; /* Smaller width (about 25% of original 8vw) */
-  height: 8vw;
+  width: 18vw; /* Smaller width (about 25% of original 8vw) */
+  height: 12vw;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
