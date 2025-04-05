@@ -1,25 +1,21 @@
-function updatePositions() {
-    const sidebar = document.getElementById('sidebar');
-    const toggleArrow = document.getElementById('sidebar-toggle');
-    const glow = document.getElementById('glow-outline');
-    const burst = document.getElementById('glow-behind-arrow');
-    const starGlow = document.getElementById('toggle-glow-star');
+const sidebar = document.getElementById('sidebar');
+const toggleArrow = document.getElementById('sidebar-toggle');
+const starGlow = document.getElementById('toggle-glow-star');
 
-    if (isOpen) {
-        sidebar.style.left = "0";
-        toggleArrow.style.left = "23.5vw";
-        glow.style.left = "26.5vw";
-        burst.style.left = "26.5vw";
-        toggleArrow.style.backgroundImage = "url(openside.png)";
-        if (starGlow) starGlow.style.left = toggleArrow.style.left;
-    } else {
-        sidebar.style.left = "-20vw";
-        toggleArrow.style.left = "3.5vw";
-        glow.style.left = "5vw";
-        burst.style.left = "5vw";
-        toggleArrow.style.backgroundImage = "url(closedside.png)";
-        if (starGlow) starGlow.style.left = toggleArrow.style.left;
-    }
+let isOpen = false;
+
+function updatePositions() {
+  if (isOpen) {
+    sidebar.style.left = "0";
+    toggleArrow.style.left = "23.5vw";
+    starGlow.style.left = "26.5vw";
+    toggleArrow.style.backgroundImage = "url('openside.png')";
+  } else {
+    sidebar.style.left = "-20vw";
+    toggleArrow.style.left = "3.5vw";
+    starGlow.style.left = "5vw";
+    toggleArrow.style.backgroundImage = "url('closedside.png')";
+  }
 }
 
 toggleArrow.addEventListener("click", () => {
