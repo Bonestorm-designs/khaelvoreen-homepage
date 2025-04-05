@@ -63,14 +63,13 @@ body {
   z-index: 999;
   cursor: pointer;
   transition: left 0.4s ease, transform 0.4s ease;
-  box-shadow: 0 0 0.6vw rgba(255, 115, 0, 0.4),
-              inset 0 0 0.3vw rgba(255, 90, 0, 0.3);
+  box-shadow: 0 0 0.6vw rgba(191, 0, 255, 0.4),
+              inset 0 0 0.3vw rgba(191, 0, 255, 0.3);
 }
 
 #sidebar-toggle:hover {
-  filter: brightness(1.2);
-  transform: scale(1.1) translateY(-50%);
-  box-shadow: 0 0 1.2vw rgba(255, 140, 0, 0.5);
+  filter: brightness(1.3);
+  box-shadow: 0 0 1vw rgba(191, 0, 255, 0.9), inset 0 0 1vw rgba(191, 0, 255, 0.5);
 }
 
 /* HOMEPAGE JOIN BUTTON */
@@ -148,12 +147,9 @@ body {
 }
 
 #join-banner-sidebar .glow-container:hover {
-#sidebar-toggle:hover {
-  filter: brightness(1.2);
-  transform: scale(1.1) translateY(-50%);
-  box-shadow: 0 0 1.2vw rgba(255, 140, 0, 0.5);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 2vw #bf00ff);
 }
-
 
 #join-banner-sidebar .glow-container img {
   width: 100%;
@@ -256,6 +252,3 @@ body {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-
-
-
