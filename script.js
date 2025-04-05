@@ -13,14 +13,14 @@ function updatePositions() {
     glow.style.left = "26.5vw";
     burst.style.left = "26.5vw";
     if (starGlow) starGlow.style.left = "26.5vw";
-    toggleArrow.style.backgroundImage = "url('openside.png')";
+    toggleArrow.style.backgroundImage = "url(openside.png)";
   } else {
     sidebar.style.left = "-20vw";
     toggleArrow.style.left = "3.5vw";
     glow.style.left = "5vw";
     burst.style.left = "5vw";
     if (starGlow) starGlow.style.left = "5vw";
-    toggleArrow.style.backgroundImage = "url('closedside.png')";
+    toggleArrow.style.backgroundImage = "url(closedside.png)";
   }
 }
 
