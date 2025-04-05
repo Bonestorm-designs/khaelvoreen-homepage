@@ -214,16 +214,20 @@ body {
 #toggle-glow-star {
   position: fixed;
   top: 50%;
-  left: 5vw; /* This will update dynamically via JS */
-  width: 12vw;
-  height: 12vw;
+  left: 5vw;
+  width: 8vw;  /* Slightly smaller */
+  height: 8vw;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 996;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  background: url(starburst-glow.png) no-repeat center center;
+  background-size: contain;
+
+  filter: brightness(2.5) saturate(2) drop-shadow(0 0 2vw orange);
+  animation: spinStar 8s linear infinite;
 }
+
 
 #toggle-glow-star::before {
   content: "";
