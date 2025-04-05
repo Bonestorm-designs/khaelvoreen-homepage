@@ -55,15 +55,17 @@ body {
   height: 4vw;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(closedside.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
   z-index: 999;
   cursor: pointer;
-  transition: left 0.4s ease, transform 0.4s ease, background-image 0.4s ease;
+  transition: left 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 0 0.6vw rgba(191, 0, 255, 0.4),
+              inset 0 0 0.3vw rgba(191, 0, 255, 0.3);
 }
+
 
 #sidebar-toggle.open {
   background-image: url(openside.png);
