@@ -3,7 +3,7 @@ function updatePositions() {
     const toggleArrow = document.getElementById('sidebar-toggle');
     const glow = document.getElementById('glow-outline');
     const burst = document.getElementById('glow-behind-arrow');
-    const starGlow = document.getElementById('toggle-glow-star'); // Make sure this is present
+    const starGlow = document.getElementById('toggle-glow-star');
 
     if (isOpen) {
         sidebar.style.left = "0";
@@ -11,16 +11,14 @@ function updatePositions() {
         glow.style.left = "26.5vw";
         burst.style.left = "26.5vw";
         toggleArrow.style.backgroundImage = "url(openside.png)";
-        starGlow.style.left = toggleArrow.style.left;
+        if (starGlow) starGlow.style.left = toggleArrow.style.left;
     } else {
         sidebar.style.left = "-20vw";
         toggleArrow.style.left = "3.5vw";
         glow.style.left = "5vw";
         burst.style.left = "5vw";
         toggleArrow.style.backgroundImage = "url(closedside.png)";
-
-        // ✅ ALIGN ORANGE STAR GLOW WITH TOGGLE
-        starGlow.style.left = toggleArrow.style.left;
+        if (starGlow) starGlow.style.left = toggleArrow.style.left;
     }
 }
 
