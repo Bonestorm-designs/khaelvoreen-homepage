@@ -223,41 +223,44 @@ body {
   position: fixed;
   top: 50%;
   left: 5vw;
-  width: 14vw;
-  height: 14vw;
+  width: 10vw;
+  height: 10vw;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 996;
 
   background: conic-gradient(
     from 0deg,
-    rgba(255, 120, 0, 0.8),
-    transparent 30deg,
-    rgba(255, 140, 0, 0.9),
-    transparent 60deg,
-    rgba(255, 120, 0, 0.8),
-    transparent 90deg,
-    rgba(255, 160, 0, 0.9),
-    transparent 120deg,
-    rgba(255, 120, 0, 0.8),
-    transparent 150deg,
-    rgba(255, 140, 0, 0.8),
-    transparent 180deg,
-    rgba(255, 160, 0, 0.9),
-    transparent 210deg,
-    rgba(255, 140, 0, 0.8),
-    transparent 240deg,
-    rgba(255, 120, 0, 0.9),
-    transparent 270deg,
-    rgba(255, 160, 0, 0.9),
-    transparent 300deg,
-    rgba(255, 140, 0, 0.8),
-    transparent 330deg
+    #FF6600 0deg,
+    transparent 10deg,
+    #FF6600 30deg,
+    transparent 40deg,
+    #FF6600 60deg,
+    transparent 70deg,
+    #FF6600 90deg,
+    transparent 100deg,
+    #FF6600 120deg,
+    transparent 130deg,
+    #FF6600 150deg,
+    transparent 160deg,
+    #FF6600 180deg,
+    transparent 190deg,
+    #FF6600 210deg,
+    transparent 220deg,
+    #FF6600 240deg,
+    transparent 250deg,
+    #FF6600 270deg,
+    transparent 280deg,
+    #FF6600 300deg,
+    transparent 310deg,
+    #FF6600 330deg,
+    transparent 340deg
   );
   border-radius: 50%;
-  filter: blur(1vw) brightness(2.2);
-  animation: spinStar 12s linear infinite;
+  filter: blur(0.4vw) brightness(1.4) contrast(1.5);
+  animation: spinStar 10s linear infinite;
 }
+
 
 @keyframes spinStar {
   from {
