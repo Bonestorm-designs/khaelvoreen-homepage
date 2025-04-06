@@ -1,118 +1,120 @@
-/* ==== BASE LAYOUT ==== */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  font-family: 'Georgia', serif;
-  background: url(Khaelbackground.png) no-repeat center center fixed;
-  background-size: cover;
-  color: #f2f2f2;
-  overflow-x: hidden; /* ✅ No horizontal scroll ever */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lore | Khael'Voreen</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- Shared Sidebar/Effects -->
+  <link rel="stylesheet" href="lore.css" />   <!-- Page-specific styling -->
+  <style>
+    /* ==== BASE LAYOUT ==== */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Georgia', serif;
+      background: url(Khaelbackground.png) no-repeat center center fixed;
+      background-size: cover;
+      color: #f2f2f2;
+      overflow-x: hidden;
+    }
 
-#layout-wrapper {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
+    #layout-wrapper {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
 
-/* ==== SIDEBAR (uses shared styles.css) ==== */
+    #lore-background {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      padding: 5vh 2vw;
+    }
 
-/* ==== MAIN CONTENT OUTER BACKGROUND ==== */
-#lore-background {
-  position: relative;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-}
+    .lore-container {
+      background: url('parchment-texture.jpg') center center no-repeat;
+      background-size: cover;
+      padding: 2.5vw;
+      border-radius: 1vw;
+      width: 100%;
+      max-width: 1400px;
+      margin-left: 26vw;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
 
-/* ==== INNER SCROLL AREA WITH PARCHMENT ==== */
-.lore-container {
-  position: absolute;
-  top: 5vh;
-  left: 26vw; /* Sidebar + 1vw buffer */
-  right: 2vw; /* Leave a nice buffer on the right */
-  bottom: 5vh;
+    .lore-title {
+      text-align: center;
+      font-size: 3.2vw;
+      color: #5b3a0c;
+      text-shadow: 0 0 10px rgba(255, 220, 130, 0.2);
+      margin-bottom: 2vh;
+    }
 
-  background: url('parchment-texture.jpg') center center no-repeat;
-  background-size: cover;
-  padding: 2.5vw;
-  border-radius: 1vw;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
+    .scroll-frame {
+      background: rgba(255, 255, 255, 0);
+      padding: 2vw;
+      border-radius: 1vw;
+      max-height: 70vh;
+      overflow-y: auto;
+      line-height: 1.8;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
+    }
 
-/* ==== TITLE ==== */
-.lore-title {
-  text-align: center;
-  font-size: 3.2vw;
-  color: #5b3a0c; /* Ink-like brown */
-  text-shadow: 0 0 10px rgba(255, 220, 130, 0.2);
-  margin-bottom: 2vh;
-}
+    .lore-paragraph {
+      margin-bottom: 2vh;
+      font-size: 1.2vw;
+      color: #2e1a05;
+      text-shadow: 0 0 1px rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="layout-wrapper">
 
-/* ==== SCROLLABLE TEXT FRAME ==== */
-.scroll-frame {
-  background: rgba(255, 255, 255, 0); /* fully transparent */
-  padding: 2vw;
-  border-radius: 1vw;
-  max-height: 70vh;
-  overflow-y: auto;
-  line-height: 1.8;
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2); /* subtle edge fade */
-}
+    <!-- Placeholder to load sidebar -->
+    <div id="sidebar-container"></div>
 
-/* ==== PARAGRAPH TEXT STYLE ==== */
-.lore-paragraph {
-  margin-bottom: 2vh;
-  font-size: 1.2vw;
-  color: #2e1a05; /* rich ink brown */
-  text-shadow: 0 0 1px rgba(255,255,255,0.1);
-}
+    <!-- MAIN CONTENT -->
+    <div id="lore-background">
+      <div class="lore-container">
+        <h1 class="lore-title">The Sundering of the World</h1>
+        <div class="scroll-frame">
+          <p class="lore-paragraph">
+            The world was young — a newborn cradle teeming with life, alive with magic and awareness...
+          </p>
+          <p class="lore-paragraph">
+            But balance is fragile. A great ravaging swept across the known world...
+          </p>
+          <p class="lore-paragraph">
+            The Ancient Ones knew what had come. And for the first time, they were afraid...
+          </p>
+          <p class="lore-paragraph">
+            And over time… silence fell. The Eternal Forest darkened as the Ancients vanished...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-/* === JOIN BUTTON (sidebar version) – match homepage === */
-#join-banner-sidebar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4vh;
-}
-
-#join-banner-sidebar .glow-container {
-  width: 11vw;
-  height: 11vw;
-  position: relative;
-  border-radius: 50%;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: smallerPulse 3s ease-in-out infinite;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-#join-banner-sidebar .glow-container:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 2vw #bf00ff);
-}
-
-#join-banner-sidebar .glow-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* === ANIMATIONS === */
-@keyframes smallerPulse {
-  0%, 100% { box-shadow: 0 0 3px rgba(191, 0, 255, 0.15); }
-  50% { box-shadow: 0 0 8px rgba(191, 0, 255, 0.25); }
-}
+  <!-- Sidebar + Toggle Script -->
+  <script src="script.js"></script>
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      });
+  </script>
+</body>
+</html>
 
