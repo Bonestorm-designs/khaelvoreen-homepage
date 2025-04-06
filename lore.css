@@ -37,17 +37,18 @@ html, body {
 }
 
 #sidebar-menu a {
-  width: 80%;
   display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  width: 100%;
+  text-align: center;
 }
 
 #sidebar-menu a img {
   width: 75%;
   max-height: 6vw;
-  display: block;
   margin: 1.5vh auto;
+  display: block;
   object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 #home-link img {
