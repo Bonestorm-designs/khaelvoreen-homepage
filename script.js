@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-  // Wait until the sidebar is fully loaded before attaching listeners
   const waitForSidebar = setInterval(() => {
     const sidebar = document.getElementById('sidebar');
     const toggleArrow = document.getElementById('sidebar-toggle');
@@ -8,7 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (sidebar && toggleArrow && starGlow) {
       clearInterval(waitForSidebar);
 
-      let isOpen = false;
+      // Load state from localStorage
+      let isOpen = localStorage.getItem("sidebarOpen") === "true";
 
       function updatePositions() {
         if (isOpen) {
@@ -26,11 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
       toggleArrow.addEventListener("click", () => {
         isOpen = !isOpen;
+        localStorage.setItem("sidebarOpen", isOpen); // 💾 Save preference
         updatePositions();
       });
 
-      // Initialize position
       updatePositions();
     }
-  }, 50); // check every 50ms until sidebar loads
+  }, 50);
 });
