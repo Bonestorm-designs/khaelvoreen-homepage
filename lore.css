@@ -33,15 +33,16 @@ html, body {
 .lore-container {
   background: url('parchment-texture.jpg') center center no-repeat;
   background-size: cover;
-  padding: 3vw;
+  padding: 2.5vw;
   border-radius: 1vw;
-  margin-left: 26vw; /* Sidebar + spacing */
-  width: calc(100vw - 28vw); /* Full width minus sidebar & buffer */
+  margin-left: 26vw; /* Sidebar (25vw) + 1vw margin */
+  margin-right: 4vw; /* Right edge breathing room */
+  width: calc(100vw - 30vw); /* Sidebar + left margin + right margin */
   max-width: 1400px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  box-sizing: border-box; /* ✅ Important: keeps padding inside the width */
+  box-sizing: border-box; /* Includes padding inside width */
 }
 
 /* ==== TITLE ==== */
