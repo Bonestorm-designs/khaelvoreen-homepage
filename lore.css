@@ -43,8 +43,8 @@
       background-size: cover;
       padding: 2.5vw;
       border-radius: 1vw;
-      width: 100%;
-      max-width: 1400px;
+      width: calc(100vw - 28vw); /* Wider than before */
+      max-width: none; /* Allow full responsive width */
       margin-left: 26vw;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       display: flex;
