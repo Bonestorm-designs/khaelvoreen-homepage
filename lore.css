@@ -43,7 +43,8 @@ html, body {
 }
 
 #sidebar-menu a img {
-  width: 80%;
+  width: 75%;
+  max-height: 6vw;
   display: block;
   margin: 1.5vh auto;
   object-fit: contain;
