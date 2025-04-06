@@ -18,35 +18,36 @@
       position: relative;
     }
 
-    .exit-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #000;
-      color: #fff;
-      font-size: 20px;
-      width: 40px;
-      height: 40px;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 1000;
-      transition: background 0.3s ease;
-    }
+  .exit-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+  }
 
-    .exit-button:hover {
-      background: #222;
-    }
+.exit-button:hover {
+  background: #222;
+}
 
-    .signup-container {
-      background-color: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(6px);
-      padding: 40px;
-      border-radius: 10px;
-      max-width: 600px;
-      width: 100%;
-      box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
-    }
+   .signup-container {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 800px; /* ✅ was 600px */
+  width: 100%;
+  box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+  position: relative; /* ✅ needed to anchor the exit button */
+}
 
     .signup-container h1 {
       margin-bottom: 20px;
@@ -90,10 +91,10 @@
   </style>
 </head>
 <body>
-  <!-- Exit Button -->
-  <button class="exit-button" onclick="history.back()">X</button>
 
   <div class="signup-container">
+     <!-- Exit Button -->
+  <button class="exit-button" onclick="history.back()">X</button>
     <h1>Join the Vanguard - APPLICATION</h1>
     <form action="https://your-wordpress-form-endpoint" method="POST">
       <label for="name">Name:</label>
