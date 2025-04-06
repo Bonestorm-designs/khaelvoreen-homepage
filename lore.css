@@ -108,6 +108,8 @@ html, body {
 
 /* ==== MAIN LORE CONTENT ==== */
 #lore-background {
+  background: url('parchment-texture.jpg') center center no-repeat;
+  background-size: cover;  
   flex: 1;
   padding: 5vh 5vw;
   display: flex;
@@ -117,8 +119,6 @@ html, body {
 }
 
 .lore-container {
-  background: url('parchment-texture.jpg') center center no-repeat;
-  background-size: cover;
   border: 5px solid #aa8c53;
   padding: 2.5vw;
   border-radius: 1.5vw;
