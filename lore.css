@@ -35,7 +35,7 @@ html, body {
   background-size: cover;
   padding: 3vw;
   border-radius: 1vw;
-  width: 100%;
+  width: calc(100% - 2vw); /* gives a subtle right margin so text doesn’t hit edge */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
