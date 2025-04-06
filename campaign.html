@@ -9,6 +9,14 @@
 <body>
 <!-- Placeholder to load sidebar -->
 <div id="sidebar-container"></div>
+  <!-- This loads the shared sidebar -->
+<script>
+  fetch('sidebar.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+    });
+</script>
 </body>
 </html>
 
