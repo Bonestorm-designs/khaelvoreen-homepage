@@ -22,9 +22,9 @@ html, body {
 /* ==== MAIN CONTENT OUTER BACKGROUND ==== */
 #lore-background {
   flex: 1;
-  padding: 5vh 2vw; /* was 5vw — now only 2vw for more width */
+  padding: 5vh 4vw; /* light margin left/right, but not too tight */
   display: flex;
-  justify-content: flex-start; /* align left */
+  justify-content: center; /* ✅ center the container again */
   align-items: flex-start;
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.75);
@@ -38,11 +38,11 @@ html, body {
   padding: 3vw;
   border-radius: 1vw;
   width: 100%;
-  max-width: 1400px; /* bump this up for wider displays */
+  max-width: 1400px; /* ✅ increase if you want more room */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  margin-right: auto; /* keep aligned left */
+  margin: 0 auto; /* ✅ ensures horizontal centering */
 }
 
 /* ==== TITLE ==== */
