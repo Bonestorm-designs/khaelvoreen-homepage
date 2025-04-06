@@ -10,8 +10,11 @@ html, body {
   overflow: hidden;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 #sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 25vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
@@ -20,12 +23,10 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 6vh;
-  position: fixed;
-  left: 0;
-  top: 0;
   z-index: 1000;
 }
 
+/* ICONS */
 #sidebar-menu {
   display: flex;
   flex-direction: column;
@@ -35,10 +36,11 @@ html, body {
 
 #sidebar-menu a img {
   width: 80%;
-  height: auto;
   max-width: 200px;
+  height: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 
 #sidebar-menu a:hover img {
   transform: scale(1.05);
