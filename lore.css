@@ -36,9 +36,8 @@ html, body {
   padding: 2.5vw;
   border-radius: 1vw;
 
-  margin-left: 26vw; /* Sidebar + buffer */
-  margin-right: 2vw; /* Optional right buffer */
-  width: calc(100vw - 28vw); /* 26vw left + 2vw right = 100vw total */
+  margin-left: 25.5vw;  /* Sidebar (25vw) + 0.5vw visual gap */
+  width: calc(100vw - 27vw); /* Total margin + content stays within 100vw */
 
   max-width: none;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
