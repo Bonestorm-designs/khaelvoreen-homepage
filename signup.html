@@ -15,6 +15,27 @@
       justify-content: center;
       flex-direction: column;
       padding: 60px 20px;
+      position: relative;
+    }
+
+    .exit-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #000;
+      color: #fff;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+
+    .exit-button:hover {
+      background: #222;
     }
 
     .signup-container {
@@ -69,8 +90,11 @@
   </style>
 </head>
 <body>
+  <!-- Exit Button -->
+  <button class="exit-button" onclick="history.back()">X</button>
+
   <div class="signup-container">
-    <h1>Join the Vanguard</h1>
+    <h1>Join the Vanguard - APPLICATION</h1>
     <form action="https://your-wordpress-form-endpoint" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
@@ -78,17 +102,21 @@
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
 
-      <label for="q1">Why do you want to join the Vanguard?</label>
+      <label for="q1">What is the name of your character and what class/role would you like to play? Please include preferred race</label>
       <textarea id="q1" name="q1" rows="3" required></textarea>
 
-      <label for="q2">What role would you play in a fantasy world?</label>
-      <textarea id="q2" name="q2" rows="3" required></textarea>
+      <label for="q2">Name the top 3 things you enjoy or would like to experience in this DnD campaign? Feel free to go into detail!</label>
+      <textarea id="q2" name="q2" rows="8" required></textarea>
 
-      <label for="q3">What’s your character’s greatest strength or flaw?</label>
+      <label for="q3">Would you like your character's backstory to be made by you, me or a collaboration? You can definitely choose to have memory loss.</label>
       <textarea id="q3" name="q3" rows="3" required></textarea>
+
+      <label for="q4">Any questions or queries? Keep in mind, until the characters have been made, and the campaign has begun, the website won't get many more updates.</label>
+      <textarea id="q4" name="q4" rows="4" required></textarea>
 
       <button type="submit">Submit</button>
     </form>
   </div>
 </body>
 </html>
+
