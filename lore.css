@@ -1,7 +1,6 @@
 body, html {
  /* Layout Containers */
 body {
-  display: flex;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -9,6 +8,13 @@ body {
   background: url(Khaelbackground.png) no-repeat center center fixed;
   background-size: cover;
   color: #f2f2f2;
+  overflow: hidden;
+}
+
+#layout-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
 }
 
@@ -81,13 +87,14 @@ body {
 }
 
 #lore-background {
+  flex: 1;
   background: url('parchment-texture.jpg') center center no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  padding: 5vh 5vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5vh 5vw;
+  overflow-y: auto;
 }
 
 .lore-container {
