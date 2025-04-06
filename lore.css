@@ -37,11 +37,12 @@ html, body {
   background-size: cover;
   padding: 3vw;
   border-radius: 1vw;
-  width: 90%;
-  max-width: 1000px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* soft shadow glow */
+  width: 100%;
+  max-width: 1300px; /* was 1000px — bump this up for wider display */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
+  margin-right: auto;  /* ← pins to left side */
 }
 
 /* ==== TITLE ==== */
