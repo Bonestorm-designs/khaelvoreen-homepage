@@ -2,127 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Thank You | Khael'Voreen</title>
+  <title>Join the Vanguard</title>
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
       background: url(Khaelbackground.png) no-repeat center center fixed;
       background-size: cover;
+      color: #f2f2f2;
       font-family: 'Cinzel', serif !important;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #f2f2f2;
-      overflow: hidden;
-    }
-
-    .thankyou-box {
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(6px);
-      padding: 40px 60px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(191, 0, 255, 0.4);
-      text-align: center;
-      max-width: 700px;
+      flex-direction: column;
+      padding: 60px 20px;
       position: relative;
-      animation: fadeIn 2s ease forwards;
     }
 
-    .thankyou-box h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #bf00ff;
-      text-shadow: 0 0 10px rgba(191, 0, 255, 0.4);
-    }
-
-    .thankyou-box p {
-      font-size: 20px;
-      margin-bottom: 30px;
-      color: #f5e6ff;
-    }
-
-    .sidebar-buttons {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    .sidebar-buttons a {
-      display: inline-block;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      overflow: hidden;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .sidebar-buttons a:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 2vw #ffffff);
-    }
-
-    .sidebar-buttons img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    .dragon {
+    .exit-button {
       position: absolute;
-      top: 20%;
-      left: -200px;
-      width: 160px;
-      height: auto;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 1s ease;
+      top: 15px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      background: #000;
+      color: #fff;
+      font-size: 26px;
+      font-weight: bold;
+      line-height: 45px;
+      text-align: center;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    .dragon.fly {
-      animation: flyAcross 6s ease-out forwards;
-      opacity: 1;
+    .exit-button:hover {
+      background: #222;
+      transform: scale(1.1);
     }
 
-    @keyframes flyAcross {
-      0%   { left: -200px; transform: translateY(0) scaleX(1); }
-      30%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
-      50%  { filter: drop-shadow(0 0 2vw red) brightness(1.5); }
-      70%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
-      100% { left: 110vw; transform: translateY(0) scaleX(1); opacity: 0; }
+    .signup-container {
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+      position: relative;
+    }
+
+    .signup-container h1 {
+      margin-bottom: 25px;
+      font-size: 36px;
+      color: #bf00ff;
+    }
+
+    .signup-container label {
+      margin-top: 24px;
+      margin-bottom: 10px;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .signup-container input,
+    .signup-container textarea {
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      line-height: 1.6;
+      border: none;
+      border-radius: 6px;
+      background-color: #333;
+      color: #fff;
+      margin-bottom: 18px;
+      resize: vertical;
+    }
+
+    .signup-container button {
+      margin-top: 15px;
+      background-color: #bf00ff;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .signup-container button:hover {
+      background-color: #a000d4;
     }
   </style>
 </head>
 <body>
-  <!-- 🔥 DRAGON IMAGE -->
-  <img src="dragon1.png" alt="Flying Dragon" class="dragon" id="dragon">
 
-  <div class="thankyou-box">
-    <h1>Thank You, Brave Soul!</h1>
-    <p>Your application for the Vanguard has been received, and we shall send a reply after careful consideration...</p>
-    <div class="sidebar-buttons">
-      <a href="index.html" id="home-link"><img src="HOME.png" alt="Home"></a>
-      <a href="lore.html" id="lore-link"><img src="LORE.png" alt="Lore"></a>
-    </div>
+  <div class="signup-container">
+    <!-- Exit Button -->
+    <button class="exit-button" onclick="history.back()">X</button>
+
+    <h1>Join the Vanguard – APPLY NOW!</h1>
+    <form action="https://formspree.io/f/mrbpokkk" method="POST">
+      <!-- Hidden Formspree Settings -->
+      <input type="hidden" name="_next" value="https://your-github-domain/thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Vanguard Signup!">
+
+      <label for="name">Name (IRL):</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="q1">What is the name of your character and what class/role would you like to play? Please include preferred race</label>
+      <textarea id="q1" name="q1" rows="3" required></textarea>
+
+      <label for="q2">Name the top 3 things you enjoy or would like to experience in this DnD campaign? Feel free to go into detail!</label>
+      <textarea id="q2" name="q2" rows="8" required></textarea>
+
+      <label for="q3">Would you like your character's backstory to be made by you, me or a collaboration? You can definitely choose to have memory loss.</label>
+      <textarea id="q3" name="q3" rows="3" required></textarea>
+
+      <label for="q4">(OPTIONAL) Any questions or queries? The characters, campaign and lore pages will receive updates as more information becomes available!</label>
+      <textarea id="q4" name="q4" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
-  <script>
-    // Trigger dragon fly after 2 seconds
-    window.addEventListener("DOMContentLoaded", () => {
-      setTimeout(() => {
-        document.getElementById("dragon").classList.add("fly");
-      }, 2000);
-    });
-  </script>
 </body>
 </html>
+
