@@ -13,7 +13,7 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      font-family: 'Georgia', serif;
+      font-family: 'Cinzel', serif !important;
       background: url(Khaelbackground.png) no-repeat center center fixed;
       background-size: cover;
       color: #f2f2f2;
