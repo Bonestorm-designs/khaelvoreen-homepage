@@ -45,55 +45,84 @@
       color: #f5e6ff;
     }
 
-    .thankyou-box a {
+    .sidebar-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .sidebar-buttons a {
       display: inline-block;
-      padding: 12px 24px;
-      background-color: #bf00ff;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
 
-    .thankyou-box a:hover {
-      background-color: #a000d4;
+    .sidebar-buttons a:hover {
+      transform: scale(1.1);
     }
 
-    /* ✨ Fade-in animation */
+    .sidebar-buttons img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 1vw #fff);
+    }
+
     @keyframes fadeIn {
       0% { opacity: 0; transform: scale(0.95); }
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 🕊️ Raven animation */
-    .raven {
+    .dragon {
       position: absolute;
       top: 20%;
-      left: -100px;
-      width: 80px;
+      left: -200px;
+      width: 160px;
       height: auto;
-      z-index: 1;
-      animation: flyAcross 10s linear infinite;
-      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .dragon.fly {
+      animation: flyAcross 6s ease-out forwards;
+      opacity: 1;
     }
 
     @keyframes flyAcross {
-      0% { left: -100px; transform: translateY(0) scaleX(1); }
-      50% { transform: translateY(-20px) scaleX(1); }
-      100% { left: 110%; transform: translateY(0) scaleX(1); }
+      0%   { left: -200px; transform: translateY(0) scaleX(1); }
+      30%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
+      50%  { filter: drop-shadow(0 0 2vw red) brightness(1.5); }
+      70%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
+      100% { left: 110vw; transform: translateY(0) scaleX(1); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <!-- 🕊️ Raven image (replace with your own if needed) -->
-  <img src="raven.png" alt="Raven" class="raven">
+  <!-- 🔥 DRAGON IMAGE -->
+  <img src="dragon1.png" alt="Flying Dragon" class="dragon" id="dragon">
 
   <div class="thankyou-box">
     <h1>Thank You, Brave Soul!</h1>
-    <p>Your answers have been received by the Vanguard. A raven will find you soon...</p>
-    <a href="index.html">Return to Khael'Voreen</a>
+    <p>We will send a dragon with your application letter to the Council, and will advise you after careful consideration.</p>
+    <div class="sidebar-buttons">
+      <a href="index.html"><img src="HOME.png" alt="Home"></a>
+      <a href="lore.html"><img src="LORE.png" alt="Lore"></a>
+    </div>
   </div>
+
+  <script>
+    // Trigger dragon fly after 2 seconds
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("dragon").classList.add("fly");
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
 
