@@ -5,6 +5,7 @@
   <title>Join the Vanguard</title>
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       background: url(Khaelbackground.png) no-repeat center center fixed;
@@ -19,70 +20,66 @@
       position: relative;
     }
 
-.exit-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+    .exit-button {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      background: #000;
+      color: #fff;
+      font-size: 26px;
+      font-weight: bold;
+      line-height: 45px;
+      text-align: center;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-  width: 45px;            /* Bigger button */
-  height: 45px;
-  background: #000;
-  color: #fff;
+    .exit-button:hover {
+      background: #222;
+      transform: scale(1.1);
+    }
 
-  font-size: 26px;        /* Larger X */
-  font-weight: bold;
-  line-height: 45px;      /* Vertically center text */
-  text-align: center;     /* Horizontally center text */
+    .signup-container {
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+      position: relative;
+    }
 
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
+    .signup-container h1 {
+      margin-bottom: 25px;
+      font-size: 36px;
+      color: #bf00ff;
+    }
 
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+    .signup-container label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-.exit-button:hover {
-  background: #222;
-  transform: scale(1.1);  /* Optional: subtle zoom effect */
-}
-
-   .signup-container {
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 1000px; /* ✅ was 600px */
-  width: 100%;
-  box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
-  position: relative; /* ✅ needed to anchor the exit button */
-}
-
-.signup-container h1 {
-  margin-bottom: 25px;
-  font-size: 36px;                /* ⬆️ Headline a bit stronger */
-  color: #bf00ff;
-}
-
-.signup-container label {
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
-  font-size: 18px;                /* ⬆️ Question text size */
-}
-
-.signup-container input,
-.signup-container textarea {
-  width: 100%;
-  padding: 14px;                  /* ⬆️ Bigger padding */
-  font-size: 18px;                /* ⬆️ Bigger input text */
-  border: none;
-  border-radius: 6px;
-  background-color: #333;
-  color: #fff;
-  margin-bottom: 14px;
-}
+    .signup-container input,
+    .signup-container textarea {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #333;
+      color: #fff;
+      margin-bottom: 14px;
+    }
 
     .signup-container button {
       margin-top: 15px;
@@ -104,36 +101,38 @@
 <body>
 
   <div class="signup-container">
-     <!-- Exit Button -->
-  <button class="exit-button" onclick="history.back()">X</button>
-    <h1>Join the Vanguard - APPLY NOW!</h1>
+    <!-- Exit Button -->
+    <button class="exit-button" onclick="history.back()">X</button>
+
+    <h1>Join the Vanguard – APPLY NOW!</h1>
     <form action="https://formspree.io/f/mrbpokkk" method="POST">
-  <!-- Hidden settings for Formspree -->
-  <input type="hidden" name="_next" value="thankyou.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="New Vanguard Signup!">
+      <!-- Hidden Formspree Settings -->
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Vanguard Signup!">
 
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-  <label for="q1">What is the name of your character and what class/role would you like to play? Please include preferred race</label>
-  <textarea id="q1" name="q1" rows="3" required></textarea>
+      <label for="q1">What is the name of your character and what class/role would you like to play? Please include preferred race</label>
+      <textarea id="q1" name="q1" rows="3" required></textarea>
 
-  <label for="q2">Name the top 3 things you enjoy or would like to experience in this DnD campaign? Feel free to go into detail!</label>
-  <textarea id="q2" name="q2" rows="8" required></textarea>
+      <label for="q2">Name the top 3 things you enjoy or would like to experience in this DnD campaign? Feel free to go into detail!</label>
+      <textarea id="q2" name="q2" rows="8" required></textarea>
 
-  <label for="q3">Would you like your character's backstory to be made by you, me or a collaboration? You can definitely choose to have memory loss.</label>
-  <textarea id="q3" name="q3" rows="3" required></textarea>
+      <label for="q3">Would you like your character's backstory to be made by you, me or a collaboration? You can definitely choose to have memory loss.</label>
+      <textarea id="q3" name="q3" rows="3" required></textarea>
 
-  <label for="q4">Any questions or queries? The characters, campaign and lore pages will receive updates as more information becomes available!</label>
-  <textarea id="q4" name="q4" rows="4" required></textarea>
+      <label for="q4">Any questions or queries? The characters, campaign and lore pages will receive updates as more information becomes available!</label>
+      <textarea id="q4" name="q4" rows="4" required></textarea>
 
-  <button type="submit">Submit</button>
-</form>
+      <button type="submit">Submit</button>
+    </form>
   </div>
+
 </body>
 </html>
 
