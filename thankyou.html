@@ -24,39 +24,39 @@
   .thankyou-box {
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(6px);
-    padding: 60px 80px; /* ⬆️ More padding */
-    border-radius: 14px;
-    box-shadow: 0 0 30px rgba(191, 0, 255, 0.5);
+    padding: 80px 100px;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(191, 0, 255, 0.6);
     text-align: center;
-    max-width: 1000px;   /* ⬆️ Wider max */
-    width: 90vw;
+    max-width: 1100px;
+    width: 95vw;
     animation: fadeIn 2s ease forwards;
   }
 
   .thankyou-box h1 {
-    font-size: 48px; /* ⬆️ Bigger headline */
-    margin-bottom: 25px;
+    font-size: 56px;
+    margin-bottom: 30px;
     color: #bf00ff;
-    text-shadow: 0 0 12px rgba(191, 0, 255, 0.4);
+    text-shadow: 0 0 14px rgba(191, 0, 255, 0.5);
   }
 
   .thankyou-box p {
-    font-size: 24px; /* ⬆️ Bigger paragraph */
-    margin-bottom: 40px;
+    font-size: 28px;
+    margin-bottom: 50px;
     color: #f5e6ff;
   }
 
   .sidebar-buttons {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 80px;
   }
 
   .sidebar-buttons a {
     display: inline-block;
-    width: 120px;  /* ⬆️ Bigger icon */
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     overflow: hidden;
     transition: transform 0.3s ease, filter 0.3s ease;
@@ -80,27 +80,25 @@
 
   .dragon {
     position: absolute;
-    top: 10%;         /* ✅ Slightly higher */
-    left: -400px;
-    width: 400px;     /* ⬆️ WAY bigger dragon */
+    top: 5%;
+    left: -700px;
+    width: 700px; /* 🐉 Way bigger */
     height: auto;
     z-index: 2;
-    opacity: 0;
-    transition: opacity 1s ease;
+    opacity: 1; /* ✅ Fully visible */
     pointer-events: none;
   }
 
   .dragon.fly {
     animation: flyAcross 6s ease-out forwards;
-    opacity: 1;
   }
 
   @keyframes flyAcross {
-    0%   { left: -400px; transform: translateY(0) scaleX(1); }
+    0%   { left: -700px; transform: translateY(0) scaleX(1); }
     30%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
     50%  { filter: drop-shadow(0 0 2vw red) brightness(1.5); }
     70%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
-    100% { left: 110vw; transform: translateY(0) scaleX(1); opacity: 0; }
+    100% { left: 120vw; transform: translateY(0) scaleX(1); opacity: 0; }
   }
 </style>
 </head>
