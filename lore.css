@@ -54,13 +54,10 @@
       box-sizing: border-box;
     }
 
-    .lore-title {
-      text-align: center;
-      font-size: 3.2vw;
-      color: #5b3a0c;
-      text-shadow: 0 0 10px rgba(255, 220, 130, 0.2);
-      margin-bottom: 2vh;
-    }
+   .lore-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+}
 
     .scroll-frame {
       background: rgba(255, 255, 255, 0);
@@ -73,11 +70,9 @@
     }
 
     .lore-paragraph {
-      margin-bottom: 2vh;
-      font-size: 1.2vw;
-      color: #2e1a05;
-      text-shadow: 0 0 1px rgba(255,255,255,0.1);
-    }
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+}
   </style>
 </head>
 <body>
