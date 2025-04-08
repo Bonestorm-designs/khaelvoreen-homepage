@@ -54,12 +54,23 @@
       box-sizing: border-box;
     }
 
-   .lore-title {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
+.lore-title {
+  text-align: center;
+  font-size: 3.2vw;
+  color: #1a0f02; /* deep parchment ink tone */
+  text-shadow: 0 0 6px rgba(255, 230, 150, 0.2); /* optional: subtle glow */
+  margin-bottom: 2vh;
 }
 
-    .scroll-frame {
+.lore-paragraph {
+  margin-bottom: 2vh;
+  font-size: 1.2vw;
+  color: #0f0d0a; /* parchment-style ink */
+  font-weight: 400;
+  text-shadow: none; /* Remove white glow */
+}
+ 
+ .scroll-frame {
       background: rgba(255, 255, 255, 0);
       padding: 2vw;
       border-radius: 1vw;
@@ -69,10 +80,6 @@
       box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
     }
 
-    .lore-paragraph {
-  font-family: 'Cinzel', serif;
-  font-weight: 400;
-}
   </style>
 </head>
 <body>
