@@ -2,22 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campaign | Khael'Voreen</title>
   <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(Khaelbackground.png) no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Cinzel', serif;
+      color: #f2f2f2;
+      display: flex;
+      height: 100vh;
+    }
+
+    #layout-wrapper {
+      display: flex;
+      width: 100%;
+    }
+
+    #main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4vh;
+      overflow: hidden;
+    }
+
+    #main-content img {
+      max-width: 70vw;
+      max-height: 80vh;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px #000);
+    }
+  </style>
 </head>
 <body>
-<!-- Placeholder to load sidebar -->
-<div id="sidebar-container"></div>
-  <!-- This loads the shared sidebar -->
-<script>
-  fetch('sidebar.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('sidebar-container').innerHTML = html;
-    });
-</script>
+  <div id="layout-wrapper">
+    <div id="sidebar-container"></div>
+
+    <div id="main-content">
+      <img src="underconstruction.png" alt="Under Construction" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
-
