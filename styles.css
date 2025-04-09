@@ -230,3 +230,44 @@ body {
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* Generic shimmer lens flare effect */
+.shimmer-hover {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.shimmer-hover::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 45%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.4) 55%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.shimmer-hover:hover::before {
+  animation: shimmer 0.8s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 100%;
+  }
+}
