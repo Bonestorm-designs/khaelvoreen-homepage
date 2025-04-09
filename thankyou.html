@@ -80,26 +80,28 @@
 
 .dragon {
   position: absolute;
-  top: 5%;
+  top: 50%;
   left: -1000px;
-  width: 2000px;      /* 🐉 ENORMOUS DRAGON */
+  width: 3000px;      /* 🐉 ENORMOUS DRAGON */
   height: auto;
   z-index: 2;
   opacity: 1;
   pointer-events: none;
+  transform: translateY(-50%);
 }
 
 .dragon.fly {
-  animation: flyAcross 2.5s ease-out forwards; /* ⚡ FASTER FLY SPEED */
+  animation: flyAcross 1.5s ease-out forwards;
 }
 
 @keyframes flyAcross {
-  0%   { left: -1000px; transform: translateY(0) scaleX(1); opacity: 1; }
+  0%   { left: -1000px; transform: translateY(-50%) scaleX(1); opacity: 1; }
   30%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
-  50%  { filter: drop-shadow(0 0 2vw red) brightness(1.5); }
+  50%  { filter: drop-shadow(0 0 1vw orange) brightness(1.5); }
   70%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
-  100% { left: 120vw; transform: translateY(0) scaleX(1); opacity: 1; }
+  100% { left: 120vw; transform: translateY(-50%) scaleX(1); opacity: 1; }
 }
+
 </style>
 </head>
 <body>
@@ -108,7 +110,7 @@
 
   <div class="thankyou-box">
     <h1>Thank You, Brave Soul!</h1>
-    <p>Your application for the Vanguard has been received, and we shall send a reply after careful consideration...</p>
+    <p>Your application for the Vanguard has been received, and we shall send you a reply after careful consideration...</p>
     <div class="sidebar-buttons">
   <a href="index.html" id="home-link">
     <span class="shimmer-hover">
@@ -128,7 +130,7 @@
     window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         document.getElementById("dragon").classList.add("fly");
-      }, 850);
+      }, 800);
     });
   </script>
 </body>
