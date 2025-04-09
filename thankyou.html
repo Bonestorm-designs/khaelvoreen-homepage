@@ -82,7 +82,7 @@
   position: absolute;
   top: 5%;
   left: -1000px;
-  width: 1000px;      /* 🐉 ENORMOUS DRAGON */
+  width: 2000px;      /* 🐉 ENORMOUS DRAGON */
   height: auto;
   z-index: 2;
   opacity: 1;
@@ -90,15 +90,15 @@
 }
 
 .dragon.fly {
-  animation: flyAcross 3.5s ease-out forwards; /* ⚡ FASTER FLY SPEED */
+  animation: flyAcross 2.5s ease-out forwards; /* ⚡ FASTER FLY SPEED */
 }
 
 @keyframes flyAcross {
-  0%   { left: -1000px; transform: translateY(0) scaleX(1); }
+  0%   { left: -1000px; transform: translateY(0) scaleX(1); opacity: 1; }
   30%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
   50%  { filter: drop-shadow(0 0 2vw red) brightness(1.5); }
   70%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
-  100% { left: 120vw; transform: translateY(0) scaleX(1); opacity: 0; }
+  100% { left: 120vw; transform: translateY(0) scaleX(1); opacity: 1; }
 }
 </style>
 </head>
@@ -116,11 +116,11 @@
   </div>
 
   <script>
-    // Trigger dragon fly after 2 seconds
+    // Trigger dragon fly after .8 seconds
     window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         document.getElementById("dragon").classList.add("fly");
-      }, 1000);
+      }, 850);
     });
   </script>
 </body>
