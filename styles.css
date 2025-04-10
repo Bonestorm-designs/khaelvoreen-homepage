@@ -61,26 +61,25 @@ body {
   filter: drop-shadow(0 0 2vw #ffffff);
 }
 
-
 #home-link img {
-  filter: drop-shadow(0 0 1vw #bf8fff);
+  filter: drop-shadow(0 0 1vw #66ff66); /* 💚 Green */
 }
 
 #campaign-link img {
-  filter: drop-shadow(0 0 1vw #66ccff);
+  filter: drop-shadow(0 0 1vw #ff4444); /* ❤️ Red */
 }
 
 #lore-link img {
-  filter: drop-shadow(0 0 1vw #ff4444);
+  filter: drop-shadow(0 0 1vw #66ccff); /* 💙 Blue */
 }
 
 #characters-link img {
-  filter: drop-shadow(0 0 1vw #66ff66);
+  filter: drop-shadow(0 0 1vw #bf8fff); /* 💜 Purple */
 }
 
 #sidebar-menu a:hover img {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 2vw #ffffff);
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 2vw #ffffff); /* Bright on hover */
 }
 
 /* SIDEBAR TOGGLE */
