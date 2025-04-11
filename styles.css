@@ -54,11 +54,11 @@ body {
 }
 
 #lore-link img {
-  filter: drop-shadow(0 0 1vw #66ccff); /* 💙 Blue */
+  filter: drop-shadow(0 0 1vw #bf8fff); /* 💜 Purple */
 }
 
 #characters-link img {
-  filter: drop-shadow(0 0 1vw #bf8fff); /* 💜 Purple */
+  filter: drop-shadow(0 0 1vw #66ccff); /* 💙 Blue */
 }
 
 #sidebar-menu a:hover img {
