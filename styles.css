@@ -73,6 +73,14 @@ body {
 }
 
 /* SIDEBAR TOGGLE */
+#sidebar {
+  transition: left 0.4s ease;
+}
+
+#sidebar.open {
+  left: 0;
+}
+
 #sidebar-toggle {
   position: fixed;
   left: 3.5vw;
@@ -94,6 +102,7 @@ body {
   filter: brightness(1.2);
   transform: scale(1.1) translateY(-50%);
 }
+
 
 /* HOMEPAGE JOIN BUTTON */
 #join-banner-home {
