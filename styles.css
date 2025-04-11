@@ -66,6 +66,11 @@ body {
   filter: drop-shadow(0 0 2vw #ffffff); /* Bright on hover */
 }
 
+#home-link:hover img { filter: drop-shadow(0 0 2vw #66ff66); }
+#campaign-link:hover img { filter: drop-shadow(0 0 2vw #ff4444); }
+#lore-link:hover img { filter: drop-shadow(0 0 2vw #66ccff); }
+#characters-link:hover img { filter: drop-shadow(0 0 2vw #bf8fff); }
+
 /* SIDEBAR TOGGLE */
 #sidebar {
   position: fixed;
