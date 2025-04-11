@@ -25,14 +25,16 @@ body {
   display: block;
   width: 100%;
   text-align: center;
+  padding: 0.5vh 0; /* Adds vertical spacing between links */
 }
 
 #sidebar-menu a img {
-  width: 15vw;            /* Bigger icons */
+  width: 15vw;
   height: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  margin: 0.5vh auto; /* Adds space around each icon */
+  padding: 0.5vw;      /* Adds internal gap around icon */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
