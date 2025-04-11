@@ -50,26 +50,28 @@
   margin-top: 40px;
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 4vw;
 }
 
 .sidebar-buttons a {
   width: 15vw;
   max-width: 200px;
-  aspect-ratio: 1 / 1;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1vw;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .sidebar-buttons a img {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: auto !important;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 0 1vw #66ff66);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .sidebar-buttons a:hover img {
