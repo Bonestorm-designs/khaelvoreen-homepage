@@ -38,18 +38,18 @@ body {
 
 #home-link img {
   filter: drop-shadow(0 0 1vw #66ff66); /* 💚 Green */
-  width: 12.3vw;
+  width: 13vw;
 }
 #campaign-link img {
   filter: drop-shadow(0 0 1vw #ff4444); /* ❤️ Red */
-  width: 12.3vw;  
+  width: 13vw;  
 }
 #lore-link img {
   filter: drop-shadow(0 0 1vw #bf8fff); /* 💜 Purple */  
 }
 #characters-link img {
   filter: drop-shadow(0 0 1vw #66ccff); /* 💙 Blue */
-  width: 12.3vw;  
+  width: 13vw;  
 }
 
 #sidebar-menu a:hover img {
