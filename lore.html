@@ -3,46 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lore | Khael'Voreen</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="lore.css" />
+  <title>Codex | Khael'Voreen</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cinzel', serif;
+      background: url(Khaelbackground.png) no-repeat center center fixed;
+      background-size: cover;
+      color: #2e1a05;
+    }
+
+    #layout-wrapper {
+      display: flex;
+    }
+
+    #sidebar-container {
+      width: 25vw;
+    }
+
+    #codex-content {
+      flex: 1;
+      padding: 5vh 4vw;
+      background: rgba(255, 255, 255, 0.95);
+      background-image: url('parchment-texture.jpg');
+      background-size: cover;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .codex-nav {
+      position: fixed;
+      top: 0;
+      left: 25vw;
+      right: 0;
+      height: 50px;
+      background: #8b0000;
+      color: #f9f0dc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .codex-nav a {
+      color: #f9f0dc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .codex-nav a:hover {
+      color: gold;
+      text-shadow: 0 0 10px gold;
+    }
+
+    .codex-section {
+      margin: 80px 0 60px;
+    }
+
+    .codex-section h2 {
+      font-size: 2.5em;
+      border-left: 10px solid #8b0000;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      color: #5b3a0c;
+    }
+
+    .codex-section p {
+      font-size: 1.2em;
+      line-height: 1.75em;
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      height: 12px;
+      background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
+      margin: 60px 0;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <div id="layout-wrapper">
+    <div id="sidebar-container"></div>
 
-<!-- Placeholder to load sidebar -->
-<div id="sidebar-container"></div>
+    <div id="codex-content">
 
-    <!-- MAIN CONTENT -->
-    <div id="lore-background">
-      <div class="lore-container">
-        <h1 class="lore-title">The Sundering of the World</h1>
-        <div class="scroll-frame">
-          <p class="lore-paragraph">
-            The world was young — a newborn cradle teeming with life, alive with magic and awareness. Then came the Ancient Ones, divine beings rich in power and wisdom, who nurtured the lands and brought order to chaos. For generations, mortals flourished under their guidance, finding a balance with the elements and the spirits, their civilizations shaped by celestial will.
-          </p>
-          <p class="lore-paragraph">
-            But balance is fragile. A great ravaging swept across the known world — not a war of nations, but a sundering of hope, of faith, of life itself. The skies wept fire. Oceans rose and swallowed coasts. The land split and groaned in agony.
-          </p>
-          <p class="lore-paragraph">
-            The Ancient Ones knew what had come. And for the first time, they were afraid. They chose to stand and fight. They were joined by countless beings — mortal and divine alike — in the defense of their homes, their way of life, and their loved ones. From the furthest lands, refugees poured in bearing stories of horrors no song could soften and no blade could stop.
-          </p>
-          <p class="lore-paragraph">
-            And over time… silence fell. The Eternal Forest darkened as the Ancients vanished, their stories sealed beneath the stones. Now, the Vanguard seeks to reclaim those memories...
-          </p>
-        </div>
+      <div class="codex-nav">
+        <a href="#shattering">Shattering</a>
+        <a href="#regions">Regions</a>
+        <a href="#heroes">Heroes</a>
+        <a href="#council">Council</a>
+        <a href="#magic">Magic</a>
+        <a href="#districts">Districts</a>
+        <a href="#vanguard">Vanguard</a>
+      </div>
+
+      <div class="codex-section" id="shattering">
+        <h2>The Shattering and the Fall of the Ancient Ones</h2>
+        <p>[Insert final prose here]</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="codex-section" id="regions">
+        <h2>The Regions Beyond the Walls</h2>
+        <p>[Insert final prose here]</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="codex-section" id="heroes">
+        <h2>The Heroes Who Shaped the City</h2>
+        <p>[Insert final prose here]</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="codex-section" id="council">
+        <h2>The Council of Khael’Voreen</h2>
+        <p>[Insert final prose here]</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="codex-section" id="magic">
+        <h2>Magic Without the Divine</h2>
+        <p>[Insert final prose here]</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="codex-section" id="districts">
+        <h2>The Districts of the Last Bastion</h2>
+        <p>[Insert final prose here]</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="codex-section" id="vanguard">
+        <h2>The Purpose of the Vanguard</h2>
+        <p>[Insert final prose here]</p>
       </div>
     </div>
-<!-- This loads the shared sidebar -->
-<script src="script.js"></script>
-    
-<script>
-  fetch('sidebar.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('sidebar-container').innerHTML = html;
-    });
-</script>
+  </div>
+
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
