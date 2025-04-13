@@ -288,6 +288,12 @@ And I write it down, so that you remember too.</p>
         document.getElementById('sidebar-container').innerHTML = html;
       })
       .catch(error => console.error('Sidebar failed to load:', error));
+    const sidebar = document.getElementById("sidebar");
+  const toggle = document.getElementById("sidebar-toggle");
+
+  toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
   </script>
 </body>
 </html>
