@@ -10,10 +10,10 @@
   body {
     margin: 0;
     padding: 0;
+    font-family: 'Cinzel', serif;
     background: url(Khaelbackground.png) no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Cinzel', serif;
-    color: #000;
+    color: #111;
     display: flex;
     height: 100vh;
   }
@@ -25,40 +25,48 @@
 
   #sidebar {
     width: 25vw;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(6px);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding-top: 6vh;
   }
 
-  #sidebar-menu a {
-    display: block;
-    margin: 2vh 0;
+  #sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
   }
 
-  #sidebar-menu img {
+  #sidebar-menu a img {
     width: 80%;
     max-width: 180px;
+    transition: transform 0.3s ease;
+  }
+
+  #sidebar-menu a img:hover {
+    transform: scale(1.05);
   }
 
   #join-banner-sidebar img {
     width: 120px;
-    margin-top: auto;
     margin-bottom: 20px;
   }
 
   #codex-content {
     flex: 1;
-    padding: 100px 5vw 60px;
+    padding: 100px 4vw 40px;
     background: rgba(255, 255, 255, 0.95);
     background-image: url('parchment-texture.jpg');
     background-size: cover;
-    color: #000;
+    color: #111;
+    font-size: 1.3em;
+    line-height: 1.8em;
     box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
-    font-size: 1.25em;
-    line-height: 1.9em;
     overflow-y: auto;
   }
 
@@ -73,13 +81,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     z-index: 1000;
     border-bottom: 4px solid gold;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-    font-size: 1.15em;
+    font-size: 1.2em;
     font-weight: 700;
-    letter-spacing: 0.8px;
   }
 
   .codex-nav a {
@@ -90,39 +97,38 @@
 
   .codex-nav a:hover {
     color: gold;
-    text-shadow: 0 0 12px gold;
+    text-shadow: 0 0 10px gold;
   }
 
   .codex-section {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 
   .codex-section h2 {
-    font-size: 2.6em;
+    font-size: 2.5em;
     border-left: 10px solid #8b0000;
     padding-left: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     color: #5b3a0c;
   }
 
   .codex-section p {
     margin-bottom: 18px;
-    font-weight: 600;
   }
 
   .codex-section em {
     display: block;
-    margin-bottom: 24px;
-    color: #333;
-    font-weight: 600;
+    margin-bottom: 20px;
+    color: #444;
+    font-style: italic;
   }
 
   .divider {
-    height: 16px;
+    height: 12px;
     background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
-    margin: 80px 0 40px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px 3px rgba(255, 215, 0, 0.5);
+    margin: 80px 0;
+    border-radius: 6px;
+    box-shadow: 0 0 10px gold;
   }
 </style>
 
