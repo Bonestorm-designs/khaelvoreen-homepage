@@ -25,22 +25,23 @@
 
     #codex-content {
       flex: 1;
-      padding: 80px 4vw 40px;
-      margin-left: 25vw; /* Sidebar width match */
+      padding: 120px 4vw 40px;
+      margin-left: 25vw;
       background: rgba(255, 255, 255, 0.97);
       background-image: url('parchment-texture.jpg');
       background-size: cover;
       color: #000;
       box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
-      font-size: 1.4em;
-      line-height: 2em;
+      font-size: 1.6em;
+      line-height: 2.2em;
       overflow-y: auto;
       height: 100vh;
+      font-weight: bold;
     }
 
     .codex-section h2 {
-      font-size: 2.5em;
-      border-left: 10px solid #8b0000;
+      font-size: 2.7em;
+      border-left: 12px solid #8b0000;
       padding-left: 20px;
       margin-bottom: 10px;
       color: #5b3a0c;
@@ -53,7 +54,7 @@
     }
 
     .divider {
-      height: 12px;
+      height: 14px;
       background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
       margin: 60px 0;
       border-radius: 8px;
@@ -64,31 +65,35 @@
       top: 0;
       left: 25vw;
       right: 0;
-      height: 60px;
+      height: 80px;
       background: linear-gradient(to right, #6c0000, #8b0000);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 30px;
+      gap: 50px;
       z-index: 1000;
-      border-bottom: 4px solid gold;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.6);
-      font-size: 1.1em;
-      font-weight: 600;
+      border-bottom: 5px solid gold;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+      font-size: 1.4em;
+      font-weight: 700;
     }
 
     .codex-nav a {
-      height: 80px; /* was 60px */
-      font-size: 1.3em; /* was 1.1em */
+      height: 80px;
+      line-height: 80px;
+      font-size: 1.4em;
       color: #fff;
       text-decoration: none;
       transition: color 0.3s ease, text-shadow 0.3s ease;
+      padding: 0 20px;
     }
 
     .codex-nav a:hover {
       color: gold;
-      text-shadow: 0 0 10px gold;
+      text-shadow: 0 0 12px gold;
+      background-color: rgba(255, 215, 0, 0.1);
+      border-radius: 10px;
     }
   </style>
 </head>
