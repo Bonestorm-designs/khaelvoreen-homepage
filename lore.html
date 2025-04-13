@@ -22,10 +22,25 @@
       min-height: 100vh;
     }
 
-    #sidebar-container {
-      width: 25vw;
-      background: transparent;
-    }
+<!-- Sidebar Glow + Toggle -->
+<div id="toggle-glow-star"></div>
+<div id="sidebar-toggle"></div>
+
+<!-- Sidebar Container -->
+<div id="sidebar" class="">
+  <div id="sidebar-menu">
+    <a href="index.html" id="home-link"><img src="HOME.jpg" alt="Home"></a>
+    <a href="campaign.html" id="campaign-link"><img src="CAMPAIGN.jpg" alt="Campaign"></a>
+    <a href="lore.html" id="lore-link"><img src="LORE.jpg" alt="Lore"></a>
+    <a href="characters.html" id="characters-link"><img src="CHARACTERS.jpg" alt="Characters"></a>
+  </div>
+
+  <a href="signup.html" id="join-banner-sidebar">
+    <div class="glow-container">
+      <img src="Join.png" alt="Join the Vanguard" />
+    </div>
+  </a>
+</div>
 
     #codex-content {
       flex: 1;
