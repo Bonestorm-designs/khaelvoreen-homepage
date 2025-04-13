@@ -265,10 +265,13 @@ And I write it down, so that you remember too.</p>
   </div>
 
   <script>
-  toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-  });
-  </script>
+const sidebar = document.getElementById("sidebar");
+const toggle = document.getElementById("sidebar-toggle");
+
+toggle.addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+});
+</script>
 </body>
 </html>
 
