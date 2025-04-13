@@ -1,3 +1,4 @@
+<!-- Step 1: Clean layout structure -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,25 +23,10 @@
       min-height: 100vh;
     }
 
-<!-- Sidebar Glow + Toggle -->
-<div id="toggle-glow-star"></div>
-<div id="sidebar-toggle"></div>
-
-<!-- Sidebar Container -->
-<div id="sidebar" class="">
-  <div id="sidebar-menu">
-    <a href="index.html" id="home-link"><img src="HOME.jpg" alt="Home"></a>
-    <a href="campaign.html" id="campaign-link"><img src="CAMPAIGN.jpg" alt="Campaign"></a>
-    <a href="lore.html" id="lore-link"><img src="LORE.jpg" alt="Lore"></a>
-    <a href="characters.html" id="characters-link"><img src="CHARACTERS.jpg" alt="Characters"></a>
-  </div>
-
-  <a href="signup.html" id="join-banner-sidebar">
-    <div class="glow-container">
-      <img src="Join.png" alt="Join the Vanguard" />
-    </div>
-  </a>
-</div>
+    #sidebar {
+      width: 25vw;
+      background: transparent;
+    }
 
     #codex-content {
       flex: 1;
@@ -83,42 +69,34 @@
       color: gold;
       text-shadow: 0 0 10px gold;
     }
-
-    .codex-section {
-      margin-bottom: 80px;
-    }
-
-    .codex-section h2 {
-      font-size: 2.5em;
-      border-left: 10px solid #8b0000;
-      padding-left: 20px;
-      margin-bottom: 10px;
-      color: #5b3a0c;
-    }
-
-    .codex-section p {
-      margin-bottom: 16px;
-    }
-
-    .codex-section em {
-      display: block;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .divider {
-      height: 12px;
-      background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
-      margin: 60px 0;
-      border-radius: 8px;
-    }
   </style>
 </head>
 <body>
   <div id="layout-wrapper">
-    <div id="sidebar-container"></div>
+
+    <!-- Step 2: Insert sidebar directly into the page -->
+    <div id="sidebar">
+      <div id="toggle-glow-star"></div>
+      <div id="sidebar-toggle"></div>
+
+      <div id="sidebar-menu">
+        <a href="index.html" id="home-link"><img src="HOME.jpg" alt="Home"></a>
+        <a href="campaign.html" id="campaign-link"><img src="CAMPAIGN.jpg" alt="Campaign"></a>
+        <a href="lore.html" id="lore-link"><img src="LORE.jpg" alt="Lore"></a>
+        <a href="characters.html" id="characters-link"><img src="CHARACTERS.jpg" alt="Characters"></a>
+      </div>
+
+      <a href="signup.html" id="join-banner-sidebar">
+        <div class="glow-container">
+          <img src="Join.png" alt="Join the Vanguard" />
+        </div>
+      </a>
+    </div>
+
+    <!-- Step 3: Start content area -->
     <div id="codex-content">
-      <!-- Floating Nav -->
+      <!-- Codex sections start here -->
+
       <div class="codex-nav">
         <a href="#shattering">Shattering</a>
         <a href="#regions">Regions</a>
@@ -128,6 +106,7 @@
         <a href="#districts">Districts</a>
         <a href="#vanguard">Vanguard</a>
       </div>
+
 
       <div class="codex-section" id="shattering">
         <h2>The Shattering and the Fall of the Ancient Ones</h2>
