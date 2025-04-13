@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Codex | Khael'Voreen</title>
+  <title>Lore | Khael'Voreen</title>
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
@@ -11,10 +10,10 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Cinzel', serif;
       background: url(Khaelbackground.png) no-repeat center center fixed;
       background-size: cover;
-      color: #111;
+      font-family: 'Cinzel', serif;
+      color: #f2f2f2;
       display: flex;
       height: 100vh;
     }
@@ -24,85 +23,19 @@
       width: 100%;
     }
 
-    #sidebar {
-      width: 25vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 6vh;
-    }
-
-    #sidebar-menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2vh;
-    }
-
-    #sidebar-menu a img {
-      width: 80%;
-      max-width: 180px;
-      transition: transform 0.3s ease;
-    }
-
-    #sidebar-menu a img:hover {
-      transform: scale(1.05);
-    }
-
-    #join-banner-sidebar img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-
     #codex-content {
       flex: 1;
-      padding: 100px 4vw 40px;
-      background: rgba(255, 255, 255, 0.95);
+      padding: 80px 4vw 40px;
+      margin-left: 25vw; /* Sidebar width match */
+      background: rgba(255, 255, 255, 0.97);
       background-image: url('parchment-texture.jpg');
       background-size: cover;
-      color: #111;
-      font-size: 1.3em;
-      line-height: 1.8em;
+      color: #000;
       box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+      font-size: 1.4em;
+      line-height: 2em;
       overflow-y: auto;
-    }
-
-    .codex-nav {
-      position: fixed;
-      top: 0;
-      left: 25vw;
-      right: 0;
-      height: 70px;
-      background: linear-gradient(to right, #6c0000, #8b0000);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      z-index: 1000;
-      border-bottom: 4px solid gold;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-      font-size: 1.2em;
-      font-weight: 700;
-    }
-
-    .codex-nav a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .codex-nav a:hover {
-      color: gold;
-      text-shadow: 0 0 10px gold;
-    }
-
-    .codex-section {
-      margin-bottom: 80px;
+      height: 100vh;
     }
 
     .codex-section h2 {
@@ -113,26 +46,51 @@
       color: #5b3a0c;
     }
 
-    .codex-section p {
-      margin-bottom: 18px;
-    }
-
     .codex-section em {
       display: block;
       margin-bottom: 20px;
-      color: #444;
-      font-style: italic;
+      color: #333;
     }
 
     .divider {
       height: 12px;
       background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
-      margin: 80px 0;
-      border-radius: 6px;
-      box-shadow: 0 0 10px gold;
+      margin: 60px 0;
+      border-radius: 8px;
+    }
+
+    .codex-nav {
+      position: fixed;
+      top: 0;
+      left: 25vw;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to right, #6c0000, #8b0000);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      z-index: 1000;
+      border-bottom: 4px solid gold;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    .codex-nav a {
+      height: 80px; /* was 60px */
+      font-size: 1.3em; /* was 1.1em */
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .codex-nav a:hover {
+      color: gold;
+      text-shadow: 0 0 10px gold;
     }
   </style>
-
 </head>
 <body>
   <div id="layout-wrapper">
