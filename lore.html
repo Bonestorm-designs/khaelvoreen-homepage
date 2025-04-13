@@ -90,7 +90,11 @@
     }
 
     .codex-nav a:hover {
-      color: gold;
+      .nav-divider {
+  color: gold;
+  font-weight: bold;
+  margin: 0 12px;
+        color: gold;
       text-shadow: 0 0 12px gold;
       background-color: rgba(255, 215, 0, 0.1);
       border-radius: 10px;
@@ -102,15 +106,15 @@
     <div id="sidebar-container"></div>
 
     <div id="codex-content">
-      <div class="codex-nav">
-        <a href="#shattering">Shattering</a>
-        <a href="#regions">Regions</a>
-        <a href="#heroes">Heroes</a>
-        <a href="#council">Council</a>
-        <a href="#magic">Magic</a>
-        <a href="#districts">Districts</a>
-        <a href="#vanguard">Vanguard</a>
-      </div>
+<div class="codex-nav">
+  <a href="#shattering">Shattering</a><span class="nav-divider">|</span>
+  <a href="#regions">Regions</a><span class="nav-divider">|</span>
+  <a href="#heroes">Heroes</a><span class="nav-divider">|</span>
+  <a href="#council">Council</a><span class="nav-divider">|</span>
+  <a href="#magic">Magic</a><span class="nav-divider">|</span>
+  <a href="#districts">Districts</a><span class="nav-divider">|</span>
+  <a href="#vanguard">Vanguard</a>
+</div>
 
       <div class="codex-section" id="shattering">
         <h2>The Shattering and the Fall of the Ancient Ones</h2>
