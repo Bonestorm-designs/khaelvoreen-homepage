@@ -92,24 +92,8 @@
 </head>
 <body>
   <div id="layout-wrapper">
-    <!-- Sidebar embedded directly -->
-    <div id="sidebar">
-      <div id="toggle-glow-star"></div> 
-      <div id="sidebar-toggle"></div>
-
-      <div id="sidebar-menu">
-        <a href="index.html" id="home-link"><img src="HOME.jpg" alt="Home"></a>
-        <a href="campaign.html" id="campaign-link"><img src="CAMPAIGN.jpg" alt="Campaign"></a>
-        <a href="lore.html" id="lore-link"><img src="LORE.jpg" alt="Lore"></a>
-        <a href="characters.html" id="characters-link"><img src="CHARACTERS.jpg" alt="Characters"></a>
-      </div>
-
-      <a href="signup.html" id="join-banner-sidebar">
-        <div class="glow-container">
-          <img src="Join.png" alt="Join the Vanguard" />
-        </div>
-      </a>
-    </div>
+    <div id="sidebar-container"></div>
+    <div id="codex-content">
 
 
       <div class="codex-section" id="shattering">
@@ -264,14 +248,14 @@ And I write it down, so that you remember too.</p>
     </div>
   </div>
 
+  <script src="script.js"></script>
   <script>
-const sidebar = document.getElementById("sidebar");
-const toggle = document.getElementById("sidebar-toggle");
-
-toggle.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
-});
-</script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
 
