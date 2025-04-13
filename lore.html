@@ -23,20 +23,26 @@
       width: 100%;
     }
 
-    #codex-content {
-      flex: 1;
-      padding: 80px 4vw 40px;
-      margin-left: 25vw; /* Sidebar width match */
-      background: rgba(255, 255, 255, 0.97);
-      background-image: url('parchment-texture.jpg');
-      background-size: cover;
-      color: #000;
-      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
-      font-size: 1.4em;
-      line-height: 2em;
-      overflow-y: auto;
-      height: 100vh;
-    }
+#codex-content {
+  position: relative;
+  flex: 1;
+  padding: 80px 4vw 40px;
+  background: rgba(0, 0, 0, 0.2); /* subtle dark overlay */
+  background-image: url('parchment-texture.jpg');
+  background-size: cover;
+  color: #000;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+  font-size: 1.4em;
+  line-height: 2em;
+  z-index: 1;}
+
+#codex-content::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.25); /* adjust opacity for more/less darkness */
+  z-index: -1;
+}
 
     .codex-section h2 {
       font-size: 2.5em;
