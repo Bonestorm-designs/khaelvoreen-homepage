@@ -5,10 +5,12 @@ html, body {
 }
 
 body {
-  background: url(Khaelbackground.png) no-repeat center center fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  background: url('Khaelbackground.png') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Georgia', serif;
-  overflow-x: hidden;
+  overflow: hidden;
   color: #f2f2f2;
 }
 
@@ -242,6 +244,32 @@ body {
   border-radius: 50%;
   filter: blur(2vw);
   z-index: -1;
+}
+
+#scaled-wrapper {
+  width: 2560px;
+  height: 1440px;
+  transform-origin: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 100px) {
+  html, body {
+    width: 100vw;
+    height: 100vh;
+  }
+  #scaled-wrapper {
+    transform: scale(calc(100vw / 2560), calc(100vh / 1440));
+  }
+}
+
+#layout-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes spinStar {
