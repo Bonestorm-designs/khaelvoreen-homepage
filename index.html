@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Khael'Voreen</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       width: 100vw;
       height: 100vh;
-      background: url('Khaelbackground.png') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Cinzel', serif;
       overflow: hidden;
+      background: black;
+      font-family: 'Cinzel', serif;
     }
 
     #scaled-wrapper {
@@ -24,6 +25,8 @@
       position: absolute;
       top: 0;
       left: 0;
+      background: url('Khaelbackground.png') no-repeat center center fixed;
+      background-size: cover;
     }
 
     @media screen and (min-width: 100px) {
@@ -31,10 +34,39 @@
         transform: scale(calc(100vw / 2560), calc(100vh / 1440));
       }
     }
+
+    #layout-wrapper {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    #join-banner-home {
+      position: absolute;
+      bottom: 60px;
+      right: 60px;
+      width: 500px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #join-banner-home img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 40px rgba(128, 0, 128, 0.8));
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
   </style>
 </head>
 <body>
-  <!-- ✅ Shared Sidebar Container -->
   <div id="scaled-wrapper">
     <div id="layout-wrapper">
       <div id="sidebar-container"></div>
@@ -48,7 +80,6 @@
     </div>
   </div>
 
-  <!-- Script Link -->
   <script src="script.js"></script>
   <script>
     fetch('sidebar.html')
