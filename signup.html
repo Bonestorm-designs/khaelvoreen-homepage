@@ -98,10 +98,39 @@
     .signup-container button:hover {
       background-color: #a000d4;
     }
-  </style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+  }
+
+  #scaled-wrapper {
+    width: 2560px;
+    height: 1440px;
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media screen and (min-width: 100px) {
+    html {
+      height: 100%;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+    #scaled-wrapper {
+      transform: scale(calc(100vw / 2560), calc(100vh / 1440));
+    }
+  }
+</style>
+  
 </head>
 <body>
-
+<div id="scaled-wrapper">
   <div class="signup-container">
     <!-- Exit Button -->
     <button class="exit-button" onclick="history.back()">X</button>
@@ -130,6 +159,7 @@
 
       <button type="submit">Submit</button>
     </form>
+  </div>
   </div>
 
   <script>
