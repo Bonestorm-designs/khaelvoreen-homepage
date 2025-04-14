@@ -78,6 +78,22 @@
     filter: drop-shadow(0 0 2vw #ffffff);
   }
 
+.sidebar-buttons a img[alt="Home"] {
+  filter: drop-shadow(0 0 1vw #66ff66); /* green glow */
+}
+
+.sidebar-buttons a img[alt="Lore"] {
+  filter: drop-shadow(0 0 1vw #bf00ff); /* purple glow */
+}
+
+.sidebar-buttons a:hover img[alt="Home"] {
+  filter: drop-shadow(0 0 2vw #66ff66);
+}
+
+.sidebar-buttons a:hover img[alt="Lore"] {
+  filter: drop-shadow(0 0 2vw #bf00ff);
+}
+  
   @keyframes fadeIn {
     0% { opacity: 0; transform: scale(0.95); }
     100% { opacity: 1; transform: scale(1); }
