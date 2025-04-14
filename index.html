@@ -11,22 +11,20 @@
 <!-- ✅ Shared Sidebar Container -->
 <div id="scaled-wrapper">
   <div id="layout-wrapper">
-  <div id="sidebar-container"></div>
+    <div id="sidebar-container"></div>
 
-
-  <!-- Homepage Join Button -->
-  <a href="signup.html" id="join-banner-home">
-    <div class="glow-container">
-      <img src="Join.png" alt="Join the Vanguard">
-    </div>
-  </a>
+    <!-- Homepage Join Button -->
+    <a href="signup.html" id="join-banner-home">
+      <div class="glow-container">
+        <img src="Join.png" alt="Join the Vanguard">
+      </div>
+    </a>
+  </div>
 </div>
-</div>
-  
-  <!-- Script Link -->
-  <script src="script.js"></script>
 
-  <script>
+<!-- ✅ Scripts go down here, OUTSIDE scaled-wrapper -->
+<script src="script.js"></script>
+<script>
   fetch('sidebar.html')
     .then(response => response.text())
     .then(html => {
@@ -34,7 +32,6 @@
     });
 </script>
 
-  
 </body>
 </html>
 
