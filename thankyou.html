@@ -122,12 +122,41 @@
     70%  { filter: drop-shadow(0 0 1vw orange) brightness(1.2); }
     100% { left: 120vw; transform: translateY(-50%) scaleX(1); opacity: 1; }
   }
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+  }
+
+  #scaled-wrapper {
+    width: 2560px;
+    height: 1440px;
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media screen and (min-width: 100px) {
+    html {
+      height: 100%;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+    #scaled-wrapper {
+      transform: scale(calc(100vw / 2560), calc(100vh / 1440));
+    }
+  }
 </style>
+  
 </head>
 <body>
   <!-- 🔥 DRAGON IMAGE -->
   <img src="dragon1.png" alt="Flying Dragon" class="dragon" id="dragon">
-
+<div id="scaled-wrapper">
   <div class="thankyou-box">
     <h1>Thank You, Brave Soul!</h1>
     <p>Your application for the Vanguard has been received, and we shall send you a reply after careful consideration...</p>
@@ -141,7 +170,8 @@
       </a>
     </div>
   </div>
-
+  </div>
+  
   <script>
     // Trigger dragon fly after .8 seconds
     window.addEventListener("DOMContentLoaded", () => {
