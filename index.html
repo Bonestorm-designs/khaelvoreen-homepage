@@ -9,9 +9,12 @@
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      background: black;
+      width: 100vw;
+      height: 100vh;
+      background: url('Khaelbackground.png') no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Cinzel', serif;
+      overflow: hidden;
     }
 
     #scaled-wrapper {
@@ -24,76 +27,37 @@
     }
 
     @media screen and (min-width: 100px) {
-      html {
-        height: 100%;
-      }
-      body {
-        width: 100vw;
-        height: 100vh;
-      }
       #scaled-wrapper {
         transform: scale(calc(100vw / 2560), calc(100vh / 1440));
       }
     }
-
-    #layout-wrapper {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      background: url('Khaelbackground.png') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    #join-banner-home {
-      position: absolute;
-      bottom: 4vh;
-      right: 4vw;
-      width: 500px;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #join-banner-home img {
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 0 25px rgba(138,43,226, 0.8));
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    #join-banner-home:hover img {
-      transform: scale(1.05);
-      filter: drop-shadow(0 0 40px rgba(255,255,255, 0.9));
-    }
   </style>
 </head>
 <body>
+  <!-- ✅ Shared Sidebar Container -->
+  <div id="scaled-wrapper">
+    <div id="layout-wrapper">
+      <div id="sidebar-container"></div>
 
-<!-- ✅ Shared Sidebar Container -->
-<div id="scaled-wrapper">
-  <div id="layout-wrapper">
-    <div id="sidebar-container"></div>
-
-    <!-- Homepage Join Button -->
-    <a href="signup.html" id="join-banner-home">
-      <div class="glow-container">
-        <img src="Join.png" alt="Join the Vanguard">
-      </div>
-    </a>
+      <!-- Homepage Join Button -->
+      <a href="signup.html" id="join-banner-home">
+        <div class="glow-container">
+          <img src="Join.png" alt="Join the Vanguard">
+        </div>
+      </a>
+    </div>
   </div>
-</div>
 
-<!-- ✅ Scripts go down here, OUTSIDE scaled-wrapper -->
-<script src="script.js"></script>
-<script>
-  fetch('sidebar.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('sidebar-container').innerHTML = html;
-    });
-</script>
-
+  <!-- Script Link -->
+  <script src="script.js"></script>
+  <script>
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
+
 
