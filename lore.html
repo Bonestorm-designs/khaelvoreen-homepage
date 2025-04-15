@@ -14,8 +14,6 @@
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-      background: url('Khaelbackground.png') no-repeat center center fixed;
-      background-size: cover;
       font-family: 'Cinzel', serif;
     }
 
@@ -41,11 +39,9 @@
     }
 
     #codex-content {
-      position: relative;
-      left: 640px;
-      width: calc(100% - 640px);
+      flex: 1;
       padding: 120px 4vw 40px;
-      background: rgba(255, 255, 255, 0.97);
+      background: rgba(255, 255, 255, 0.95);
       background-image: url('parchment-texture.jpg');
       background-size: cover;
       color: #000;
@@ -91,7 +87,7 @@
     .codex-nav {
       position: fixed;
       top: 0;
-      left: 640px;
+      left: 25vw;
       right: 0;
       height: 80px;
       background: linear-gradient(to right, #6c0000, #8b0000);
