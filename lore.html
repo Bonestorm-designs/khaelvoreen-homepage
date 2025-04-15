@@ -7,20 +7,39 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: url(Khaelbackground.png) no-repeat center center fixed;
-      background-size: cover;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    body {
       font-family: 'Cinzel', serif;
+      background: url('Khaelbackground.png') no-repeat center center fixed;
+      background-size: cover;
       color: #f2f2f2;
-      display: flex;
-      height: 100vh;
+    }
+
+    #scaled-wrapper {
+      width: 2560px;
+      height: 1440px;
+      transform-origin: top left;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @media screen and (min-width: 100px) {
+      #scaled-wrapper {
+        transform: scale(calc(100vw / 2560), calc(100vh / 1440));
+      }
     }
 
     #layout-wrapper {
       display: flex;
       width: 100%;
+      height: 100%;
     }
 
     #codex-content {
@@ -39,12 +58,12 @@
       font-weight: bold;
     }
 
-.codex-section h2 {
-  font-size: 2.7em;
-  padding-left: 0;
-  margin-bottom: 10px;
-  color: #5b3a0c;
-}
+    .codex-section h2 {
+      font-size: 2.7em;
+      padding-left: 0;
+      margin-bottom: 10px;
+      color: #5b3a0c;
+    }
 
     .codex-section em {
       display: block;
@@ -59,17 +78,17 @@
       border-radius: 8px;
     }
 
-.red-divider {
-  height: 6px;
-  background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
-  margin: 30px 0 -30px;
-  border-radius: 4px;
-}
+    .red-divider {
+      height: 6px;
+      background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
+      margin: 30px 0 -30px;
+      border-radius: 4px;
+    }
 
     #toggle-glow-star {
-  display: none !important;
-}
-    
+      display: none !important;
+    }
+
     .codex-nav {
       position: fixed;
       top: 0;
@@ -89,60 +108,30 @@
       font-weight: 700;
     }
 
-.codex-nav a {
-  height: 80px;
-  font-size: 1.3em;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.codex-nav a:hover {
-  color: gold;
-  text-shadow: 0 0 10px gold;
-}
-
-/* 👇 Add this below */
-.nav-divider {
-  color: gold;
-  font-weight: bold;
-  margin: 0 12px;
-}
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: black;
-  }
-
-  #scaled-wrapper {
-    width: 2560px;
-    height: 1440px;
-    transform-origin: top left;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  @media screen and (min-width: 100px) {
-    html {
-      height: 100%;
+    .codex-nav a {
+      height: 80px;
+      font-size: 1.3em;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
-    body {
-      width: 100vw;
-      height: 100vh;
+
+    .codex-nav a:hover {
+      color: gold;
+      text-shadow: 0 0 10px gold;
     }
-    #scaled-wrapper {
-      transform: scale(calc(100vw / 2560), calc(100vh / 1440));
+
+    .nav-divider {
+      color: gold;
+      font-weight: bold;
+      margin: 0 12px;
     }
-  }
-</style>
-  
+  </style>
 </head>
 <body>
   <div id="scaled-wrapper">
-  <div id="layout-wrapper">
-    <div id="sidebar-container"></div>
+    <div id="layout-wrapper">
+      <div id="sidebar-container"></div>
 
     <div id="codex-content">
 <div class="codex-nav">
