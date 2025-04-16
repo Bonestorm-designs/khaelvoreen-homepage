@@ -4,19 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lore | Khael'Voreen</title>
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Fantasy Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond&display=swap');
-    
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  font-family: 'EB Garamond', serif; /* 👈 changed from Cinzel */
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'EB Garamond', serif;
+      background-color: #1a0f07;
+    }
 
     #scaled-wrapper {
       width: 2560px;
@@ -38,78 +36,87 @@ html, body {
       width: 100%;
       height: 100%;
     }
-    
-#codex-content {
-  position: relative;
-  top: 0;
-  left: 900px;
-  width: calc(100% - 950px);
-  height: 100vh;
 
-  padding: 120px 6vw 40px;
-  overflow-y: auto;
-  overflow-x: hidden;
+    #codex-content {
+      position: absolute;
+      top: 0;
+      left: 850px;
+      width: calc(100% - 850px);
+      height: 100vh;
+      padding: 120px 6vw 60px;
+      overflow-y: auto;
+      background: rgba(245, 235, 210, 0.9);
+      background-image: url('parchment-texture.jpg');
+      background-size: cover;
+      background-blend-mode: multiply;
+      color: #2c160a;
+      box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.3);
+      font-size: 1.25em;
+      line-height: 1.85em;
+      max-width: 1000px;
+      margin: 0 auto;
+      border: 1px solid rgba(90, 70, 40, 0.3);
+      border-radius: 12px;
+      position: relative;
+    }
 
-  color: #000;
-  font-family: 'EB Garamond', serif;
-  font-size: 1.9em;
-  line-height: 2.2em;
-  font-weight: bold;
+    /* Faded edge overlay effect */
+    #codex-content::before,
+    #codex-content::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
 
-  background-color: rgba(255, 255, 255, 0.96);
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, transparent 120px, transparent calc(100% - 120px), rgba(0, 0, 0, 0.5) 100%),
-    url('parchment-texture.jpg');
-  background-blend-mode: multiply;
-  background-size: cover;
-  background-repeat: repeat-y;
-  background-attachment: scroll;
-  background-position: center;
+    #codex-content::before {
+      background: linear-gradient(to right, rgba(26, 15, 7, 0.6), transparent 20%, transparent 80%, rgba(26, 15, 7, 0.6));
+    }
 
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
-  z-index: 2;
-}
+    #codex-content::after {
+      background: linear-gradient(to bottom, rgba(26, 15, 7, 0.5), transparent 10%, transparent 90%, rgba(26, 15, 7, 0.5));
+    }
 
-#codex-content::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 60px; /* Adjust placement from the edge */
-  width: 240px;
-  height: 100%;
-  background: url('water-stain.png') repeat-y;
-  background-size: contain;
-  opacity: 0.08; /* Subtle! You can increase this */
-  pointer-events: none;
-  z-index: 1;
-}    
+    .codex-section {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 60px;
+    }
 
-.codex-section {
-  position: relative;
-  z-index: 2;
-  /* Optional: keep other styling here too */
-}
-  
-.codex-section h2 {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 2.7em;
-  padding-left: 0;
-  margin-bottom: 10px;
-  color: #000; /* 👈 pure black */
-  text-shadow: none; /* optional: remove glow for a cleaner black */
-}
+    .codex-section h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.7em;
+      color: #5b3a0c;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 0 #f5e6c8;
+    }
 
+    .codex-section p {
+      margin-bottom: 1.5em;
+    }
+
+    .codex-section p:first-of-type::first-letter {
+      float: left;
+      font-size: 3em;
+      line-height: 1;
+      margin-right: 10px;
+      font-family: 'Uncial Antiqua', serif;
+      color: #6b3e0d;
+    }
 
     .codex-section em {
       display: block;
       margin-bottom: 20px;
-      color: #333;
+      color: #3a2a1a;
+      font-style: italic;
     }
 
     .divider {
       height: 14px;
       background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
-      margin: 30px 0 -30px;
+      margin: 60px 0;
       border-radius: 8px;
     }
 
@@ -120,10 +127,6 @@ html, body {
       border-radius: 4px;
     }
 
-    #toggle-glow-star {
-      display: none !important;
-}
-    
     .codex-nav {
       position: fixed;
       top: 0;
@@ -141,8 +144,8 @@ html, body {
       box-shadow: 0 4px 16px rgba(0,0,0,0.6);
       font-size: 1.4em;
       font-weight: 700;
-      font-family: 'Cinzel Decorative', serif;    
-}
+      font-family: 'Cinzel Decorative', serif;
+    }
 
     .codex-nav a {
       height: 80px;
@@ -162,6 +165,15 @@ html, body {
       font-weight: bold;
       margin: 0 12px;
     }
+
+    /* Optional: Hide scrollbars for aesthetic */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(60, 40, 20, 0.6);
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -169,15 +181,19 @@ html, body {
     <div id="layout-wrapper">
       <div id="sidebar-container"></div>
       <div id="codex-content">
-<div class="codex-nav">
-  <a href="#shattering">Shattering</a><span class="nav-divider">|</span>
-  <a href="#regions">Regions</a><span class="nav-divider">|</span>
-  <a href="#heroes">Heroes</a><span class="nav-divider">|</span>
-  <a href="#council">Council</a><span class="nav-divider">|</span>
-  <a href="#magic">Magic</a><span class="nav-divider">|</span>
-  <a href="#districts">Districts</a><span class="nav-divider">|</span>
-  <a href="#vanguard">Vanguard</a>
-</div>
+        <!-- Nav and Lore Sections Here -->
+        <!-- You can paste the full <div class="codex-nav"> and each codex-section from your original content below this line -->
+
+        <!-- START NAVIGATION -->
+        <div class="codex-nav">
+          <a href="#shattering">Shattering</a><span class="nav-divider">|</span>
+          <a href="#regions">Regions</a><span class="nav-divider">|</span>
+          <a href="#heroes">Heroes</a><span class="nav-divider">|</span>
+          <a href="#council">Council</a><span class="nav-divider">|</span>
+          <a href="#magic">Magic</a><span class="nav-divider">|</span>
+          <a href="#districts">Districts</a><span class="nav-divider">|</span>
+          <a href="#vanguard">Vanguard</a>
+        </div>
 
       <div class="codex-section">
         <h2 id="shattering">The Shattering and the Fall of the Ancient Ones</h2>
@@ -348,7 +364,6 @@ html, body {
   </div>
 </div>
   
-  <script src="script.js"></script>
   <script>
     fetch('sidebar.html')
       .then(res => res.text())
@@ -358,4 +373,3 @@ html, body {
   </script>
 </body>
 </html>
-
