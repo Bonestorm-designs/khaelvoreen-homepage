@@ -2,108 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lore | Khael'Voreen</title>
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond&display=swap');
-
+    
 html, body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  min-height: 100vh; /* ← changed from fixed height */
-  font-family: 'EB Garamond', serif;
-  background: url('Khaelbackground.png') no-repeat center center fixed;
-  background-size: cover;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scroll-padding-top: 100px; /* match or exceed your nav height */
-  scroll-behavior: smooth;  
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'EB Garamond', serif; /* 👈 changed from Cinzel */
 }
 
-#layout-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start; /* no centering */
-  align-items: flex-start;     /* no vertical centering */
-  flex-wrap: nowrap;
-  min-height: 100vh;
-}
-
-    #sidebar-container {
-      width: 18vw;
-      min-width: 260px;
-      background: #111;
+    #scaled-wrapper {
+      width: 2560px;
+      height: 1440px;
+      transform-origin: top left;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
-/* Scrollable black codex container */
+    @media screen and (min-width: 100px) {
+      #scaled-wrapper {
+        transform: scale(calc(100vw / 2560), calc(100vh / 1440));
+      }
+    }
+
+    #layout-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
 #codex-content {
-  position: relative;
-  width: 80vw;
-  max-width: 1400px;
-  height: auto; /* <-- let it grow naturally with content */
-  max-height: none; /* just to be safe */
-  overflow-y: visible; /* don't trap scrolling */
+  position: absolute;
+  top: 0;
+  left: 850px;           /* Sidebar width */
+  width: calc(100% - 200px);
+  height: 100vh;
+  position: relative; /* Needed so ::after anchors to this element */
+  z-index: 2;
+
+  padding: 120px 4vw 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
   background: rgba(255, 255, 255, 0.97);
   background-image: url('parchment-texture.jpg');
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   color: #000;
-  padding: 70px 5vw 40px; /* gives room for sticky nav */
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
-  z-index: 2;
-  font-size: clamp(1.3rem, 1.9vw, 1.9rem);
-  line-height: 1.8em;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+  font-family: 'EB Garamond', serif; /* 👈 changed from Crimson Pro */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+  font-size: 1.9em;
+  line-height: 2.2em;
   font-weight: bold;
-  margin-left: 250px; /* match your sidebar width */
 }
 
-/* Gradient overlay inside container */
+.codex-section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.7em;
+  padding-left: 0;
+  margin-bottom: 10px;
+  color: #000; /* 👈 pure black */
+  text-shadow: none; /* optional: remove glow for a cleaner black */
+}
+
+
+    .codex-section em {
+      display: block;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .divider {
+      height: 14px;
+      background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
+      margin: 30px 0 -30px;
+      border-radius: 8px;
+    }
+
+    .red-divider {
+      height: 6px;
+      background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
+      margin: 30px 0 -30px;
+      border-radius: 4px;
+    }
+
+    #toggle-glow-star {
+      display: none !important;
+}
+
 #codex-content::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   pointer-events: none;
-  z-index: 3;
-  mix-blend-mode: multiply;
-  background: linear-gradient(
-    to right,
-    rgba(26, 15, 7, 0.6) 0%,
-    rgba(26, 15, 7, 0.3) 5%,
-    transparent 20%,
-    transparent 80%,
-    rgba(26, 15, 7, 0.3) 95%,
-    rgba(26, 15, 7, 0.6) 100%
-  );
+  z-index: 1;
+  background:
+    linear-gradient(
+      to right,
+      rgba(26, 15, 7, 0.6) 0%,
+      rgba(26, 15, 7, 0.3) 5%,
+      transparent 20%,
+      transparent 80%,
+      rgba(26, 15, 7, 0.3) 95%,
+      rgba(26, 15, 7, 0.6) 100%
+    ),
   background-repeat: repeat-y;
 }
     
-/* Nav bar inside codex */
-.codex-nav {
-  position: sticky;
-  top: 0;
-  background: linear-gradient(to right, #6c0000, #8b0000);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  height: 70px;
-  z-index: 10;
-  border-bottom: 4px solid gold;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-  font-size: clamp(1rem, 1.4vw, 1.4rem);
-  font-family: 'Cinzel Decorative', serif;
+    .codex-nav {
+      position: fixed;
+      top: 0;
+      left: 25vw;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to right, #6c0000, #8b0000);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      z-index: 1000;
+      border-bottom: 5px solid gold;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+      font-size: 1.4em;
+      font-weight: 700;
+      font-family: 'Cinzel Decorative', serif;    
 }
 
     .codex-nav a {
+      height: 80px;
+      font-size: 1.1em;
       color: #fff;
       text-decoration: none;
       transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -119,89 +160,36 @@ html, body {
       font-weight: bold;
       margin: 0 12px;
     }
-
-    .codex-section h2 {
-      font-family: 'Cinzel Decorative', serif;
-      font-size: clamp(2rem, 2.7vw, 2.7rem);
-      margin-bottom: 10px;
-      color: #000;
-      text-shadow: none;
-    }
-
-    .codex-section em {
-      display: block;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .divider {
-      height: 14px;
-      background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
-      margin: 30px 0;
-      border-radius: 8px;
-    }
-
-    .red-divider {
-      height: 6px;
-      background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
-      margin: 30px 0;
-      border-radius: 4px;
-    }
-
-    #toggle-glow-star {
-      display: none !important;
-    }
-
-    /* Optional: Responsive tweaks for mobile */
-    @media (max-width: 768px) {
-      #layout-wrapper {
-        flex-direction: column;
-      }
-
-      #sidebar-container {
-        width: 100%;
-        min-height: 100px;
-      }
-      
-      .codex-nav {
-        flex-wrap: wrap;
-        gap: 20px;
-        height: auto;
-        padding: 10px 0;
-      }
-
-      #codex-content {
-        padding: 80px 6vw 40px;
-      }
-    }
   </style>
 </head>
 <body>
-<div id="layout-wrapper">
-  <div id="sidebar-container"></div>
+  <div id="scaled-wrapper">
+    <div id="layout-wrapper">
+      <div id="sidebar-container"></div>
+      <div id="codex-content">
+<div class="codex-nav">
+  <a href="#shattering">Shattering</a><span class="nav-divider">|</span>
+  <a href="#regions">Regions</a><span class="nav-divider">|</span>
+  <a href="#heroes">Heroes</a><span class="nav-divider">|</span>
+  <a href="#council">Council</a><span class="nav-divider">|</span>
+  <a href="#magic">Magic</a><span class="nav-divider">|</span>
+  <a href="#districts">Districts</a><span class="nav-divider">|</span>
+  <a href="#vanguard">Vanguard</a>
+</div>
 
-  <div id="codex-content">
-    <div class="codex-nav">
-      <a href="#shattering">Shattering</a><span class="nav-divider">|</span>
-      <a href="#regions">Regions</a><span class="nav-divider">|</span>
-      <a href="#heroes">Heroes</a><span class="nav-divider">|</span>
-      <a href="#council">Council</a><span class="nav-divider">|</span>
-      <a href="#magic">Magic</a><span class="nav-divider">|</span>
-      <a href="#districts">Districts</a><span class="nav-divider">|</span>
-      <a href="#vanguard">Vanguard</a>
-    </div>
+      <div class="codex-section">
+        <h2 id="shattering">The Shattering and the Fall of the Ancient Ones</h2>
+        <p><em>As recorded by Sehlora Mirinth, Archivist of the First Sun</em></p>
 
-    <div class="codex-section">
-      <h2 id="shattering">The Shattering and the Fall of the Ancient Ones</h2>
-      <p><em>As recorded by Sehlora Mirinth, Archivist of the First Sun</em></p>
+—
 
-      <p>There was a time when the world breathed in harmony.</p>
-     
-      <p>Before it cracked. Before the light dimmed and we all forgot the name of our gods.</p>
-      
-      <p>I was young when the Ancient Ones still walked among us...</p>
+</p>There was a time when the world breathed in harmony.<p>
 
-      <p>Each of them brought something. Not all were gods in the way you might think — not almighty, not infallible. But they were becaons. Powerful. Vast. Iss-Hadal would walk barefoot into the heart of a volcano and coax it into silence. Lei-Sun would place her hand to the bark of an ailing tree and draw life back into its leaves. Wateirov would make us laugh, his illusions showing us the beauty of distant lands.<p>
+<p>Before it cracked. Before the light dimmed and we all forgot the name of our gods.<p>
+
+<p>I was young when the Ancient Ones still walked among us, not as kings or tyrants, but as shepherds of wonder. I remember the scent of the Everdawn fields in spring, where flowered grain shimmered beneath golden sunfire and glowing beetles sung between the stalks. We used to laugh, and sing, and dance. That was the world the Ancient Ones nurtured — not created, but guided. They did not shape stone and blood, but values and connectedness. They sang to rivers and they changed their course. They whispered to mountains and calmed their trembling hearts.<p>
+
+<p>Each of them brought something. Not all were gods in the way you might think — not almighty, not infallible. But they were becaons. Powerful. Vast. Iss-Hadal would walk barefoot into the heart of a volcano and coax it into silence. Lei-Sun would place her hand to the bark of an ailing tree and draw life back into its leaves. Wateirov would make us laugh, his illusions showing us the beauty of distant lands.<p>
 
 <p>We mortals were flawed. We squabbled over borders, harvested for selfish reasons, feared each other for our skin, our horns, our wings. But the Ancient Ones never ruled us. They guided us. And through their presence, we grew — cultures blossomed like wildflowers, tangled and diverse, beautiful in their own imperfect colours.<p>
 
@@ -356,6 +344,7 @@ html, body {
 </div>
     </div>
   </div>
+</div>
   
   <script src="script.js"></script>
   <script>
