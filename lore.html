@@ -13,11 +13,11 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh; /* ← changed from fixed height */
   font-family: 'EB Garamond', serif;
   background: url('Khaelbackground.png') no-repeat center center fixed;
   background-size: cover;
-  overflow: hidden;
+  overflow-x: hidden; /* ← only hide horizontal overflow */
 }
 
 #layout-wrapper {
