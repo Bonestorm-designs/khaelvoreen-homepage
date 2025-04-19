@@ -69,7 +69,8 @@ em {
   font-family: 'Cinzel Decorative', serif;
   font-size: 2.7em;
   padding-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* 👈 increases space below */
+  word-break: break-word; /* optional, breaks long words */
   color: #000; /* 👈 pure black */
   text-shadow: none; /* optional: remove glow for a cleaner black */
 }
@@ -81,7 +82,13 @@ em {
   margin-bottom: 0.4em; /* Brings content closer to subhead */
   margin-top: 1.4em; /* Adds clarity spacing above */
 }
-    
+
+.codex-section h4 {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.4em; /* optional: control size */
+  margin: 20px 0 10px; /* optional: adds spacing */
+}
 
     .divider {
       height: 14px;
@@ -155,6 +162,11 @@ em {
       color: gold;
       text-shadow: 0 0 10px gold;
     }
+ 
+    .codex-section li {
+  margin-bottom: 10px; /* or 15px for more breathing room */
+  line-height: 1.6em;
+}
 
     .nav-divider {
       color: gold;
