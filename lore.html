@@ -26,10 +26,11 @@ html, body {
 #layout-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* no centering */
+  align-items: flex-start;     /* no vertical centering */
+  flex-wrap: nowrap;
+  min-height: 100vh;
 }
 
     #sidebar-container {
@@ -52,7 +53,7 @@ html, body {
   background-attachment: fixed;
   background-position: center;
   color: #000;
-  padding: 120px 5vw 40px; /* gives room for sticky nav */
+  padding: 70px 5vw 40px; /* gives room for sticky nav */
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
   z-index: 2;
   font-size: clamp(1.3rem, 1.9vw, 1.9rem);
