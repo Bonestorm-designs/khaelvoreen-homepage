@@ -141,6 +141,14 @@ html, body {
       font-weight: bold;
       margin: 0 12px;
     }
+    
+  h2[id]::before {
+  display: block;
+  content: " ";
+  margin-top: -100px; /* Match nav height + padding */
+  height: 100px;
+  visibility: hidden;
+}
   </style>
 </head>
 <body>
@@ -152,17 +160,18 @@ html, body {
   <a href="#shattering">Shattering</a><span class="nav-divider">|</span>
   <a href="#regions">Regions</a><span class="nav-divider">|</span>
   <a href="#heroes">Heroes</a><span class="nav-divider">|</span>
-  <a href="#council">Council</a><span class="nav-divider">|</span>
-  <a href="#magic">Magic</a><span class="nav-divider">|</span>
+  <a href="#academy">Academy</a><span class="nav-divider">|</span>
+  <a href="#vanguard">Vanguard</a><span class="nav-divider">|</span>
   <a href="#districts">Districts</a><span class="nav-divider">|</span>
-  <a href="#vanguard">Vanguard</a>
+  <a href="#council">Council</a><span class="nav-divider">|</span>
+  <a href="#magic">Magic</a>
 </div>
 
       <div class="codex-section">
         <h2 id="shattering">The Shattering and the Fall of the Ancient Ones</h2>
         <p><em>Excerpt from the journal of Sehlora Mirinth, Archivist of the First Sun</em></p>
 
-—
+        
 
 <div class="lore-entry">
 
@@ -354,37 +363,7 @@ html, body {
   <p>He co-leads the Vanguard Initiative alongside Torren Sunstrike.</p>
 
 </div>
-
-
-<div class="red-divider"></div>
-<div class="divider"></div>
-<div class="red-divider"></div>
-
-      <div class="codex-section">
-        <h2 id="council">The Council of Khael’Voreen</h2>
-        <p>Beneath the gleaming spires of the Citadel and nestled within the city’s great chambers, the Council of Khael’Voreen is tasked with preserving the legacy of all the cultures in the valley. Each sitting Council member represents one of the city’s 9 major districts, even the Eternal Forest and the halls of Kor Lodrum have representatives. While a few are beloved figures who regularly walk among their people, most are only seen during public decrees and celebrations.
-
-        <p>Supporting them is a layered system known as the Circle of Rule. City Lords maintain order within the districts, responsible for civilian life, trade, and stability. They oversee the Guilds — powerful organizations that each manage the lifeblood of their district, from infrastructure to innovation to rations for the citizens. Above them, Ambassadors and Clerks operate between districts, coordinating legislation and managing diplomacy between factions and representatives.
-
-        <p>Then there are the Elders — once Council members themselves, they have stepped away from public duties to pursue studies, political manuevering, or long-term projects. Though they no longer have direct power of legistlation, many still hold sway behind closed doors. Some whisper that the Elders control more than any sitting official, and that their influence in shaping the city’s course never truly ends.
-
-        <p>Notably, the Vanguard — the chosen few sent beyond the barrier — report not to the Council directly, but to two figures: the Grand Magus and the Iron Commander. While the Council selected the Vanguard’s members and endorsed the project, their day-to-day oversight is more detached… at least, for now.</p>
-      </div>
-
-<div class="red-divider"></div>
-<div class="divider"></div>
-<div class="red-divider"></div>
-
- <div class="codex-section">
-  <h2 id="magic">Magic Without the Divine</h2>
-  <p>In the centuries since the Ancient Ones vanished, magic has not disappeared — but it has changed. Divine spellcasters still heal wounds, shield allies, and smite with holy power. Yet their connection to higher forces is now shrouded in uncertainty. Clerics no longer hear the voices of their gods, and paladins uphold oaths with no reply. Their power remains, but its source is unclear.</p>
-  
-   <p>Some believe these blessings are echoes — the last whispers of celestial beings long gone. Others insist they stem from within: willpower, commitment, or faith made manifest. Druids, especially those trained deep within the Eternal Forest, still have communion with the Spirit Mother, while others tap into natural forces that have no need for worship. For many, divine connection is not gone, but is distant and unintelligible.</p>
-
-  <p>The arcane, by contrast, thrives through study and structure. At the heart of Khael’Voreen stands the great Academy, where mages pursue knowledge across all known disciplines: evocation, illusion, divination, transmutation, and more. It is the safest hub for those who seek to understand magic in a world that is filled with so many questions.</p>
-
-  <p>Whether your power comes from ancient rites, forgotten relics, or the strength of belief, know this — in Khael’Voreen, magic is still alive. It has evolved to embrace the silence. Ask your GM how your spellcasting class might interact with these mysteries as you create your character.</p>
-</div>
+        
 
 <div class="red-divider"></div>
 <div class="divider"></div>
@@ -392,7 +371,7 @@ html, body {
 
 <div class="lore-entry">
 
-  <h2>Czemhaza wa Kanti — The Mystical Academy</h2>
+ <h2 id="academy">Czemhaza wa Kanti — The Mystical Academy</h2>
 
   <p><strong>Czemhaza wa Kanti</strong>, translated as <em>“The Circle of Knowledge and Memory”</em>, is the central institution for magical study, arcane research, and spellcraft regulation within Khael’Voreen. It stands at the core of the Citadel District and serves as both a place of learning and one of the city’s most powerful organizations.</p>
 
@@ -441,9 +420,13 @@ html, body {
 </div>
 
 
+<div class="red-divider"></div>
+<div class="divider"></div>
+<div class="red-divider"></div>
+
 <div class="lore-entry">
 
-  <h2>The Vanguard Initiative</h2>
+<h2 id="vanguard">The Vanguard Initiative</h2>
 
   <p>The <strong>Vanguard Initiative</strong> is a proposed expedition program intended to explore the world beyond the protective barrier that surrounds Khael’Voreen. It would mark the first organized venture outside the valley in over four centuries.</p>
 
@@ -503,7 +486,7 @@ html, body {
 
 <div class="lore-entry">
 
-  <h2>The Districts of Khael’Voreen</h2>
+<h2 id="districts">The Districts of Khael’Voreen</h2>
 
   <p>Khael’Voreen is a vast, ring-structured city built around the Academy at its center. Its layout reflects the memory of a broken world — a tapestry of cultures and traditions preserved within protective walls. The city is divided into nine major districts, each a reflection of the people and philosophies that took shelter here.</p>
 
@@ -532,9 +515,14 @@ html, body {
   <p>A narrow fringe of older, often forgotten spaces — alley workshops, abandoned temples, and semi-ruined buildings that defy consistent record-keeping. Though most consider it harmless, those with ties to the city’s underground know better. Secrets linger here.</p>
 
 </div>
+
+<div class="red-divider"></div>
+<div class="divider"></div>
+<div class="red-divider"></div>        
 <div class="lore-entry">
 
-  <h2>The Council of Khael’Voreen</h2>
+<h2 id="council">The Council of Khael’Voreen</h2>
+
 
   <p>The Council of Khael’Voreen serves as the central governing body of the valley, composed of nine seated representatives — one for each major district. Their role is to maintain peace, distribute resources, and preserve the diverse cultures that coexist within the city’s walls.</p>
 
@@ -563,7 +551,11 @@ html, body {
   <h3>Public Perception</h3>
 
   <p>Among the people, opinions are mixed. Some see the Council as cautious protectors. Others call them relics of a time that no longer exists. They are respected — but not beyond question.</p>
+</div>
 
+<div class="red-divider"></div>
+<div class="divider"></div>
+<div class="red-divider"></div>
 <div class="lore-entry">
   <h2 id="magic">Magic Without the Divine</h2>
 
@@ -579,8 +571,7 @@ html, body {
 </div>
 
 </div>
-
-  </div>
+</div>
 </div>
   
   <script src="script.js"></script>
