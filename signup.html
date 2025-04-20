@@ -149,12 +149,52 @@
   </div>
 
   <script src="script.js"></script>
-  <script>
-    fetch('sidebar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('sidebar-container').innerHTML = html;
-      });
+<script>
+  // 1. Load the sidebar HTML
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+
+      // 2. Call this ONLY after the sidebar has loaded
+      initializeSidebarToggle();
+    });
+
+  // 3. Sidebar toggle logic (moved into a function)
+  function initializeSidebarToggle() {
+    const sidebar = document.getElementById('sidebar');
+    const toggleArrow = document.getElementById('sidebar-toggle');
+    const starGlow = document.getElementById('toggle-glow-star');
+
+    if (!sidebar || !toggleArrow || !starGlow) {
+      console.warn("Sidebar toggle elements not found.");
+      return;
+    }
+
+    let isOpen = localStorage.getItem("sidebarOpen") === "true";
+
+    function updatePositions() {
+      if (isOpen) {
+        sidebar.style.left = "0";
+        toggleArrow.style.left = "23.5vw";
+        starGlow.style.left = "26.5vw";
+        toggleArrow.style.backgroundImage = "url('openside.png')";
+      } else {
+        sidebar.style.left = "-20vw";
+        toggleArrow.style.left = "3.5vw";
+        starGlow.style.left = "5vw";
+        toggleArrow.style.backgroundImage = "url('closedside.png')";
+      }
+    }
+
+    toggleArrow.addEventListener("click", () => {
+      isOpen = !isOpen;
+      localStorage.setItem("sidebarOpen", isOpen);
+      updatePositions();
+    });
+
+    updatePositions();
+  }
     
   // Function to close the signup form
   function closeSignup() {
