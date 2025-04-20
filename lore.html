@@ -6,10 +6,11 @@
   <title>Lore | Khael'Voreen</title>
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond&display=swap');
-    
-html, body {
+
+  <!-- Font imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond&family=Zeyada&display=swap" rel="stylesheet">
+<style>
+  html, body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -75,6 +76,10 @@ em {
   text-shadow: none; /* optional: remove glow for a cleaner black */
 }
 
+  .handwritten {
+  font-family: 'Zeyada', cursive;
+}
+
 /* Style for subheadings (h3) */
 .codex-section h3 {
   font-weight: bold;
@@ -107,6 +112,15 @@ em {
     #toggle-glow-star {
       display: none !important;
 }
+
+.handwritten {
+  font-family: 'Zeyada', cursive;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  color: #2e1c13; /* rich ink brown for authenticity */
+}  
 
 #codex-content::after {
   content: "";
@@ -206,7 +220,7 @@ em {
 
         
 
-<div class="lore-entry">
+<div class="lore-entry handwritten">
 
   <p><strong>There was a time when the world moved in harmony.</strong></p>
 
