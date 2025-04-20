@@ -127,10 +127,9 @@
 
 <body>
   <div id="layout-wrapper">
-    <div id="sidebar-container"></div>
+    <div id="sidebar-container"></div> <!-- Loaded via JS -->
 
     <div class="signup-container" id="signup">
-      <!-- Exit Button -->
       <button class="exit-button" onclick="closeSignup()">X</button>
 
       <h1>Join the Vanguard – APPLY NOW!</h1>
@@ -160,43 +159,43 @@
     </div>
   </div>
 
-  <script>
-    // Load the sidebar
-    fetch('sidebar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('sidebar-container').innerHTML = html;
-      });
-
-    // Hide the form when the X is clicked
-    function closeSignup() {
-      const signup = document.getElementById('signup');
-      signup.classList.add('hidden');
-      setTimeout(() => {
-        signup.style.display = 'none';
-      }, 500); // Wait for fade-out animation
-    }
-
-    // Handle form submission
-    document.getElementById("signup-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const form = e.target;
-      const data = new FormData(form);
-
-      const response = await fetch("https://formspree.io/f/mrbpokkk", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" }
-      });
-
-      if (response.ok) {
-        window.location.href = "thankyou.html";
-      } else {
-        alert("Oops! Something went wrong. Please try again.");
-      }
+<script>
+  // Load sidebar content
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
     });
-  </script>
+
+  // Exit button behavior
+  function closeSignup() {
+    const signup = document.getElementById('signup');
+    signup.classList.add('hidden');
+    setTimeout(() => {
+      signup.style.display = 'none';
+    }, 500);
+  }
+
+  // Form handling
+  document.getElementById("signup-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    const response = await fetch("https://formspree.io/f/mrbpokkk", {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" }
+    });
+
+    if (response.ok) {
+      window.location.href = "thankyou.html";
+    } else {
+      alert("Oops! Something went wrong. Please try again.");
+    }
+  });
+</script>
 </body>
 </html>
 
