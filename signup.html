@@ -13,13 +13,12 @@
       padding: 0;
       height: 100vh;
       overflow: hidden;
+      font-family: 'Cinzel', serif;
     }
 
     body {
       background: url('Secondwallpaper.jpg') no-repeat center center fixed;
       background-size: cover;
-      font-family: 'Cinzel', serif;
-      color: #f2f2f2;
       display: flex;
     }
 
@@ -45,12 +44,19 @@
       padding: 60px 40px;
       width: 100%;
       max-width: 1000px;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(6px);
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
       font-weight: bold;
       position: relative;
+      transition: opacity 0.5s ease;
+      z-index: 10;
+    }
+
+    .signup-container.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .signup-container h1 {
@@ -108,7 +114,7 @@
       border: none;
       border-radius: 50%;
       cursor: pointer;
-      z-index: 10;
+      z-index: 20;
       transition: background 0.3s ease, transform 0.2s ease;
     }
 
@@ -123,8 +129,9 @@
   <div id="layout-wrapper">
     <div id="sidebar-container"></div>
 
-    <div class="signup-container">
-      <button class="exit-button" onclick="history.back()">X</button>
+    <div class="signup-container" id="signup">
+      <!-- Exit Button -->
+      <button class="exit-button" onclick="closeSignup()">X</button>
 
       <h1>Join the Vanguard – APPLY NOW!</h1>
       <form id="signup-form">
@@ -136,13 +143,13 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="q1">What is the name of your character and what class or role would you like to play? Please include preferred race</label>
+        <label for="q1">What is the name of your character and what class or role would you like to play? Please include preferred species</label>
         <textarea id="q1" name="q1" rows="3" required></textarea>
 
         <label for="q2">Name the top 3 things you enjoy or would like to experience in this DnD campaign? Feel free to go into detail!</label>
         <textarea id="q2" name="q2" rows="8" required></textarea>
 
-        <label for="q3">Would you like your character's backstory to be made by you, me or a collaboration? You can definitely choose to have memory loss.</label>
+        <label for="q3">Would you like your character's backstory to be made by you or a collaboration? You can definitely choose to have memory loss.</label>
         <textarea id="q3" name="q3" rows="3" required></textarea>
 
         <label for="q4">(OPTIONAL) Any questions or queries? The characters, campaign and lore pages will receive updates as more information becomes available!</label>
@@ -161,7 +168,16 @@
         document.getElementById('sidebar-container').innerHTML = html;
       });
 
-    // Form submission
+    // Hide the form when the X is clicked
+    function closeSignup() {
+      const signup = document.getElementById('signup');
+      signup.classList.add('hidden');
+      setTimeout(() => {
+        signup.style.display = 'none';
+      }, 500); // Wait for fade-out animation
+    }
+
+    // Handle form submission
     document.getElementById("signup-form").addEventListener("submit", async function (e) {
       e.preventDefault();
 
@@ -183,3 +199,4 @@
   </script>
 </body>
 </html>
+
