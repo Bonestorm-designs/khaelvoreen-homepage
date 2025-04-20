@@ -152,49 +152,7 @@
   </div>
 
 <script>
-  // Load sidebar HTML and initialize toggle after it’s in the DOM
-  fetch('sidebar.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('sidebar-container').innerHTML = html;
-
-      // Delay toggle logic so the sidebar is fully loaded
-      setTimeout(() => {
-        const sidebar = document.getElementById('sidebar');
-        const toggleArrow = document.getElementById('sidebar-toggle');
-        const starGlow = document.getElementById('toggle-glow-star');
-
-        if (sidebar && toggleArrow && starGlow) {
-          let isOpen = localStorage.getItem("sidebarOpen") === "true";
-
-          function updatePositions() {
-            if (isOpen) {
-              sidebar.style.left = "0";
-              toggleArrow.style.left = "23.5vw";
-              starGlow.style.left = "26.5vw";
-              toggleArrow.style.backgroundImage = "url('openside.png')";
-            } else {
-              sidebar.style.left = "-20vw";
-              toggleArrow.style.left = "3.5vw";
-              starGlow.style.left = "5vw";
-              toggleArrow.style.backgroundImage = "url('closedside.png')";
-            }
-          }
-
-          toggleArrow.addEventListener("click", () => {
-            isOpen = !isOpen;
-            localStorage.setItem("sidebarOpen", isOpen);
-            updatePositions();
-          });
-
-          updatePositions();
-        } else {
-          console.warn('Sidebar or toggle elements not found.');
-        }
-      }, 0); // Let DOM update before running toggle logic
-    });
-
-  // Exit button for signup form
+  // Function to close the signup form
   function closeSignup() {
     const signup = document.getElementById('signup');
     signup.classList.add('hidden');
@@ -203,22 +161,74 @@
     }, 500);
   }
 
-  // Form submission
+  // Function to initialize sidebar toggle functionality
+  function initializeSidebarToggle() {
+    const sidebar = document.getElementById('sidebar');
+    const toggleArrow = document.getElementById('sidebar-toggle');
+    const starGlow = document.getElementById('toggle-glow-star');
+
+    if (!sidebar || !toggleArrow || !starGlow) {
+      console.error('Sidebar or toggle elements not found.');
+      return;
+    }
+
+    let isOpen = localStorage.getItem("sidebarOpen") === "true";
+
+    function updatePositions() {
+      if (isOpen) {
+        sidebar.style.left = "0";
+        toggleArrow.style.left = "23.5vw";
+        starGlow.style.left = "26.5vw";
+        toggleArrow.style.backgroundImage = "url('openside.png')";
+      } else {
+        sidebar.style.left = "-20vw";
+        toggleArrow.style.left = "3.5vw";
+        starGlow.style.left = "5vw";
+        toggleArrow.style.backgroundImage = "url('closedside.png')";
+      }
+    }
+
+    toggleArrow.addEventListener("click", () => {
+      isOpen = !isOpen;
+      localStorage.setItem("sidebarOpen", isOpen);
+      updatePositions();
+    });
+
+    updatePositions();
+  }
+
+  // Load sidebar HTML and initialize toggle
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+      initializeSidebarToggle();
+    })
+    .catch(error => {
+      console.error('Error loading sidebar:', error);
+    });
+
+  // Form submission handling
   document.getElementById("signup-form").addEventListener("submit", async function (e) {
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
 
-    const response = await fetch("https://formspree.io/f/mrbpokkk", {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" }
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/mrbpokkk", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
 
-    if (response.ok) {
-      window.location.href = "thankyou.html";
-    } else {
-      alert("Oops! Something went wrong. Please try again.");
+      if (response.ok) {
+        window.location.href = "thankyou.html";
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert("An error occurred. Please try again later.");
     }
   });
 </script>
