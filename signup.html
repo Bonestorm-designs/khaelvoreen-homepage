@@ -31,8 +31,9 @@
 .signup-container {
   position: absolute;
   top: 50%;
-  left: calc(25vw + 50%); /* accounts for sidebar + center */
+  left: 50%;
   transform: translate(-50%, -50%);
+  margin-left: 12.5vw; /* Adjust for sidebar width */
   padding: 60px 40px;
   width: 100%;
   max-width: 1000px;
@@ -42,6 +43,7 @@
   box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
   font-family: 'EB Garamond', serif;
   font-weight: bold;
+  font-size: 1.8rem; /* 👈 Add this line for font size */
   z-index: 10;
 }
 
@@ -76,15 +78,14 @@
     }
 
     .signup-container button {
+      font-family: 'Cinzel', serif;
       background-color: #bf00ff;
       color: #fff;
       padding: 12px 20px;
       font-size: 24px;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
-      .signup-container button 
-      font-family: 'Cinzel', serif;
+      cursor: pointer; 
       transition: background-color 0.3s ease;
     }
 
@@ -170,15 +171,17 @@
       signup.style.display = 'none';
     }, 500);
   }
-window.addEventListener("DOMContentLoaded", () => {
-  const waitForSidebar = setInterval(() => {
+fetch('sidebar.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('sidebar-container').innerHTML = html;
+
+    // 💡 Move this toggle logic INSIDE this block so it runs after the sidebar loads:
     const sidebar = document.getElementById('sidebar');
     const toggleArrow = document.getElementById('sidebar-toggle');
     const starGlow = document.getElementById('toggle-glow-star');
 
     if (sidebar && toggleArrow && starGlow) {
-      clearInterval(waitForSidebar);
-
       let isOpen = localStorage.getItem("sidebarOpen") === "true";
 
       function updatePositions() {
@@ -203,8 +206,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       updatePositions();
     }
-  }, 50);
-});
+  });
 
   // Form handling
   document.getElementById("signup-form").addEventListener("submit", async function (e) {
