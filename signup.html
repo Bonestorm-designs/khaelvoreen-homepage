@@ -5,21 +5,20 @@
   <title>Join the Vanguard</title>
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond&display=swap" rel="stylesheet" />
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100vh;
       overflow: hidden;
-      font-family: 'Cinzel', serif;
+      font-family: 'EB Garamond', serif;
     }
 
     body {
       background: url('Secondwallpaper.jpg') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
     }
 
     #layout-wrapper {
@@ -28,33 +27,39 @@
       height: 100%;
     }
 
-.signup-container {
-  position: absolute;
-  top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-margin-left: 6vw; /* shifts it toward left */
-  padding: 60px 40px;
-  width: 100%;
-  max-width: 1000px;
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
-  font-family: 'EB Garamond', serif;
-  font-weight: bold;
-  font-size: 1.8rem; /* 👈 Add this line for font size */
-  z-index: 10;
-}
+    #sidebar-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 25vw;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 5;
+      overflow-y: auto;
+    }
 
-    .signup-container.hidden {
-      opacity: 0;
-      pointer-events: none;
+    .signup-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 1000px;
+      padding: 60px 40px;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+      font-family: 'EB Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: bold;
+      z-index: 10;
     }
 
     .signup-container h1 {
-      margin-bottom: 25px;
+      font-family: 'Cinzel', serif;
       font-size: 36px;
+      margin-bottom: 25px;
       color: #bf00ff;
     }
 
@@ -78,14 +83,14 @@ margin-left: 6vw; /* shifts it toward left */
     }
 
     .signup-container button {
-      font-family: 'Cinzel', serif;
       background-color: #bf00ff;
       color: #fff;
       padding: 12px 20px;
-      font-size: 24px;
+      font-size: 22px;
       border: none;
-      border-radius: 8px;
-      cursor: pointer; 
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
       transition: background-color 0.3s ease;
     }
 
@@ -120,10 +125,12 @@ margin-left: 6vw; /* shifts it toward left */
 </head>
 
 <body>
-<div id="toggle-glow-star"></div>
-<div id="sidebar-toggle"></div> 
- <div id="layout-wrapper">
-    <div id="sidebar-container"></div> <!-- Loaded via JS -->
+  <!-- Sidebar toggle glow + arrow -->
+  <div id="toggle-glow-star"></div>
+  <div id="sidebar-toggle"></div>
+
+  <div id="layout-wrapper">
+    <div id="sidebar-container"></div>
 
     <div class="signup-container" id="signup">
       <button class="exit-button" onclick="closeSignup()">X</button>
@@ -138,16 +145,16 @@ margin-left: 6vw; /* shifts it toward left */
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="q1">What is the name of your character and what class or role would you like to play? Please include preferred species</label>
+        <label for="q1">Character name, class/role, and preferred species:</label>
         <textarea id="q1" name="q1" rows="3" required></textarea>
 
-        <label for="q2">Name the top 3 things you enjoy or would like to experience in this DnD campaign? Feel free to go into detail!</label>
+        <label for="q2">Top 3 things you'd like to experience in the campaign:</label>
         <textarea id="q2" name="q2" rows="8" required></textarea>
 
-        <label for="q3">Would you like your character's backstory to be made by you or a collaboration? You can definitely choose to have memory loss.</label>
+        <label for="q3">Do you want to create your backstory, collaborate, or leave it mysterious?</label>
         <textarea id="q3" name="q3" rows="3" required></textarea>
 
-        <label for="q4">(OPTIONAL) Any questions or queries? The characters, campaign and lore pages will receive updates as more information becomes available!</label>
+        <label for="q4">(Optional) Questions, comments, or ideas:</label>
         <textarea id="q4" name="q4" rows="4"></textarea>
 
         <button type="submit">Submit</button>
@@ -155,80 +162,71 @@ margin-left: 6vw; /* shifts it toward left */
     </div>
   </div>
 
-<script>
-  // Load sidebar content
-  fetch('sidebar.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('sidebar-container').innerHTML = html;
-    });
+  <script>
+    // Load sidebar HTML and initialize toggle
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
 
-  // Exit button behavior
-  function closeSignup() {
-    const signup = document.getElementById('signup');
-    signup.classList.add('hidden');
-    setTimeout(() => {
-      signup.style.display = 'none';
-    }, 500);
-  }
-fetch('sidebar.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('sidebar-container').innerHTML = html;
+        const sidebar = document.getElementById('sidebar');
+        const toggleArrow = document.getElementById('sidebar-toggle');
+        const starGlow = document.getElementById('toggle-glow-star');
 
-    // Now initialize the toggle logic AFTER sidebar is loaded
-    const sidebar = document.getElementById('sidebar');
-    const toggleArrow = document.getElementById('sidebar-toggle');
-    const starGlow = document.getElementById('toggle-glow-star');
+        if (sidebar && toggleArrow && starGlow) {
+          let isOpen = localStorage.getItem("sidebarOpen") === "true";
 
-    if (sidebar && toggleArrow && starGlow) {
-      let isOpen = localStorage.getItem("sidebarOpen") === "true";
+          function updatePositions() {
+            if (isOpen) {
+              sidebar.style.left = "0";
+              toggleArrow.style.left = "23.5vw";
+              starGlow.style.left = "26.5vw";
+              toggleArrow.style.backgroundImage = "url('openside.png')";
+            } else {
+              sidebar.style.left = "-20vw";
+              toggleArrow.style.left = "3.5vw";
+              starGlow.style.left = "5vw";
+              toggleArrow.style.backgroundImage = "url('closedside.png')";
+            }
+          }
 
-      function updatePositions() {
-        if (isOpen) {
-          sidebar.style.left = "0";
-          toggleArrow.style.left = "23.5vw";
-          starGlow.style.left = "26.5vw";
-          toggleArrow.style.backgroundImage = "url('openside.png')";
-        } else {
-          sidebar.style.left = "-20vw";
-          toggleArrow.style.left = "3.5vw";
-          starGlow.style.left = "5vw";
-          toggleArrow.style.backgroundImage = "url('closedside.png')";
+          toggleArrow.addEventListener("click", () => {
+            isOpen = !isOpen;
+            localStorage.setItem("sidebarOpen", isOpen);
+            updatePositions();
+          });
+
+          updatePositions();
         }
-      }
-
-      toggleArrow.addEventListener("click", () => {
-        isOpen = !isOpen;
-        localStorage.setItem("sidebarOpen", isOpen);
-        updatePositions();
       });
 
-      updatePositions();
+    // Close the form
+    function closeSignup() {
+      const signup = document.getElementById('signup');
+      signup.classList.add('hidden');
+      setTimeout(() => {
+        signup.style.display = 'none';
+      }, 500);
     }
-  });
 
-  // Form handling
-  document.getElementById("signup-form").addEventListener("submit", async function (e) {
-    e.preventDefault();
+    // Form submission
+    document.getElementById("signup-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
 
-    const form = e.target;
-    const data = new FormData(form);
+      const response = await fetch("https://formspree.io/f/mrbpokkk", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
 
-    const response = await fetch("https://formspree.io/f/mrbpokkk", {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" }
+      if (response.ok) {
+        window.location.href = "thankyou.html";
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
     });
-
-    if (response.ok) {
-      window.location.href = "thankyou.html";
-    } else {
-      alert("Oops! Something went wrong. Please try again.");
-    }
-  });
-</script>
-<script src="script.js"></script> 
+  </script>
 </body>
 </html>
-
