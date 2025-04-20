@@ -176,7 +176,7 @@ fetch('sidebar.html')
   .then(html => {
     document.getElementById('sidebar-container').innerHTML = html;
 
-    // 💡 Move this toggle logic INSIDE this block so it runs after the sidebar loads:
+    // Now initialize the toggle logic AFTER sidebar is loaded
     const sidebar = document.getElementById('sidebar');
     const toggleArrow = document.getElementById('sidebar-toggle');
     const starGlow = document.getElementById('toggle-glow-star');
