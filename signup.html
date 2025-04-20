@@ -7,18 +7,18 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: url(Secondwallpaper.jpg) no-repeat center center fixed;
-      background-size: cover;
-      color: #f2f2f2;
-      font-family: 'Cinzel', serif !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 60px 20px;
-      position: relative;
-    }
+body {
+  background: url('Secondwallpaper.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f2f2f2;
+  font-family: 'Cinzel', serif !important;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
 
     .exit-button {
       position: absolute;
@@ -105,32 +105,10 @@
     background: black;
   }
 
-  #scaled-wrapper {
-    width: 2560px;
-    height: 1440px;
-    transform-origin: top left;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  @media screen and (min-width: 100px) {
-    html {
-      height: 100%;
-    }
-    body {
-      width: 100vw;
-      height: 100vh;
-    }
-    #scaled-wrapper {
-      transform: scale(calc(100vw / 2560), calc(100vh / 1440));
-    }
-  }
 </style>
   
 </head>
 <body>
-<div id="scaled-wrapper">
   <div class="signup-container">
     <!-- Exit Button -->
     <button class="exit-button" onclick="history.back()">X</button>
@@ -159,7 +137,6 @@
 
       <button type="submit">Submit</button>
     </form>
-  </div>
   </div>
 
   <script>
