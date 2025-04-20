@@ -168,29 +168,6 @@
         document.getElementById('sidebar-container').innerHTML = html;
       });
 
-    function updatePositions() {
-      if (isOpen) {
-        sidebar.style.left = "0";
-        toggleArrow.style.left = "23.5vw";
-        starGlow.style.left = "26.5vw";
-        toggleArrow.style.backgroundImage = "url('openside.png')";
-      } else {
-        sidebar.style.left = "-20vw";
-        toggleArrow.style.left = "3.5vw";
-        starGlow.style.left = "5vw";
-        toggleArrow.style.backgroundImage = "url('closedside.png')";
-      }
-    }
-
-    toggleArrow.addEventListener("click", () => {
-      isOpen = !isOpen;
-      localStorage.setItem("sidebarOpen", isOpen);
-      updatePositions();
-    });
-
-    updatePositions();
-  }
-
   // Form submission handling
   document.getElementById("signup-form").addEventListener("submit", async function (e) {
     e.preventDefault();
