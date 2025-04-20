@@ -162,12 +162,6 @@
     }, 500);
   }
 
-    fetch('sidebar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('sidebar-container').innerHTML = html;
-      });
-
   // Form submission handling
   document.getElementById("signup-form").addEventListener("submit", async function (e) {
     e.preventDefault();
