@@ -151,6 +151,7 @@
     </div>
   </div>
 
+<script src="script.js"></script>  
 <script>
   // Function to close the signup form
   function closeSignup() {
@@ -161,18 +162,11 @@
     }, 500);
   }
 
-  // Function to initialize sidebar toggle functionality
-  function initializeSidebarToggle() {
-    const sidebar = document.getElementById('sidebar');
-    const toggleArrow = document.getElementById('sidebar-toggle');
-    const starGlow = document.getElementById('toggle-glow-star');
-
-    if (!sidebar || !toggleArrow || !starGlow) {
-      console.error('Sidebar or toggle elements not found.');
-      return;
-    }
-
-    let isOpen = localStorage.getItem("sidebarOpen") === "true";
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      });
 
     function updatePositions() {
       if (isOpen) {
@@ -196,17 +190,6 @@
 
     updatePositions();
   }
-
-  // Load sidebar HTML and initialize toggle
-  fetch('sidebar.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('sidebar-container').innerHTML = html;
-      initializeSidebarToggle();
-    })
-    .catch(error => {
-      console.error('Error loading sidebar:', error);
-    });
 
   // Form submission handling
   document.getElementById("signup-form").addEventListener("submit", async function (e) {
