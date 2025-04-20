@@ -114,10 +114,7 @@
 </head>
 
 <body>
-  <!-- Sidebar toggle glow + arrow -->
-  <div id="toggle-glow-star"></div>
-  <div id="sidebar-toggle"></div>
-
+ </script>
   <div id="layout-wrapper">
     <div id="sidebar-container"></div>
 
@@ -151,8 +148,14 @@
     </div>
   </div>
 
-<script src="script.js"></script>  
-<script>
+  <script src="script.js"></script>
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      });
+    
   // Function to close the signup form
   function closeSignup() {
     const signup = document.getElementById('signup');
