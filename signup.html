@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <div id="sidebar-container"></div>
   <style>
 body {
   background: url('Secondwallpaper.jpg') no-repeat center center fixed;
@@ -44,6 +45,17 @@ body {
       transform: scale(1.1);
     }
 
+  #sidebar-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 25vw;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 5;
+  overflow-y: auto;
+}
+    
 .signup-container {
   background-color: #000;
   backdrop-filter: blur(6px);
@@ -102,7 +114,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: black;
   }
 
 </style>
@@ -140,6 +151,12 @@ body {
   </div>
 
   <script>
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+    });
+
     document.getElementById("signup-form").addEventListener("submit", async function(e) {
       e.preventDefault();
 
