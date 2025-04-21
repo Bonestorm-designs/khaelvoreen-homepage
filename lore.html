@@ -444,8 +444,8 @@ Academy</h2>
       .then(res => res.text())
       .then(html => {
       document.getElementById('sidebar-container').innerHTML = html;
-    }); // ✅ <- add this closing parenthesis!
+      initSidebarToggle(); // ✅ This was missing
+    });
   </script>
 </body>
 </html>
-🔌 WHERE THINGS GO — SUPER CLEAR VERSION
