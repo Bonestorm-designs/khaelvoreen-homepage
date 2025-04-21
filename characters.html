@@ -87,12 +87,12 @@ html, body {
 
   <script src="script.js"></script>
   <script>
-    fetch('sidebar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('sidebar-container').innerHTML = html;
-      initSidebarToggle(); // ✅ This was missing
-    });
+fetch('sidebar.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('sidebar-container').innerHTML = html;
+    initSidebarToggle(); // ✅ Correctly scoped inside the .then block
+  });
   </script>
 </body>
 </html>
