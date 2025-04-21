@@ -7,12 +7,14 @@ html, body {
   font-family: 'EB Garamond', serif;
 }
 
+/* Layout container */
 #layout-wrapper {
   display: flex;
   width: 100%;
   height: 100%;
 }
 
+/* Main content scrollable area */
 #codex-content {
   position: fixed;
   top: 0;
@@ -41,35 +43,59 @@ html, body {
   margin-bottom: 1.4em;
 }
 
-.codex-section > p > em:first-child {
-  display: block;
-  margin-bottom: 20px;
-  color: #333;
+/* Responsive top nav */
+.codex-nav {
+  position: fixed;
+  top: 0;
+  left: 25vw;
+  width: calc(100vw - 25vw);
+  min-height: 60px;
+  padding: 0 2vw;
+  background: linear-gradient(to right, #6c0000, #8b0000);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 50px); /* Responsive spacing */
+  z-index: 1000;
+  border-bottom: 5px solid gold;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  font-weight: 700;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(0.8rem, 1.4vw, 1.2rem); /* 🔥 Responsive */
 }
 
-em {
-  font-style: italic;
-  font-weight: normal;
-  color: inherit;
+.codex-nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 0.5rem 0.8rem;
+  white-space: nowrap;
+  max-width: 150px;
+  text-align: center;
 }
 
+.codex-nav a:hover {
+  color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+.nav-divider {
+  color: gold;
+  font-weight: bold;
+  margin: 0 6px;
+}
+
+/* Headings */
 .codex-section h2 {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 2.7em;
+  font-size: clamp(2rem, 4vw, 2.7em);
   line-height: 1.3em;
   margin-bottom: 20px;
   word-break: break-word;
   color: #000;
   text-shadow: none;
-}
-
-.handwritten {
-  font-family: 'Zeyada', cursive;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  color: #2e1c13;
 }
 
 .codex-section h3 {
@@ -86,6 +112,37 @@ em {
   margin: 20px 0 10px;
 }
 
+/* Emphasized intro block */
+.codex-section > p > em:first-child {
+  display: block;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* General em style */
+em {
+  font-style: italic;
+  font-weight: normal;
+  color: inherit;
+}
+
+/* Handwriting class */
+.handwritten {
+  font-family: 'Zeyada', cursive;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  color: #2e1c13;
+}
+
+/* List styling */
+.codex-section li {
+  margin-bottom: 35px;
+  line-height: 1.6em;
+}
+
+/* Dividers */
 .divider {
   height: 14px;
   background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
@@ -100,10 +157,12 @@ em {
   border-radius: 4px;
 }
 
+/* Sidebar toggle icon hidden on lore page */
 #toggle-glow-star {
   display: none !important;
 }
 
+/* Parchment side shadow */
 #codex-content::after {
   content: "";
   position: absolute;
@@ -125,48 +184,7 @@ em {
   background-repeat: repeat-y;
 }
 
-.codex-nav {
-  position: fixed;
-  top: 0;
-  left: 25vw;
-  width: calc(100vw - 25vw);
-  height: 80px;
-  background: linear-gradient(to right, #6c0000, #8b0000);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  z-index: 1000;
-  border-bottom: 5px solid gold;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
-  font-weight: 700;
-  font-family: 'Cinzel Decorative', serif;
-}
-
-.codex-nav a {
-  height: 80px;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.codex-nav a:hover {
-  color: gold;
-  text-shadow: 0 0 10px gold;
-}
-
-.codex-section li {
-  margin-bottom: 35px;
-  line-height: 1.6em;
-}
-
-.nav-divider {
-  color: gold;
-  font-weight: bold;
-  margin: 0 12px;
-}
-
+/* Anchor spacing fix for nav jump */
 h2[id]::before {
   display: block;
   content: " ";
