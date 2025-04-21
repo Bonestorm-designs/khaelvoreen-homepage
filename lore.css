@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lore | Khael'Voreen</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="styles.css" /> <!-- Shared Sidebar/Effects -->
-  <link rel="stylesheet" href="lore.css" />   <!-- Page-specific styling -->
-  <style>
-  html, body {
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'EB Garamond', serif; /* 👈 changed from Cinzel */
+  font-family: 'EB Garamond', serif;
 }
 
-    #layout-wrapper {
-      display: flex;
-      width: 100%;
-      height: 100%;
-    }
+#layout-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 
 #codex-content {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 25vw; /* Adjust this value to match your sidebar's width */
+  left: 25vw;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 120px 4vw 40px;
@@ -41,15 +30,15 @@
   background-position: center;
   font-family: 'EB Garamond', serif;
   box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
-  font-size: clamp(1.2rem, 2.0vw, 2.4rem); /* Fully responsive */
-  line-height: 1.65em; /* 👈 tighter sentence spacing */
+  font-size: clamp(1.2rem, 2.0vw, 2.4rem);
+  line-height: 1.65em;
   font-weight: bold;
   z-index: 2;
-  color: #000;  
+  color: #000;
 }
 
 #codex-content p {
-  margin-bottom: 1.4em; /* 👈 keeps paragraph spacing clean */
+  margin-bottom: 1.4em;
 }
 
 .codex-section > p > em:first-child {
@@ -58,7 +47,6 @@
   color: #333;
 }
 
-/* Keep normal em inline emphasis untouched */
 em {
   font-style: italic;
   font-weight: normal;
@@ -68,48 +56,11 @@ em {
 .codex-section h2 {
   font-family: 'Cinzel Decorative', serif;
   font-size: 2.7em;
-  line-height: 1.3em;  /* 👈 adds vertical breathing space */
-  margin-bottom: 20px; /* 👈 optional: space below the heading */
-  word-break: break-word; /* 👈 optional: keeps long words from spilling over */
-  color: #000; /* 👈 pure black */
-  text-shadow: none; /* optional: remove glow for a cleaner black */
-}
-
-  .handwritten {
-  font-family: 'Zeyada', cursive;
-}
-
-/* Style for subheadings (h3) */
-.codex-section h3 {
-  font-weight: bold;
-  text-decoration: underline;
-  margin-bottom: 0.4em; /* Brings content closer to subhead */
-  margin-top: 1.4em; /* Adds clarity spacing above */
-}
-
-.codex-section h4 {
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 1.4em; /* optional: control size */
-  margin: 20px 0 10px; /* optional: adds spacing */
-}
-
-    .divider {
-      height: 14px;
-      background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
-      margin: 30px 0 -30px;
-      border-radius: 8px;
-    }
-
-    .red-divider {
-      height: 6px;
-      background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
-      margin: 30px 0 -30px;
-      border-radius: 4px;
-    }
-
-    #toggle-glow-star {
-      display: none !important;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+  word-break: break-word;
+  color: #000;
+  text-shadow: none;
 }
 
 .handwritten {
@@ -118,8 +69,40 @@ em {
   line-height: 2.4rem;
   font-weight: normal;
   letter-spacing: 0.5px;
-  color: #2e1c13; /* rich ink brown for authenticity */
-}  
+  color: #2e1c13;
+}
+
+.codex-section h3 {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 0.4em;
+  margin-top: 1.4em;
+}
+
+.codex-section h4 {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.4em;
+  margin: 20px 0 10px;
+}
+
+.divider {
+  height: 14px;
+  background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
+  margin: 30px 0 -30px;
+  border-radius: 8px;
+}
+
+.red-divider {
+  height: 6px;
+  background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
+  margin: 30px 0 -30px;
+  border-radius: 4px;
+}
+
+#toggle-glow-star {
+  display: none !important;
+}
 
 #codex-content::after {
   content: "";
@@ -130,81 +113,65 @@ em {
   min-height: 100%;
   pointer-events: none;
   z-index: 1;
-  background:
-    linear-gradient(
-      to right,
-      rgba(26, 15, 7, 0.6) 0%,
-      rgba(26, 15, 7, 0.3) 5%,
-      transparent 20%,
-      transparent 80%,
-      rgba(26, 15, 7, 0.3) 95%,
-      rgba(26, 15, 7, 0.6) 100%
-    ),
+  background: linear-gradient(
+    to right,
+    rgba(26, 15, 7, 0.6) 0%,
+    rgba(26, 15, 7, 0.3) 5%,
+    transparent 20%,
+    transparent 80%,
+    rgba(26, 15, 7, 0.3) 95%,
+    rgba(26, 15, 7, 0.6) 100%
+  );
   background-repeat: repeat-y;
 }
-    
-    .codex-nav {
-      position: fixed;
-      top: 0;
-      left: 25vw;
-      width: calc(100vw - 25vw);
-      height: 80px;
-      background: linear-gradient(to right, #6c0000, #8b0000);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-      z-index: 1000;
-      border-bottom: 5px solid gold;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
-      font-size: !important;
-      font-weight: 700;
-      font-family: 'Cinzel Decorative', serif;    
+
+.codex-nav {
+  position: fixed;
+  top: 0;
+  left: 25vw;
+  width: calc(100vw - 25vw);
+  height: 80px;
+  background: linear-gradient(to right, #6c0000, #8b0000);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  z-index: 1000;
+  border-bottom: 5px solid gold;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  font-weight: 700;
+  font-family: 'Cinzel Decorative', serif;
 }
 
-    .codex-nav a {
-      height: 80px;
-      font-size: !important;
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
+.codex-nav a {
+  height: 80px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
 
-    .codex-nav a:hover {
-      color: gold;
-      text-shadow: 0 0 10px gold;
-    }
- 
-    .codex-section li {
-  margin-bottom: 35px; /* or 15px for more breathing room */
+.codex-nav a:hover {
+  color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+.codex-section li {
+  margin-bottom: 35px;
   line-height: 1.6em;
 }
 
-    .nav-divider {
-      color: gold;
-      font-weight: bold;
-      margin: 0 12px;
-    }
-    
-  h2[id]::before {
+.nav-divider {
+  color: gold;
+  font-weight: bold;
+  margin: 0 12px;
+}
+
+h2[id]::before {
   display: block;
   content: " ";
-  margin-top: -100px; /* Match nav height + padding */
+  margin-top: -100px;
   height: 100px;
   visibility: hidden;
 }
-  </style>
-
-  <!-- Sidebar + Toggle Script -->
-  <script src="script.js"></script>
-  <script>
-    fetch('sidebar.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('sidebar-container').innerHTML = html;
-      });
-  </script>
-</body>
-</html>
 
