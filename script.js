@@ -8,13 +8,24 @@ function initSidebarToggle() {
     return;
   }
 
+  // Define sidebar width and toggle left offset
+  const SIDEBAR_WIDTH = 25;        // in vw
+  const TOGGLE_LEFT_CLOSED = 3.5;  // in vw
+
   let isOpen = localStorage.getItem("sidebarOpen") === "true";
 
   function updatePositions() {
-    sidebar.style.left = isOpen ? "0" : "-25vw";
-    toggleArrow.style.left = isOpen ? "23.5vw" : "3.5vw";
-    starGlow.style.left = isOpen ? "26.5vw" : "5vw";
-    toggleArrow.style.backgroundImage = `url('${isOpen ? 'openside.png' : 'closedside.png'}')`;
+    if (isOpen) {
+      sidebar.style.left = "0";
+      toggleArrow.style.left = `${SIDEBAR_WIDTH - 1.5}vw`; // = 23.5vw
+      starGlow.style.left = `${SIDEBAR_WIDTH + 1.5}vw`;    // = 26.5vw
+      toggleArrow.style.backgroundImage = "url('openside.png')";
+    } else {
+      sidebar.style.left = `-${SIDEBAR_WIDTH - TOGGLE_LEFT_CLOSED}vw`; // = -21.5vw
+      toggleArrow.style.left = `${TOGGLE_LEFT_CLOSED}vw`;
+      starGlow.style.left = "5vw";
+      toggleArrow.style.backgroundImage = "url('closedside.png')";
+    }
   }
 
   toggleArrow.addEventListener("click", () => {
@@ -23,7 +34,5 @@ function initSidebarToggle() {
     updatePositions();
   });
 
-  updatePositions();
+  updatePositions(); // Set initial position
 }
-
-
