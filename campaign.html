@@ -84,7 +84,8 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('sidebar-container').innerHTML = html;
-      });
+      initSidebarToggle(); // ✅ This was missing
+    });
   </script>
 </body>
 </html>
