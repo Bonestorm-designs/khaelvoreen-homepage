@@ -77,15 +77,15 @@
       <img src="underconstruction.jpg" alt="Under Construction" />
     </div>
   </div>
-  
+
   <script src="script.js"></script>
   <script>
     fetch('sidebar.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('sidebar-container')?.remove(); // not needed here but safe
-        initSidebarToggle?.();
-      });
+        document.getElementById('sidebar-container').innerHTML = html;
+      initSidebarToggle(); // ✅ This was missing
+    });
   </script>
 </body>
 </html>
