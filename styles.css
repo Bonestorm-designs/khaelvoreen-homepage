@@ -34,7 +34,7 @@ body {
 #sidebar-menu a img {
   width: 15vw;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   margin: 0.5vh auto; /* Adds space around each icon */
   padding: 0.5vw;      /* Adds internal gap around icon */
