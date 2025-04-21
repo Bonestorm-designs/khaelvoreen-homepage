@@ -1,38 +1,32 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const waitForSidebar = setInterval(() => {
-    const sidebar = document.getElementById('sidebar');
-    const toggleArrow = document.getElementById('sidebar-toggle');
-    const starGlow = document.getElementById('toggle-glow-star');
+fetch('sidebar.html')
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById('sidebar-container').innerHTML = html;
+    initSidebarToggle(); // 👈 call setup only after loaded
+  });
 
-    if (sidebar && toggleArrow && starGlow) {
-      clearInterval(waitForSidebar);
+function initSidebarToggle() {
+  const sidebar = document.getElementById('sidebar');
+  const toggleArrow = document.getElementById('sidebar-toggle');
+  const starGlow = document.getElementById('toggle-glow-star');
 
-      // Load saved state from localStorage
-      let isOpen = localStorage.getItem("sidebarOpen") === "true";
+  if (!sidebar || !toggleArrow || !starGlow) return;
 
-      function updatePositions() {
-        if (isOpen) {
-          sidebar.style.left = "0";
-          toggleArrow.style.left = "23.5vw";   // aligns with sidebar width
-          starGlow.style.left = "26.5vw";      // positioned just past the toggle
-          toggleArrow.style.backgroundImage = "url('openside.png')";
-        } else {
-          sidebar.style.left = "-25vw";        // matches full sidebar width
-          toggleArrow.style.left = "3.5vw";    // floats to the edge
-          starGlow.style.left = "5vw";         // glow centered near toggle
-          toggleArrow.style.backgroundImage = "url('closedside.png')";
-        }
-      }
+  let isOpen = localStorage.getItem("sidebarOpen") === "true";
 
-      // Handle toggle click
-      toggleArrow.addEventListener("click", () => {
-        isOpen = !isOpen;
-        localStorage.setItem("sidebarOpen", isOpen);
-        updatePositions();
-      });
+  function updatePositions() {
+    sidebar.style.left = isOpen ? "0" : "-25vw";
+    toggleArrow.style.left = isOpen ? "23.5vw" : "3.5vw";
+    starGlow.style.left = isOpen ? "26.5vw" : "5vw";
+    toggleArrow.style.backgroundImage = `url('${isOpen ? 'openside.png' : 'closedside.png'}')`;
+  }
 
-      updatePositions(); // initial load
-    }
-  }, 50);
-});
+  toggleArrow.addEventListener("click", () => {
+    isOpen = !isOpen;
+    localStorage.setItem("sidebarOpen", isOpen);
+    updatePositions();
+  });
+
+  updatePositions();
+}
 
