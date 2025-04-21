@@ -26,24 +26,26 @@
       height: 100%;
     }
 
-    .signup-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      max-width: 1000px;
-      padding: 60px 40px;
-      background-color: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
-      font-family: 'EB Garamond', serif;
-      font-size: 2.4rem;
-      font-weight: bold;
-      z-index: 10;
-    }
-
+.signup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 1000px;
+  max-height: 90vh;
+  padding: 40px 30px;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: bold;
+  z-index: 10;
+  overflow-y: auto;
+}
+    
     .signup-container h1 {
       font-family: 'Cinzel', serif;
       font-size: 36px;
