@@ -7,22 +7,20 @@ html, body {
   font-family: 'EB Garamond', serif;
 }
 
-/* Layout container */
+/* Layout wrapper */
 #layout-wrapper {
   display: flex;
   width: 100%;
   height: 100%;
 }
 
-/* Main content scrollable area */
+/* Main scrollable content */
 #codex-content {
-  position: relative; /* ⬅️ was fixed */
-  overflow-y: auto;
-  height: 100vh;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 25vw;
+  left: 25vw; /* Sidebar width */
   overflow-y: auto;
   overflow-x: hidden;
   padding: 120px 4vw 40px;
@@ -32,154 +30,29 @@ html, body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  font-family: 'EB Garamond', serif;
   box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
   font-size: clamp(1.2rem, 2.0vw, 2.4rem);
   line-height: 1.65em;
   font-weight: bold;
   z-index: 2;
   color: #000;
+  font-family: 'EB Garamond', serif;
+  box-sizing: border-box;
 }
 
+/* Paragraph spacing */
 #codex-content p {
   margin-bottom: 1.4em;
 }
 
-/* Responsive top nav */
-.codex-nav {
-  position: fixed;
-  top: 0;
-  left: 25vw;
-  width: calc(100vw - 25vw);
-  height: 70px;
-  background: linear-gradient(to right, #6c0000, #8b0000);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  overflow-x: auto;         /* ⬅ Enables scrolling */
-  white-space: nowrap;      /* ⬅ Prevents wrapping */
-  gap: 20px;                /* ⬅ Tighter spacing */
-  padding: 0 1.5vw;
-  scrollbar-width: none;    /* Firefox - hides scrollbar */
-  -ms-overflow-style: none; /* Edge - hides scrollbar */
-  z-index: 1000;
-  border-bottom: 5px solid gold;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
-  font-weight: 700;
-  font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(0.7rem, 1.1vw, 1.1rem); /* 👈 Compact font size */
-}
-
-/* Hide scrollbar for WebKit browsers */
-.codex-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.codex-nav a {
-  display: inline-block;
-  padding: 0 0.6vw;
-  color: #fff;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.codex-nav a:hover {
-  color: gold;
-  text-shadow: 0 0 10px gold;
-}
-
-.nav-divider {
-  color: gold;
-  font-weight: bold;
-  margin: 0 6px;
-}
-
-/* Headings */
-.codex-section h2 {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(2rem, 4vw, 2.7em);
-  line-height: 1.3em;
-  margin-bottom: 20px;
-  word-break: break-word;
-  color: #000;
-  text-shadow: none;
-}
-
-.codex-section h3 {
-  font-weight: bold;
-  text-decoration: underline;
-  margin-bottom: 0.4em;
-  margin-top: 1.4em;
-}
-
-.codex-section h4 {
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 1.4em;
-  margin: 20px 0 10px;
-}
-
-/* Emphasized intro block */
-.codex-section > p > em:first-child {
-  display: block;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* General em style */
-em {
-  font-style: italic;
-  font-weight: normal;
-  color: inherit;
-}
-
-/* Handwriting class */
-.handwritten {
-  font-family: 'Zeyada', cursive;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  color: #2e1c13;
-}
-
-/* List styling */
-.codex-section li {
-  margin-bottom: 35px;
-  line-height: 1.6em;
-}
-
-/* Dividers */
-.divider {
-  height: 14px;
-  background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
-  margin: 30px 0 -30px;
-  border-radius: 8px;
-}
-
-.red-divider {
-  height: 6px;
-  background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
-  margin: 30px 0 -30px;
-  border-radius: 4px;
-}
-
-/* Sidebar toggle icon hidden on lore page */
-#toggle-glow-star {
-  display: none !important;
-}
-
-/* Parchment side shadow */
+/* Parchment shadow edge — stays inside content */
 #codex-content::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* ⬅️ ensures it always covers the scrollable area */
+  height: 100%; /* Only inside content area */
   pointer-events: none;
   z-index: 1;
   background: linear-gradient(
@@ -194,12 +67,103 @@ em {
   background-repeat: repeat-y;
 }
 
-/* Anchor spacing fix for nav jump */
+/* Navigation bar (still fixed, responsive) */
+.codex-nav {
+  position: fixed;
+  top: 0;
+  left: 25vw;
+  width: 75vw;
+  height: 9vh;
+  min-height: 60px;
+  background: linear-gradient(to right, #6c0000, #8b0000);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  z-index: 1000;
+  border-bottom: 5px solid gold;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  font-weight: 700;
+  font-family: 'Cinzel Decorative', serif;
+  padding: 0 2vw;
+  box-sizing: border-box;
+}
+
+/* Nav links */
+.codex-nav a {
+  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.codex-nav a:hover {
+  color: gold;
+  text-shadow: 0 0 10px gold;
+}
+
+/* Divider lines */
+.divider {
+  height: 14px;
+  background: linear-gradient(to right, #d4af37, #ffd700, #d4af37);
+  margin: 30px 0 -30px;
+  border-radius: 8px;
+}
+
+.red-divider {
+  height: 6px;
+  background: linear-gradient(to right, #8b0000, #b30000, #8b0000);
+  margin: 30px 0 -30px;
+  border-radius: 4px;
+}
+
+/* Other content */
+.codex-section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.7em;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+  word-break: break-word;
+  color: #000;
+  text-shadow: none;
+}
+
+.codex-section h3,
+.codex-section h4 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.codex-section h3 {
+  margin-bottom: 0.4em;
+  margin-top: 1.4em;
+}
+
+.codex-section h4 {
+  font-size: 1.4em;
+  margin: 20px 0 10px;
+}
+
+.codex-section li {
+  margin-bottom: 35px;
+  line-height: 1.6em;
+}
+
+.nav-divider {
+  color: gold;
+  font-weight: bold;
+  margin: 0 12px;
+}
+
+/* Anchor spacing for in-page links */
 h2[id]::before {
-  display: block;
   content: " ";
+  display: block;
   margin-top: -100px;
   height: 100px;
   visibility: hidden;
 }
-
