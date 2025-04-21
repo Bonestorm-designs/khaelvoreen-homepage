@@ -126,19 +126,18 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
   <script>
-    fetch('sidebar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('sidebar-container')?.remove(); // not needed here but safe
-        initSidebarToggle?.();
-      });
-
     window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         document.getElementById("dragon").classList.add("fly");
       }, 800);
+    });
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar-container').innerHTML = html;
+      initSidebarToggle(); // ✅ This was missing
     });
   </script>
 </body>
