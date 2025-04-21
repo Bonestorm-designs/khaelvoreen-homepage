@@ -1,16 +1,12 @@
-fetch('sidebar.html')
-  .then(response => response.text())
-  .then(html => {
-    document.getElementById('sidebar-container').innerHTML = html;
-    initSidebarToggle(); // 👈 call setup only after loaded
-  });
-
 function initSidebarToggle() {
   const sidebar = document.getElementById('sidebar');
   const toggleArrow = document.getElementById('sidebar-toggle');
   const starGlow = document.getElementById('toggle-glow-star');
 
-  if (!sidebar || !toggleArrow || !starGlow) return;
+  if (!sidebar || !toggleArrow || !starGlow) {
+    console.warn("Sidebar toggle elements not found.");
+    return;
+  }
 
   let isOpen = localStorage.getItem("sidebarOpen") === "true";
 
@@ -29,4 +25,5 @@ function initSidebarToggle() {
 
   updatePositions();
 }
+
 
