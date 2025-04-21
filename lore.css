@@ -49,31 +49,39 @@ html, body {
   top: 0;
   left: 25vw;
   width: calc(100vw - 25vw);
-  min-height: 60px;
-  padding: 0 2vw;
+  height: 70px;
   background: linear-gradient(to right, #6c0000, #8b0000);
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: clamp(10px, 2vw, 50px); /* Responsive spacing */
+  overflow-x: auto;         /* ⬅ Enables scrolling */
+  white-space: nowrap;      /* ⬅ Prevents wrapping */
+  gap: 20px;                /* ⬅ Tighter spacing */
+  padding: 0 1.5vw;
+  scrollbar-width: none;    /* Firefox - hides scrollbar */
+  -ms-overflow-style: none; /* Edge - hides scrollbar */
   z-index: 1000;
   border-bottom: 5px solid gold;
   box-shadow: 0 4px 16px rgba(0,0,0,0.6);
   font-weight: 700;
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(0.8rem, 1.4vw, 1.2rem); /* 🔥 Responsive */
+  font-size: clamp(0.7rem, 1.1vw, 1.1rem); /* 👈 Compact font size */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.codex-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .codex-nav a {
-  text-decoration: none;
+  display: inline-block;
+  padding: 0 0.6vw;
   color: #fff;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  padding: 0.5rem 0.8rem;
-  white-space: nowrap;
-  max-width: 150px;
-  text-align: center;
 }
 
 .codex-nav a:hover {
