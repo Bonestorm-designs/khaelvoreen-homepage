@@ -6,12 +6,18 @@
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond&display=swap" rel="stylesheet" />
+
   <style>
+    /* 🔧 Global Reset & Box Model Fix */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden; /* 🚫 prevents horizontal scroll */
       font-family: 'EB Garamond', serif;
     }
 
@@ -29,23 +35,22 @@
 .signup-container {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: calc(50% + 12.5vw); /* Adjusted: centers relative to space beyond sidebar */
   transform: translate(-50%, -50%);
   width: 90vw;
   max-width: 1000px;
-  max-height: 90vh;
-  padding: 40px 30px;
+  padding: 60px 40px;
   background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(6px);
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
   font-family: 'EB Garamond', serif;
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: 1.6rem;
   font-weight: bold;
   z-index: 10;
   overflow-y: auto;
 }
-    
+
     .signup-container h1 {
       font-family: 'Cinzel', serif;
       font-size: 36px;
@@ -56,14 +61,15 @@
     .signup-container label {
       display: block;
       margin: 20px 0 10px;
-      font-size: 24px;
+      font-size: 1.4rem;
     }
 
     .signup-container input,
     .signup-container textarea {
       width: 100%;
+      max-width: 100%;
       padding: 16px;
-      font-size: 18px;
+      font-size: 1rem;
       border: none;
       border-radius: 6px;
       background-color: #333;
@@ -76,7 +82,7 @@
       background-color: #bf00ff;
       color: #fff;
       padding: 12px 20px;
-      font-size: 22px;
+      font-size: 1.2rem;
       border: none;
       border-radius: 6px;
       cursor: pointer;
@@ -115,7 +121,6 @@
 </head>
 
 <body>
- </script>
   <div id="layout-wrapper">
     <div id="sidebar-container"></div>
 
@@ -136,7 +141,7 @@
         <textarea id="q1" name="q1" rows="3" required></textarea>
 
         <label for="q2">Top 3 things you want to experience in the campaign (go into detail if you'd like!):</label>
-        <textarea id="q2" name="q2" rows="8" required></textarea>
+        <textarea id="q2" name="q2" rows="6" required></textarea>
 
         <label for="q3">Do you want to create your own backstory, collaborate, or have amnesia?</label>
         <textarea id="q3" name="q3" rows="3" required></textarea>
@@ -149,7 +154,7 @@
     </div>
   </div>
 
-   <script src="script.js"></script>
+  <script src="script.js"></script>
   <script>
     fetch('sidebar.html')
       .then(res => res.text())
