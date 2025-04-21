@@ -7,30 +7,31 @@ window.addEventListener("DOMContentLoaded", () => {
     if (sidebar && toggleArrow && starGlow) {
       clearInterval(waitForSidebar);
 
-      // Load state from localStorage
+      // Load saved state from localStorage
       let isOpen = localStorage.getItem("sidebarOpen") === "true";
 
       function updatePositions() {
         if (isOpen) {
           sidebar.style.left = "0";
-          toggleArrow.style.left = "23.5vw";
-          starGlow.style.left = "26.5vw";
+          toggleArrow.style.left = "23.5vw";   // aligns with sidebar width
+          starGlow.style.left = "26.5vw";      // positioned just past the toggle
           toggleArrow.style.backgroundImage = "url('openside.png')";
         } else {
-          sidebar.style.left = "-20vw";
-          toggleArrow.style.left = "3.5vw";
-          starGlow.style.left = "5vw";
+          sidebar.style.left = "-25vw";        // matches full sidebar width
+          toggleArrow.style.left = "3.5vw";    // floats to the edge
+          starGlow.style.left = "5vw";         // glow centered near toggle
           toggleArrow.style.backgroundImage = "url('closedside.png')";
         }
       }
 
+      // Handle toggle click
       toggleArrow.addEventListener("click", () => {
         isOpen = !isOpen;
-        localStorage.setItem("sidebarOpen", isOpen); // 💾 Save preference
+        localStorage.setItem("sidebarOpen", isOpen);
         updatePositions();
       });
 
-      updatePositions();
+      updatePositions(); // initial load
     }
   }, 50);
 });
