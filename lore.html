@@ -9,7 +9,7 @@
   <!-- ✅ Stylesheets -->
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="lore.css" /> <!-- ✅ NEW: Move lore-specific styles here -->
+  <link rel="stylesheet" href="lore.css" />
 
   <!-- ✅ Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond&family=Zeyada&display=swap" rel="stylesheet" />
@@ -444,6 +444,7 @@ Academy</h2>
       .then(res => res.text())
       .then(html => {
       document.getElementById('sidebar-container').innerHTML = html;
+    }); // ✅ <- add this closing parenthesis!
   </script>
 </body>
 </html>
