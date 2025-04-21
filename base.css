@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
+/* === GLOBAL RESET & BASE FONT === */
 html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
   font-family: 'Cinzel', serif;
+  overflow: hidden;
+  background: black; /* fallback in case main background image fails */
 }
+
+/* === SHIMMER EFFECT (for buttons or hovers) === */
 .shimmer-hover {
   display: inline-block;
   position: relative;
@@ -31,32 +40,32 @@ html, body {
   100% { left: 125%; }
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: black;
-}
-
+/* === FIXED RESOLUTION WRAPPER (designed for 2560x1440) === */
 #scaled-wrapper {
   width: 2560px;
   height: 1440px;
-  transform-origin: top left;
   position: absolute;
   top: 0;
   left: 0;
+  transform-origin: top left;
 }
 
+/* === RESPONSIVE SCALING === */
 @media screen and (min-width: 100px) {
   html {
     height: 100%;
   }
+
   body {
     width: 100vw;
     height: 100vh;
   }
+
   #scaled-wrapper {
-    transform: scale(calc(100vw / 2560), calc(100vh / 1440));
+    transform: scale(
+      calc(100vw / 2560),
+      calc(100vh / 1440)
+    );
   }
 }
 
