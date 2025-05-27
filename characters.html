@@ -2,97 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Characters | Khael'Voreen</title>
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lore.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=EB+Garamond&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url("Nephyrfold Heights.jpg") no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Cinzel', serif;
-      color: #f2f2f2;
+    .character-nav {
+      position: fixed;
+      top: 90px;
+      left: 25vw;
+      width: calc(100vw - 25vw);
+      height: 90px;
+      background: linear-gradient(to right, #3e0000, #5a0000);
+      color: #fff;
       display: flex;
-      height: 100vh;
-    }
-
-    #layout-wrapper {
-      display: flex;
-      width: 100%;
-    }
-
-    #main-content {
-      flex: 1;
-      display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 4vh;
-      overflow: hidden;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 30px;
+      padding: 0 2vw;
+      z-index: 1000;
+      border-top: 5px solid gold;
+      border-bottom: 5px solid gold;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      font-weight: 700;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
     }
 
-    #main-content img {
-      max-width: 70vw;
-      max-height: 80vh;
-      object-fit: contain;
-      filter: drop-shadow(0 0 10px #000);
-      margin-left: 25vw;
+    .character-tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 1.5rem;
+      margin-top: 40px;
+      justify-items: center;
     }
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  font-family: 'Cinzel', serif;
-  background: url("Nephyrfold Heights.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: #f2f2f2;
-  display: flex;
-}
 
+    .talent-icon {
+      width: 70px;
+      height: 70px;
+      background-size: cover;
+      border: 2px solid #333;
+      border-radius: 12px;
+      filter: grayscale(100%) brightness(0.6);
+      position: relative;
+      transition: filter 0.3s ease;
+    }
 
-  #scaled-wrapper {
-    width: 2560px;
-    height: 1440px;
-    transform-origin: top left;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+    .talent-icon.active {
+      filter: none;
+      border-color: gold;
+    }
 
-  @media screen and (min-width: 100px) {
-    html {
-      height: 100%;
+    .talent-icon:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 8px 10px;
+      font-size: 0.9rem;
+      font-family: 'EB Garamond', serif;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 100;
     }
-    body {
-      width: 100vw;
-      height: 100vh;
-    }
-    #scaled-wrapper {
-      transform: scale(calc(100vw / 2560), calc(100vh / 1440));
-    }
-  }
-</style>
-  
+  </style>
 </head>
 <body>
-  <div id="layout-wrapper">
-    <div id="sidebar-container"></div>
-
-    <div id="main-content">
-      <img src="underconstruction.jpg" alt="Under Construction" />
+<div id="layout-wrapper">
+  <div id="sidebar-container"></div>
+  <div id="codex-content">
+    <div class="codex-nav character-nav">
+      <a href="#muuru">Muuru (Fighter)</a>
+      <a href="#uilliam">Uilliam (Barbarian)</a>
+      <a href="#karnos">Karnos (Druid)</a>
+      <a href="#wizard">Unnamed (Wizard)</a>
+      <a href="#bard">Unnamed (Bard)</a>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-  <script>
-fetch('sidebar.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('sidebar-container').innerHTML = html;
-    initSidebarToggle(); // ✅ Correctly scoped inside the .then block
-  });
-  </script>
+    <section class="codex-section" id="muuru">
+      <h2>Muuru (Fighter)</h2>
+      <div class="character-tree">
+        <div class="talent-icon active" style="background-image: url('icons/strike.png');" data-tooltip="Power Strike: Deal bonus damage on your next hit."></div>
+        <div class="talent-icon" style="background-image: url('icons/guard.png');" data-tooltip="Iron Guard: Gain resistance to physical damage."></div>
+        <div class="talent-icon" style="background-image: url('icons/whirlwind.png');" data-tooltip="Whirlwind: Hit all nearby enemies."></div>
+      </div>
+    </section>
+
+    <section class="codex-section" id="uilliam">
+      <h2>Uilliam (Barbarian)</h2>
+      <div class="character-tree">
+        <div class="talent-icon active" style="background-image: url('icons/rage.png');" data-tooltip="Berserker Rage: Gain bonus damage while below half HP."></div>
+        <div class="talent-icon" style="background-image: url('icons/roar.png');" data-tooltip="Intimidating Roar: Frighten nearby enemies."></div>
+        <div class="talent-icon" style="background-image: url('icons/leap.png');" data-tooltip="Savage Leap: Jump to engage a distant enemy."></div>
+      </div>
+    </section>
+
+    <section class="codex-section" id="karnos">
+      <h2>Karnos (Druid)</h2>
+      <div class="character-tree">
+        <div class="talent-icon active" style="background-image: url('icons/vines.png');" data-tooltip="Grasping Vines: Restrict enemy movement."></div>
+        <div class="talent-icon" style="background-image: url('icons/bloom.png');" data-tooltip="Nature's Bloom: Restore HP to allies in a small area."></div>
+        <div class="talent-icon" style="background-image: url('icons/wildshape.png');" data-tooltip="Wild Shape: Transform into a beast."></div>
+      </div>
+    </section>
+
+    <section class="codex-section" id="wizard">
+      <h2>Unnamed (Wizard)</h2>
+      <div class="character-tree">
+        <div class="talent-icon active" style="background-image: url('icons/fireball.png');" data-tooltip="Fireball: Launch an explosive ball of flame."></div>
+        <div class="talent-icon" style="background-image: url('icons/magicshield.png');" data-tooltip="Arcane Ward: Gain a magical shield."></div>
+        <div class="talent-icon" style="background-image: url('icons/blink.png');" data-tooltip="Blink: Instantly teleport a short distance."></div>
+      </div>
+    </section>
+
+    <section class="codex-section" id="bard">
+      <h2>Unnamed (Bard)</h2>
+      <div class="character-tree">
+        <div class="talent-icon active" style="background-image: url('icons/song.png');" data-tooltip="Inspiring Song: Grant bonus to all allies' rolls."></div>
+        <div class="talent-icon" style="background-image: url('icons/illusion.png');" data-tooltip="Minor Illusion: Distract or confuse enemies."></div>
+        <div class="talent-icon" style="background-image: url('icons/echo.png');" data-tooltip="Echo Verse: Repeats the last spell cast."></div>
+      </div>
+    </section>
+  </div>
+</div>
+<script>
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+    });
+</script>
 </body>
 </html>
