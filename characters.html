@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Metadata -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Characters | Khael'Voreen</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="lore.css" />
+
+  <!-- Character Page Styles -->
   <style>
-    /* TAB NAVIGATION BAR */
+    /* Character Tabs Bar */
     .character-tabs {
       position: fixed;
       top: 90px;
@@ -48,6 +57,7 @@
       text-shadow: 0 0 6px gold;
     }
 
+    /* Talent Tree Sections */
     .talent-section {
       display: none;
       padding-top: 210px;
@@ -101,69 +111,74 @@
 </head>
 
 <body>
-  <div id="layout-wrapper">
-    <div id="sidebar-container"></div>
+  <div id="scaled-wrapper">
+    <div id="layout-wrapper">
+      
+      <!-- SIDEBAR INJECTED HERE -->
+      <div id="sidebar-container"></div>
 
-    <!-- CHARACTER TABS -->
-    <div class="character-tabs">
-      <div class="tab active" data-tab="bard">Unnamed (Bard)</div>
-      <div class="tab" data-tab="barbarian">Uilliam (Barbarian)</div>
-      <div class="tab" data-tab="druid">Karnos (Druid)</div>
-      <div class="tab" data-tab="fighter">Muuru (Fighter)</div>
-      <div class="tab" data-tab="wizard">Unnamed (Wizard)</div>
-    </div>
+      <!-- CHARACTER TAB BAR -->
+      <div class="character-tabs">
+        <div class="tab active" data-tab="bard">Unnamed (Bard)</div>
+        <div class="tab" data-tab="barbarian">Uilliam (Barbarian)</div>
+        <div class="tab" data-tab="druid">Karnos (Druid)</div>
+        <div class="tab" data-tab="fighter">Muuru (Fighter)</div>
+        <div class="tab" data-tab="wizard">Unnamed (Wizard)</div>
+      </div>
 
-    <!-- CHARACTER TALENT TREES -->
-    <div id="codex-content">
-      <section id="bard" class="talent-section active">
-        <h2>Unnamed (Bard)</h2>
-        <div class="talent-tree">
-          <div class="talent-icon" data-tooltip="Example Bard Ability"></div>
-          <div class="talent-icon active" data-tooltip="Unlocked Bard Talent"></div>
-        </div>
-      </section>
+      <!-- MAIN CONTENT -->
+      <div id="codex-content">
+        <!-- Talent Trees -->
+        <section id="bard" class="talent-section active">
+          <h2>Unnamed (Bard)</h2>
+          <div class="talent-tree">
+            <div class="talent-icon" data-tooltip="Placeholder Bard Ability"></div>
+            <div class="talent-icon active" data-tooltip="Unlocked Bard Power"></div>
+          </div>
+        </section>
 
-      <section id="barbarian" class="talent-section">
-        <h2>Uilliam (Barbarian)</h2>
-        <div class="talent-tree">
-          <div class="talent-icon" data-tooltip="Example Barbarian Rage"></div>
-        </div>
-      </section>
+        <section id="barbarian" class="talent-section">
+          <h2>Uilliam (Barbarian)</h2>
+          <div class="talent-tree">
+            <div class="talent-icon" data-tooltip="Barbarian Rage"></div>
+          </div>
+        </section>
 
-      <section id="druid" class="talent-section">
-        <h2>Karnos (Druid)</h2>
-        <div class="talent-tree">
-          <div class="talent-icon" data-tooltip="Druid Wild Shape Ability"></div>
-        </div>
-      </section>
+        <section id="druid" class="talent-section">
+          <h2>Karnos (Druid)</h2>
+          <div class="talent-tree">
+            <div class="talent-icon" data-tooltip="Druid Wild Shape"></div>
+          </div>
+        </section>
 
-      <section id="fighter" class="talent-section">
-        <h2>Muuru (Fighter)</h2>
-        <div class="talent-tree">
-          <div class="talent-icon" data-tooltip="Second Wind"></div>
-        </div>
-      </section>
+        <section id="fighter" class="talent-section">
+          <h2>Muuru (Fighter)</h2>
+          <div class="talent-tree">
+            <div class="talent-icon" data-tooltip="Fighter Second Wind"></div>
+          </div>
+        </section>
 
-      <section id="wizard" class="talent-section">
-        <h2>Unnamed (Wizard)</h2>
-        <div class="talent-tree">
-          <div class="talent-icon" data-tooltip="Arcane Blast"></div>
-        </div>
-      </section>
+        <section id="wizard" class="talent-section">
+          <h2>Unnamed (Wizard)</h2>
+          <div class="talent-tree">
+            <div class="talent-icon" data-tooltip="Arcane Blast"></div>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 
-  <!-- SIDEBAR INJECTOR -->
+  <!-- Inject Sidebar -->
   <script src="script.js"></script>
   <script>
     fetch('sidebar.html')
-      .then(response => response.text())
+      .then(res => res.text())
       .then(html => {
         document.getElementById('sidebar-container').innerHTML = html;
-        if (typeof initSidebarToggle === "function") initSidebarToggle();
+        initSidebarToggle();
       });
 
-    // Tab Switching Logic
+    // Tab Switching
     const tabs = document.querySelectorAll('.tab');
     const sections = document.querySelectorAll('.talent-section');
 
@@ -175,6 +190,10 @@
         document.getElementById(tab.dataset.tab).classList.add('active');
       });
     });
+  </script>
+</body>
+</html>
+
   </script>
 </body>
 </html>
