@@ -17,12 +17,16 @@
 
   <!-- Character Page Styles -->
   <style>
+    :root {
+      --sidebar-width: 25vw;
+    }
+
     /* Character Tabs Bar */
     .character-tabs {
       position: fixed;
       top: 90px;
-      left: 25vw;
-      width: calc(100vw - 25vw);
+      left: var(--sidebar-width);
+      width: calc(100% - var(--sidebar-width));
       height: 90px;
       background: linear-gradient(to right, #002244, #004466);
       border-bottom: 5px solid gold;
@@ -51,10 +55,15 @@
       transition: all 0.3s ease;
     }
 
-    .tab:hover, .tab.active {
-      background: #005577;
+    .tab:hover,
+    .tab.active {
+      background: linear-gradient(to bottom, #005577, #001122);
       color: gold;
       text-shadow: 0 0 6px gold;
+      border: 3px solid gold;
+      box-shadow: 0 0 12px gold, 0 0 20px rgba(255, 215, 0, 0.4);
+      transform: scale(1.08);
+      z-index: 1;
     }
 
     /* Talent Tree Sections */
@@ -114,61 +123,70 @@
   <div id="scaled-wrapper">
     <div id="layout-wrapper">
       
-      <!-- SIDEBAR INJECTED HERE -->
+      <!-- Sidebar Injected Here -->
       <div id="sidebar-container"></div>
 
-      <!-- CHARACTER TAB BAR -->
+      <!-- Character Tab Bar -->
       <div class="character-tabs">
-        <div class="tab active" data-tab="bard">Unnamed (Bard)</div>
+        <div class="tab active" data-tab="monk">Phaarmer Devin (Monk)</div>
         <div class="tab" data-tab="barbarian">Uilliam (Barbarian)</div>
         <div class="tab" data-tab="druid">Karnos (Druid)</div>
         <div class="tab" data-tab="fighter">Muuru (Fighter)</div>
-        <div class="tab" data-tab="wizard">Unnamed (Wizard)</div>
+        <div class="tab" data-tab="wizard">Carlos (Wizard)</div>
       </div>
 
-      <!-- MAIN CONTENT -->
+      <!-- Main Content Area -->
       <div id="codex-content">
-        <!-- Talent Trees -->
-        <section id="bard" class="talent-section active">
-          <h2>Unnamed (Bard)</h2>
+        <!-- Monk -->
+        <section id="monk" class="talent-section active">
+          <h2>Phaarmer Devin (Monk)</h2>
           <div class="talent-tree">
-            <div class="talent-icon" data-tooltip="Placeholder Bard Ability"></div>
-            <div class="talent-icon active" data-tooltip="Unlocked Bard Power"></div>
+            <div class="talent-icon" data-tooltip="Ki Strike – Empower your fists with focused energy."></div>
+            <div class="talent-icon" data-tooltip="Step of the Wind – Move like a breeze across the battlefield."></div>
+            <div class="talent-icon active" data-tooltip="Flurry of Blows – Strike twice in rapid succession."></div>
           </div>
         </section>
 
+        <!-- Barbarian -->
         <section id="barbarian" class="talent-section">
           <h2>Uilliam (Barbarian)</h2>
           <div class="talent-tree">
-            <div class="talent-icon" data-tooltip="Barbarian Rage"></div>
+            <div class="talent-icon" data-tooltip="Rage – Enter a battle frenzy, gaining damage and resistance."></div>
+            <div class="talent-icon active" data-tooltip="Reckless Attack – Strike boldly, but leave yourself open."></div>
           </div>
         </section>
 
+        <!-- Druid -->
         <section id="druid" class="talent-section">
           <h2>Karnos (Druid)</h2>
           <div class="talent-tree">
-            <div class="talent-icon" data-tooltip="Druid Wild Shape"></div>
+            <div class="talent-icon" data-tooltip="Wild Shape – Transform into a beast of nature."></div>
+            <div class="talent-icon" data-tooltip="Healing Bloom – Cause flora to erupt with rejuvenating energy."></div>
           </div>
         </section>
 
+        <!-- Fighter -->
         <section id="fighter" class="talent-section">
           <h2>Muuru (Fighter)</h2>
           <div class="talent-tree">
-            <div class="talent-icon" data-tooltip="Fighter Second Wind"></div>
+            <div class="talent-icon" data-tooltip="Second Wind – Draw on your stamina to heal."></div>
+            <div class="talent-icon" data-tooltip="Action Surge – Take an additional action this turn."></div>
           </div>
         </section>
 
+        <!-- Wizard -->
         <section id="wizard" class="talent-section">
-          <h2>Unnamed (Wizard)</h2>
+          <h2>Carlos (Wizard)</h2>
           <div class="talent-tree">
-            <div class="talent-icon" data-tooltip="Arcane Blast"></div>
+            <div class="talent-icon" data-tooltip="Arcane Blast – Unleash raw magical energy."></div>
+            <div class="talent-icon active" data-tooltip="Mage Armor – Protect yourself with shimmering force."></div>
           </div>
         </section>
       </div>
     </div>
   </div>
 
-  <!-- Inject Sidebar -->
+  <!-- Sidebar Script -->
   <script src="script.js"></script>
   <script>
     fetch('sidebar.html')
@@ -193,6 +211,7 @@
   </script>
 </body>
 </html>
+
 
   </script>
 </body>
