@@ -166,13 +166,35 @@
         </section>
 
         <!-- Fighter -->
-        <section id="fighter" class="talent-section">
-          <h2>Muuru (Fighter)</h2>
-          <div class="talent-tree">
-            <div class="talent-icon" data-tooltip="Second Wind – Draw on your stamina to heal."></div>
-            <div class="talent-icon" data-tooltip="Action Surge – Take an additional action this turn."></div>
-          </div>
-        </section>
+<section id="fighter" class="talent-section">
+  <h2>Muuru (Fighter)</h2>
+
+  <div class="talent-tree-wrapper" style="display: flex; gap: 60px;">
+    <!-- Tree 1: Legionnaire -->
+    <div class="talent-tree-column">
+      <h3>Legionnaire</h3>
+      <div class="talent-node active"
+           data-name="Marked Assault"
+           data-summary="For 1 minute, you and 2 allies gain +2 AC if adjacent and shielded."
+           onclick="showTalentDetail(this)">
+      </div>
+    </div>
+
+    <!-- Placeholder columns for other trees -->
+    <div class="talent-tree-column">
+      <h3>Centurion</h3>
+      <!-- Add abilities here -->
+    </div>
+
+    <div class="talent-tree-column">
+      <h3>Praetorian</h3>
+      <!-- Add abilities here -->
+    </div>
+  </div>
+
+  <!-- EXPANDABLE INFO PANEL -->
+  <div id="talent-detail-panel" class="hidden"></div>
+</section>
 
         <!-- Wizard -->
         <section id="wizard" class="talent-section">
