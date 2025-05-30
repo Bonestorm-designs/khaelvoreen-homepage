@@ -220,6 +220,59 @@ html, body {
   filter: drop-shadow(0 0 2vw #bf00ff) brightness(1.7);
 }
 
+.talent-node {
+  width: 100px;
+  height: 100px;
+  background: url('grey-icon.png') center/contain no-repeat;
+  border: 2px solid #555;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  filter: grayscale(1) brightness(0.5);
+  transition: transform 0.2s ease;
+}
+
+.talent-node.active {
+  filter: none;
+  border-color: gold;
+}
+
+.talent-node:hover::after {
+  content: attr(data-summary);
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  z-index: 1000;
+  max-width: 280px;
+  text-align: center;
+}
+
+/* EXPANDED PANEL BELOW TREE */
+#talent-detail-panel {
+  background: url('parchment-texture.jpg') no-repeat center center;
+  background-size: cover;
+  border: 2px solid gold;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 520px;
+  margin-top: 20px;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+}
+
+#talent-detail-panel.hidden {
+  display: none;
+}
+
+
 /* STAR GLOW BEHIND SIDEBAR TOGGLE */
 #toggle-glow-star {
   position: fixed;
