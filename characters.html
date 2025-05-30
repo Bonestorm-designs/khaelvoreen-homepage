@@ -236,5 +236,27 @@
 
 
   </script>
+<script>
+function showTalentDetail(el) {
+  const panel = document.getElementById('talent-detail-panel');
+  const name = el.getAttribute('data-name');
+  const summary = el.getAttribute('data-summary');
+
+  // You can store full content in a map or just hard-code here
+  if (name === 'Marked Assault') {
+    panel.innerHTML = `
+      <h4>${name}</h4>
+      <p><strong>Tree:</strong> Legionnaire</p>
+      <p><strong>Level:</strong> 2</p>
+      <p><strong>Activation:</strong> Action</p>
+      <p><strong>Usage:</strong> Once per short or long rest</p>
+      <p><strong>Description:</strong> For 1 minute, you and up to 2 allies of your choice in adjacent squares gain +2 AC. You must have at least 2 allies in adjacent squares to you, and you must have a shield equipped.</p>
+    `;
+  }
+
+  panel.classList.remove('hidden');
+}
+</script>
+
 </body>
 </html>
