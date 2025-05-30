@@ -86,7 +86,8 @@
       margin-top: 40px;
     }
 
-    .talent-icon {
+    .talent-icon,
+    .talent-node {
       width: 100px;
       height: 100px;
       background: url('grey-icon.png') center/contain no-repeat;
@@ -94,14 +95,17 @@
       border-radius: 8px;
       position: relative;
       filter: grayscale(1) brightness(0.5);
+      cursor: pointer;
     }
 
-    .talent-icon.active {
+    .talent-icon.active,
+    .talent-node.active {
       filter: none;
       border-color: gold;
     }
 
-    .talent-icon:hover::after {
+    .talent-icon:hover::after,
+    .talent-node:hover::after {
       content: attr(data-tooltip);
       position: absolute;
       bottom: -40px;
@@ -116,13 +120,38 @@
       pointer-events: none;
       z-index: 10;
     }
+
+    #talent-detail-panel {
+      margin-top: 40px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid gold;
+      border-radius: 8px;
+      padding: 20px;
+      color: #fff;
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .talent-tree-wrapper {
+      display: flex;
+      gap: 60px;
+    }
+
+    .talent-tree-column h3 {
+      font-family: 'Cinzel Decorative', serif;
+      color: gold;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
 <body>
   <div id="scaled-wrapper">
     <div id="layout-wrapper">
-      
       <!-- Sidebar Injected Here -->
       <div id="sidebar-container"></div>
 
@@ -166,35 +195,35 @@
         </section>
 
         <!-- Fighter -->
-<section id="fighter" class="talent-section">
-  <h2>Muuru (Fighter)</h2>
+        <section id="fighter" class="talent-section">
+          <h2>Muuru (Fighter)</h2>
+          <div class="talent-tree-wrapper">
+            <!-- Tree 1: Legionnaire -->
+            <div class="talent-tree-column">
+              <h3>Legionnaire</h3>
+              <div class="talent-node active"
+                   data-name="Marked Assault"
+                   data-summary="For 1 minute, you and 2 allies gain +2 AC if adjacent and shielded."
+                   onclick="showTalentDetail(this)">
+              </div>
+            </div>
 
-  <div class="talent-tree-wrapper" style="display: flex; gap: 60px;">
-    <!-- Tree 1: Legionnaire -->
-    <div class="talent-tree-column">
-      <h3>Legionnaire</h3>
-      <div class="talent-node active"
-           data-name="Marked Assault"
-           data-summary="For 1 minute, you and 2 allies gain +2 AC if adjacent and shielded."
-           onclick="showTalentDetail(this)">
-      </div>
-    </div>
+            <!-- Placeholder columns -->
+            <div class="talent-tree-column">
+              <h3>Centurion</h3>
+              <!-- Add abilities here -->
+            </div>
+            <div class="talent-tree-column">
+              <h3>Praetorian</h3>
+              <!-- Add abilities here -->
+            </div>
+          </div>
 
-    <!-- Placeholder columns for other trees -->
-    <div class="talent-tree-column">
-      <h3>Centurion</h3>
-      <!-- Add abilities here -->
-    </div>
-
-    <div class="talent-tree-column">
-      <h3>Praetorian</h3>
-      <!-- Add abilities here -->
-    </div>
-  </div>
-
-  <!-- EXPANDABLE INFO PANEL -->
-  <div id="talent-detail-panel" class="hidden"></div>
-</section>
+          <!-- EXPANDABLE INFO PANEL -->
+          <div id="talent-detail-panel">
+            <p>Select a talent to learn more.</p>
+          </div>
+        </section>
 
         <!-- Wizard -->
         <section id="wizard" class="talent-section">
@@ -208,7 +237,7 @@
     </div>
   </div>
 
-  <!-- Sidebar Script -->
+  <!-- Scripts -->
   <script src="script.js"></script>
   <script>
     fetch('sidebar.html')
@@ -218,7 +247,6 @@
         initSidebarToggle();
       });
 
-    // Tab Switching
     const tabs = document.querySelectorAll('.tab');
     const sections = document.querySelectorAll('.talent-section');
 
@@ -230,33 +258,26 @@
         document.getElementById(tab.dataset.tab).classList.add('active');
       });
     });
+
+    function showTalentDetail(el) {
+      const panel = document.getElementById('talent-detail-panel');
+      const name = el.getAttribute('data-name');
+      const summary = el.getAttribute('data-summary');
+
+      if (name === 'Marked Assault') {
+        panel.innerHTML = `
+          <h4>${name}</h4>
+          <p><strong>Tree:</strong> Legionnaire</p>
+          <p><strong>Level:</strong> 2</p>
+          <p><strong>Activation:</strong> Action</p>
+          <p><strong>Usage:</strong> Once per short or long rest</p>
+          <p><strong>Description:</strong> For 1 minute, you and up to 2 allies of your choice in adjacent squares gain +2 AC. You must have at least 2 allies in adjacent squares to you, and you must have a shield equipped.</p>
+        `;
+      } else {
+        panel.innerHTML = `<p>${summary}</p>`;
+      }
+    }
   </script>
 </body>
 </html>
 
-
-  </script>
-<script>
-function showTalentDetail(el) {
-  const panel = document.getElementById('talent-detail-panel');
-  const name = el.getAttribute('data-name');
-  const summary = el.getAttribute('data-summary');
-
-  // You can store full content in a map or just hard-code here
-  if (name === 'Marked Assault') {
-    panel.innerHTML = `
-      <h4>${name}</h4>
-      <p><strong>Tree:</strong> Legionnaire</p>
-      <p><strong>Level:</strong> 2</p>
-      <p><strong>Activation:</strong> Action</p>
-      <p><strong>Usage:</strong> Once per short or long rest</p>
-      <p><strong>Description:</strong> For 1 minute, you and up to 2 allies of your choice in adjacent squares gain +2 AC. You must have at least 2 allies in adjacent squares to you, and you must have a shield equipped.</p>
-    `;
-  }
-
-  panel.classList.remove('hidden');
-}
-</script>
-
-</body>
-</html>
